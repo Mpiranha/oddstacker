@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/forgot-password',function (){
+    return view('forgot');
+});
+
+Route::get('/enter',function (){
+    return view('home');
+});
+
+// Route::get('', function() {
+//     return view('login');
+// });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
