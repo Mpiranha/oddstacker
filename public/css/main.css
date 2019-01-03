@@ -1,0 +1,92 @@
+html, body, #app {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+.full-height {
+    height: 100%;
+}
+.logo {
+    letter-spacing: 0.3rem;
+    font-size: 1.2rem !important;
+    color: white;
+    font-weight: 500;
+}
+
+.desc-header {
+    font-weight: 800;
+    font-size: 2.5rem;
+    font-family: sans-serif;
+}
+/*GENERAL*/
+.white-text {
+    color: white;
+}
+
+.clear-padding {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* LOGIN */
+.signup-link {
+    color: rgb(57, 185, 57);
+}
+.shades {
+    background-color:#000000d4;
+    height: 100%;
+}
+.more-mt{
+    margin-top: 8rem !important;
+}
+
+/* Login and Reg Bg */
+
+.log-rg-bg {
+
+    background-image: url(../images/bg_login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Regiteration */
+
+.white-text {
+    color: white;
+}
+
+.login-link {
+    color: rgb(57, 185, 57);
+}
+
+/* Landing Navbar styles */
+.bg-nav {
+    background-color: #183462;
+}
+.nav-item a {
+    color: white;
+}
+
+@media screen and (max-width: 360px) {
+    .nav-item a {
+        font-size: 0.8rem;
+    }
+}
+
+/*  Play button */
+.reduce-width-inline {
+    width: 80% !important;
+    display: inline-block;
+}
+
+.more-pt {
+    padding: 3rem 1rem;
+}
+
+.clear-bg {
+    background-color: transparent !important;
+}
+
+

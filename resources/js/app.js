@@ -5,6 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -17,7 +18,10 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('odd-header', require('./components/Header.vue'));
+Vue.component('forgot-password', require('./components/ForgotPass.vue'));
+
+
 
 // const files = require.context('./', true, /\.vue$/i)
 
