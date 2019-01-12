@@ -30,3 +30,25 @@ Route::get('/enter',function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* Admin Routes */
+
+Route::get('/admin', function(){
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/users', function(){
+    return view('admin.users');
+});
+Route::get('/admin/countries', function(){
+    return view('admin.countries');
+});
+Route::get('/admin/leagues', function(){
+    return view('admin.leagues');
+});
+Route::get('/admin/events', function(){
+    return view('admin.events');
+});
+Route::get('/admin/teams', function(){
+    return view('admin.teams');
+});
