@@ -19,7 +19,15 @@ window.Vue = require('vue');
  */
 
 Vue.component('odd-header', require('./components/Header.vue'));
-Vue.component('forgot-password', require('./components/ForgotPass.vue'));
+Vue.component('stack-nav', require('./components/StackNav.vue'));
+Vue.component('stack-box', require('./components/StackBox.vue'));
+Vue.component('amount-box', require('./components/AmountBox.vue'));
+Vue.component('right-fancy-box', require('./components/Box2.vue'));
+Vue.component('left-fancy-box', require('./components/Box3.vue'));
+Vue.component('fancy-top-bottom', require('./components/Box4.vue'));
+Vue.component('main-nav', require('./components/MainNav.vue'));
+Vue.component('payment-bar', require('./components/Paymentbar.vue'));
+
 
 
 

@@ -5,6 +5,112 @@ html, body, #app {
     overflow-y: auto;
 }
 
+.w-20 {width: 20%;}
+.w-80 {width: 80%;}
+.pr-21 {padding-right: 2.1rem !important;}
+.f-1 {font-size: 1rem !important;}
+.f-1-1 {font-size: 1.1rem !important;}
+.f-2 {font-size: 1.4rem !important;}
+.bt-1 {border-top: 1px solid black;}
+.bg-purple {
+    background-color: #073453;
+    color: white;
+}
+
+/* Filer bar */
+#filter-bar {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    background-color: #186E7F;
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    z-index: 9999;
+    padding: 10rem 1rem 3rem 1rem;
+}
+
+#close-filter {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    color: white;
+    background-color: rgba(255, 235, 205, 0);
+    border: 0;
+    font-size: 2rem;
+
+}
+
+#search-box {
+    border-radius: 40px;
+}
+
+.filter-headers {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+
+.ball {
+    padding: 2.5rem 1rem;
+    font-size: 2rem;
+    color: #E50101;
+}
+.ball i {
+    margin: 0 auto;
+}
+.d-flex h6{font-size: 0.7rem;
+    font-family: Roboto;}
+
+.table th, .table td {padding: 0;}
+.bold {font-weight: bold;}
+.bold-1 {font-weight: bolder;}
+
+.table th, .table td{
+    margin-bottom: 0;
+    font-size: 0.7rem;
+}
+
+.cus-bg-black {
+    background-color: #0D0D0D;
+    color: white;
+    font-size: 1rem;
+}
+
+.bad {
+    border: 1px solid red;
+}
+
+.good {
+    border: 1px solid greenyellow;
+}
+
+.bg-home {
+    background-image: url(../images/bg_home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-user {
+    background-image: url(../images/bg_user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+    width: 29%;
+}
+
+.cal-font {
+    font-size: 1.1rem;
+}
+
 .full-height {
     height: 100%;
 }
@@ -35,10 +141,24 @@ html, body, #app {
     color: rgb(57, 185, 57);
 }
 .shades {
-    background-color:#000000d4;
+    background-color:rgba(26, 24, 24, 0.831);
     height: 100%;
+    overflow-y: auto;
+}
+.little-shade {
+    background-color: rgba(26, 24, 24, 0.5);
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .more-mt{
+    margin-top: 4rem !important;
+}
+
+.extra-mt {
     margin-top: 8rem !important;
 }
 

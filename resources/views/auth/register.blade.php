@@ -5,35 +5,35 @@
         <div class="shades">
             <odd-header></odd-header>
 
-            <form action="#" class="ml-4 mr-4">
+            <form id="reg-form" action="#" class="ml-4 mr-4"action="#" method="post">
 
                 <div class="form-group white-text">
-                    <label for="tel">Phone Number</label>
-                    <input  class="form-control" type="tel" id="tell" placeholder="+2348000000000" value="">
+                    <label for="tel">Phone Number *</label>
+                    <input  class="form-control" type="tel" id="tel" placeholder="+2348000000000" value="">
                 </div>
 
                 <div class="form-group white-text">
-                    <label for="username">Username</label>
+                    <label for="username">Username *</label>
                     <input  class="form-control" type="text" id="username" placeholder="bobrisky514" value="">
                 </div>
 
                 <div class="form-group white-text">
-                    <label for="pwd">Password</label>
+                    <label for="pwd">Password *</label>
                     <input  class="form-control" type="password" id="pwd" placeholder="" value="">
                 </div>
 
                 <div class="form-group white-text">
-                    <label for="con-pwd">Confirm Password</label>
+                    <label for="con-pwd">Confirm Password *</label>
                     <input  class="form-control" type="password" id="con-pwd" placeholder="" value="">
                 </div>
 
 
                 <div class="form-group form-check">
-                    <label class="form-check-label  white-text">
-                        <input class="form-check-input" type="checkbox"> I confirm that i am over 18 Years and agree to Terms & Privacy Policy
+                    <label for="agree-terms" class="form-check-label  white-text">
+                        <input class="form-check-input" type="checkbox" id="agree-terms"> I confirm that i am over 18 Years and agree to Terms & Privacy Policy
                     </label>
                 </div>
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <button id="reg-submit" type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
 
             <div class="row text-center more-mt">

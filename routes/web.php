@@ -23,6 +23,14 @@ Route::get('/enter',function (){
     return view('home');
 });
 
+Route::get('/test',function (){
+    return view('test');
+});
+
+Route::get('/deposit',function (){
+    return view('deposit');
+});
+
 // Route::get('', function() {
 //     return view('login');
 // });
