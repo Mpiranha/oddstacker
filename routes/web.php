@@ -23,10 +23,61 @@ Route::get('/enter',function (){
     return view('home');
 });
 
-// Route::get('', function() {
-//     return view('login');
-// });
+Route::get('/test',function (){
+    return view('test');
+});
+
+Route::get('/deposit',function (){
+    return view('deposit');
+});
+
+Route::get('/results',function (){
+    return view('results');
+});
+
+Route::get('/result',function (){
+    return view('result');
+});
+
+Route::get('/profile',function (){
+    return view('profile');
+});
+
+Route::get('/withdrawal',function (){
+    return view('withdrawal');
+});
+
+Route::get('/cashier',function (){
+    return view('cashier');
+});
+
+Route::get('/account',function (){
+    return view('account');
+});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* Admin Routes */
+
+Route::get('/admin', function(){
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/users', function(){
+    return view('admin.users');
+});
+Route::get('/admin/countries', function(){
+    return view('admin.countries');
+});
+Route::get('/admin/leagues', function(){
+    return view('admin.leagues');
+});
+Route::get('/admin/events', function(){
+    return view('admin.events');
+});
+Route::get('/admin/teams', function(){
+    return view('admin.teams');
+});

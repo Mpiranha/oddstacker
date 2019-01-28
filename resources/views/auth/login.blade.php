@@ -1,27 +1,38 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid full-height log-rg-bg clear-padding">
-        <div class="shades">
+    <div class="container-fluid h-100 log-rg-bg clear-padding">
+        <div class="shades h-100">
             <odd-header></odd-header>
 
-            <form action="#" class="ml-4 mr-4 more-mt">
+
+
+            <form id="login-form" action="#" class="ml-4 mr-4 extra-mt" method="POST">
                 
+            <div class="col-12 messages"></div>
             <div class="form-group white-text">
                 <label for="username">Username</label>
-                <input  class="form-control" type="text" id="username" placeholder="bobrisky514" value="">
+                <input  class="form-control"
+                 type="text" id="username"
+                 placeholder="bobrisky514" 
+                 pattern=".{3,}"
+                 value="" required>
             </div>
 
             <div class="form-group white-text">
                 <label for="pwd">Password</label>
-                <input  class="form-control" type="password" id="pwd" placeholder="" value="">
+                <input  class="form-control"
+                 type="password"
+                 id="pwd"
+                 placeholder=""
+                 value="" required>
             </div>
 
                 <div class="form-group text-right">
                     <a href="#">Forgot password</a>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button id="login-btn" type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
 
             <div class="row text-center mt-5">
@@ -30,5 +41,6 @@
                 </div>
             </div>
         </div> 
+        <footer-comp></footer-comp>
     </div>
 @endsection
