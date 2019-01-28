@@ -8,25 +8,46 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between w-100 align-items-end">
                         <h6 class="bold">Both Teams to Score</h6>
-                        <h6>05:32:15</h6>
+                        <h6 class="bold-1 pr-3">05:32:15</h6>
                     </div>
                     <div class="another-shape w-100">
-                        <span class="amt-text">NGN 20, 000</span>
+                        <span class="amt-text">NGN 100 000</span>
                         <span class="cur-stack">NGN 20 000</span>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
-                        <h6>STAKE</h6>
-                        <h6>WIN MARGIN</h6>
-                        <h6>ENTRY</h6>
+                        <div class="d-flex flex-column mr-3">
+                            <h6 class="bold">STAKE</h6>
+                            <h6 class="bold-1">NGN 400 000</h6>
+                        </div>
+
+                        <div class="flex-grow-1 rounded-border px-3 pt-1">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="bold-1 darker">POS</h6>
+                                <h6 class="pl-2 bold-1 darker">WON</h6>
+                                <h6 class="bold-1 darker">ODDS</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <h6 class="bold-1 more-em">5/400</h6>
+                                <h6 class="bold-1 amount-text px-3 text-white ">2000</h6>
+                                <h6 class="bold-1 more-em">41.22</h6>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column ml-3">
+                            <h6 class="bold">ENTRY</h6>
+                            <h6 class="bold-1">7/100</h6>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between w-100">
-                        <h6 class="bold-1">NGN 400</h6>
-                        <h6 class="bold-1 pr-21">TOP HALF</h6>
-                        <h6 class="bold-1">100</h6>
+                    <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end mt-2">
+                        <h6>WIN MARGIN </h6>
+                        <h6>CODE</h6>
+                        <h6>ODDS</h6>
                     </div>
-                    <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
-                        <h6>CODE <span class="bold-1">FF32421</span></h6>
-                        <h6>ODDS <span class="bold-1">44.95</span></h6>
+                    <div class="d-flex justify-content-between align-items-start w-100">
+                        <h6 class="bold-1 darker">FIRST ONLY</h6>
+                        <h6 class="bold-1 darker">56758</h6>
+                        <h6 class="bold-1 darker">44.95</h6>
                     </div>
                 </div>
             </div>
@@ -97,18 +118,36 @@ export default {
         border-left: 15px solid #eee0;
         border-right: 14px solid #eee0;
     }  
+
+    .rounded-border {
+        border-radius: 30px;
+        border: 2px solid green;
+    }
+    .amount-text {
+        border-radius: 30px;
+        background-color: green;
+    }
     .amt-text {
         position: absolute;
         top: -4px;
         left: 20px;
         font-weight: bolder;
     }
-
     .cur-stack {
         position: absolute;
         top: 4px;
         left: 153px;
         font-weight: bolder;
         font-size: 0.7rem;
+    }
+
+    .darker {
+        color: #01000c;
+        font-size: 0.8rem;
+    }
+
+    .more-em {
+        font-size: 0.8rem !important;
+        color: #01000c;
     }
 </style>

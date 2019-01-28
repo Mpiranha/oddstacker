@@ -1,24 +1,12 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid m-0 p-0 h-100 bg-home">
+<div class="container-fluid m-0 p-0 h-100 scroll-y bg-home">
+
+    <div class="little-shade">
         <main-nav title="STACK LOBBY"></main-nav>
-        <div class="little-shade">
-            <div class="row m-0 mt-2 bg-purple p-2 cal-font">
-                <div class="col-2">
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                </div>
-                <div class="col-8 text-center">
-                    <i class="far fa-calendar-alt"></i> 05 June 2018
-                </div>
-                <div class="col-2">
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-            </div>
+        <div class="px-3">
+            <date-picker></date-picker>
 
             <stack-nav class="mt-2"></stack-nav>
 
@@ -34,7 +22,7 @@
             <!-- Filter Bar   -->
             <div id="filter-bar">
                 <button type="button" class="close-filter text-light" id="close-filter" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
 
                 <input type="text" class="form-control" id="search-box" aria-describedby="searchHelp" placeholder="Search">
@@ -53,7 +41,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
 
                 <div class="filter-type mt-5">
                     <h1 class="filter-headers">FILTER BY TYPE</h1>
@@ -70,7 +58,7 @@
                     </ul>
                 </div>
             </div>
-            
+
 
             <stack-box></stack-box>
             <stack-box></stack-box>
@@ -78,6 +66,7 @@
             <stack-box></stack-box>
             <stack-box></stack-box>
         </div>
-    </diV>
+    </div>
+    <footer-comp></footer-comp>
+</diV>
 @endsection
-

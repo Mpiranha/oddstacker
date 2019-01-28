@@ -22,11 +22,15 @@ Vue.component('odd-header', require('./components/Header.vue'));
 Vue.component('stack-nav', require('./components/StackNav.vue'));
 Vue.component('stack-box', require('./components/StackBox.vue'));
 Vue.component('amount-box', require('./components/AmountBox.vue'));
-Vue.component('right-fancy-box', require('./components/Box2.vue'));
-Vue.component('left-fancy-box', require('./components/Box3.vue'));
-Vue.component('fancy-top-bottom', require('./components/Box4.vue'));
+Vue.component('right-fancy-box', require('./components/FancyRightBtn.vue'));
+Vue.component('left-fancy-box', require('./components/FancyLeftBtn.vue'));
+Vue.component('fancy-top-bottom', require('./components/FancyTopBotBtn.vue'));
 Vue.component('main-nav', require('./components/MainNav.vue'));
-Vue.component('payment-bar', require('./components/Paymentbar.vue'));
+Vue.component('footer-comp', require('./components/Footer.vue'));
+Vue.component('stock-nav', require('./components/StocksNav.vue'));
+Vue.component('date-picker', require('./components/DatePicker.vue'));
+Vue.component('stack-box-new', require('./components/StackBoxNew.vue'));
+Vue.component('team-view-box', require('./components/TeamViewBox.vue'));
 
 
 

@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid full-height log-rg-bg clear-padding">
-        <div class="shades">
+    <div class="container-fluid h-100 log-rg-bg clear-padding">
+        <div class="shades h-100">
             <odd-header></odd-header>
 
 
@@ -41,5 +41,6 @@
                 </div>
             </div>
         </div> 
+        <footer-comp></footer-comp>
     </div>
 @endsection

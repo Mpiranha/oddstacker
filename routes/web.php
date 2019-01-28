@@ -31,9 +31,30 @@ Route::get('/deposit',function (){
     return view('deposit');
 });
 
-// Route::get('', function() {
-//     return view('login');
-// });
+Route::get('/results',function (){
+    return view('results');
+});
+
+Route::get('/result',function (){
+    return view('result');
+});
+
+Route::get('/profile',function (){
+    return view('profile');
+});
+
+Route::get('/withdrawal',function (){
+    return view('withdrawal');
+});
+
+Route::get('/cashier',function (){
+    return view('cashier');
+});
+
+Route::get('/account',function (){
+    return view('account');
+});
+
 
 Auth::routes();
 

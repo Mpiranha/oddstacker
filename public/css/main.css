@@ -3,11 +3,13 @@ html, body, #app {
     height: 100%;
     overflow-x: hidden; 
     overflow-y: auto;
+    font-family: sans-serif;
 }
 
-.w-20 {width: 20%;}
-.w-80 {width: 80%;}
+.w-20 {width: 20% !important;}
+.w-80 {width: 80% !important;}
 .pr-21 {padding-right: 2.1rem !important;}
+.pl-21 {padding-left: 2.1rem !important;}
 .f-1 {font-size: 1rem !important;}
 .f-1-1 {font-size: 1.1rem !important;}
 .f-2 {font-size: 1.4rem !important;}
@@ -16,6 +18,66 @@ html, body, #app {
     background-color: #073453;
     color: white;
 }
+
+.scroll-y {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.btn-stack, .btn-lead {
+    font-size: 0.65rem !important;
+    font-weight: 800;
+    width: 35% !important;
+}
+.bg-aqua {background-color: #3A8EC7 !important;}
+.bg-grey {background-color: #C7C7C7 !important;}
+.text-grey {color: rgb(128, 128, 128);}
+
+.border-curve {
+    border-radius: 38px 38px 0px 0px / 38px 38px 48px 31px;
+    border: 2px solid white;
+    padding: 2rem 1.3rem;
+}
+
+.stack-lead-btn a.active{
+    background-color: #3A8EC7 !important;
+    color: white !important;
+}
+
+
+.result-box div h6{
+    font-size: 0.9rem;
+}
+
+.amount-text {
+    background-color: #3ece13;
+    border-radius: 30px;
+    border: 2px solid white;
+}
+.slight-round-bord {
+    border-radius: 12px;
+    border: 2px solid grey;
+}
+
+.amount-field {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.inc {
+    font-weight: bolder;
+}
+
+.box{
+    padding: 0.3rem;
+    margin: 2px;
+    background-color: #18335F;
+    border-radius:0px;
+ }
+
+ .box h5{
+    color: white;
+    padding-left: 0.2rem;
+  }
 
 /* Filer bar */
 #filter-bar {
@@ -59,8 +121,7 @@ html, body, #app {
 .ball i {
     margin: 0 auto;
 }
-.d-flex h6{font-size: 0.7rem;
-    font-family: Roboto;}
+.d-flex h6{font-size: 0.7rem;}
 
 .table th, .table td {padding: 0;}
 .bold {font-weight: bold;}
@@ -91,6 +152,13 @@ html, body, #app {
     background-size: cover;
 }
 
+.bg-land {
+    background-image: url(../images/bg_land.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .bg-user {
     background-image: url(../images/bg_user.png);
     background-repeat: no-repeat;
@@ -111,9 +179,6 @@ html, body, #app {
     font-size: 1.1rem;
 }
 
-.full-height {
-    height: 100%;
-}
 .logo {
     letter-spacing: 0.3rem;
     font-size: 1.2rem !important;
@@ -124,16 +189,30 @@ html, body, #app {
 .desc-header {
     font-weight: 800;
     font-size: 2.5rem;
-    font-family: sans-serif;
 }
 /*GENERAL*/
 .white-text {
     color: white;
 }
 
+.text-green{color: #3ece13;}
+
 .clear-padding {
     padding-right: 0;
     padding-left: 0;
+}
+
+.profile-submit-btn {
+    width: 80%;
+    margin-top: 1em;
+    border-radius: 2rem;
+    padding: 0.5em;
+   
+}
+
+.prof-form label, .withdaw-form label {
+    color: white;
+    font-size: 1.2rem;
 }
 
 /* LOGIN */
@@ -142,17 +221,12 @@ html, body, #app {
 }
 .shades {
     background-color:rgba(26, 24, 24, 0.831);
-    height: 100%;
-    overflow-y: auto;
+    padding-bottom: 1rem;
 }
 .little-shade {
     background-color: rgba(26, 24, 24, 0.5);
-    height: 100%;
-    overflow-y: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    padding-bottom: 1rem;
+
 }
 .more-mt{
     margin-top: 4rem !important;
@@ -160,6 +234,13 @@ html, body, #app {
 
 .extra-mt {
     margin-top: 8rem !important;
+}
+
+.cash-items {
+    padding: 0.1rem 0 0.2rem 1rem;
+    color: white;
+    display: block;
+    font-size: 1rem;
 }
 
 /* Login and Reg Bg */
@@ -207,6 +288,32 @@ html, body, #app {
 
 .clear-bg {
     background-color: transparent !important;
+}
+
+
+
+.end{
+    width: 40%;
+    margin: 2px;
+    color: white;
+}
+
+.end-left{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: #E50101;
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem !important;
+    font-weight: 100;
+}
+
+.end-right{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #171717;
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem !important;
+    font-weight: 100;
 }
 
 

@@ -5,7 +5,23 @@ $(document).ready(function(){
 		$("#sidebar").animate({
             left: '0px'
         });
-	  });
+
+        //Close top-bar if open
+        if( $("#top-bar").css("display") == "block" ) {
+            $("#top-bar").slideToggle("1000");
+        }
+
+        //Close filter if open
+        if( $("#filter-bar").css("right") == "0px" ) {
+            $("#filter-bar").animate({
+                right: '-250px'
+            });
+        }
+
+      });
+      
+      
+      
 
     $("#close").click(function() {
 	    $("#sidebar").animate({
@@ -17,12 +33,20 @@ $(document).ready(function(){
 
     // Top Bar
     $("#right-btn").click(function() {  
-        if( $("#top-bar").slideToggle("1000") ) {
+        $("#top-bar").slideToggle("1000");
             $("#top-bar").animate({
                 top: '95px'
             });
-        }
+
+                //close sidebar if open
+            if( $("#sidebar").css("left") == "0px" ) {
+                $("#sidebar").animate({
+                    left: '-250px'
+                });
+            }
     });
+
+    
            
     //Top bar End
 
@@ -38,7 +62,16 @@ $(document).ready(function(){
         $("#filter-bar").animate({
             right: '0'
         });
+
+            //close sidebbar if open
+        if( $("#sidebar").css("left") == "0px" ) {
+            $("#sidebar").animate({
+                left: '-250px'
+            });
+        }
     });
+
+    //Filter end
 
 
     // jQuery methods go here...
@@ -131,11 +164,22 @@ $(document).ready(function(){
 
 
 
-    $('#reg-submit').click(function() {
+    $("#reg-submit").click(function() {
         if (errors.length < 1) {
             return true;
         }
         return false;
     });
+
+    $("#my-stack").click(function() {
+        $("#my-stack").addClass("active");
+        $("#leaderboard").hasClass("active") ? $("#leaderboard").removeClass("active") : false;
+    });
+    
+    $("#leaderboard").click(function() {
+        $("#leaderboard").addClass("active");
+        $("#my-stack").hasClass("active") ? $("#my-stack").removeClass("active") : false;
+    });
+    
   
   });
