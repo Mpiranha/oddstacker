@@ -1,8 +1,17 @@
 <template>
     <div id="fancy-left-btn" class="px-3 fancy-left text-center mr-2 flex-fill">
-        STOCKS
+        {{content}}
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        content: String
+    }
+}
+</script>
+
 
 <style>
 

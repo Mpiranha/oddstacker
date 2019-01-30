@@ -31,6 +31,8 @@ Vue.component('stock-nav', require('./components/StocksNav.vue'));
 Vue.component('date-picker', require('./components/DatePicker.vue'));
 Vue.component('stack-box-new', require('./components/StackBoxNew.vue'));
 Vue.component('team-view-box', require('./components/TeamViewBox.vue'));
+Vue.component('new-box', require('./components/Newbox.vue'));
+Vue.component('second-box', require('./components/Secondbox.vue'));
 
 
 

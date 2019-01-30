@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid h-100 clear-padding log-rg-bg">
-        <div class="shades h-100">
+    <div class="container-fluid h-100 scroll-y clear-padding log-rg-bg">
+        <div class="shades pb-5">
             <div class="row">
                 <div class="col-12 col-sm-12">
                     <nav class="navbar navbar-expand bg-nav">

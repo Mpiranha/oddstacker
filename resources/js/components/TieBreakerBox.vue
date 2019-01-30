@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex fancy-top-bot">
-        <div class="d-flex star">
-            <i class="fas fa-star mt-1"></i><span>(1)</span>
+        <div class="h-100 mt-3 star">
+            <i class="far fa-star"></i>
         </div>
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
@@ -12,12 +12,11 @@
                 </div>
             </div>
             
-            <div class="d-flex mt-3">
+            <div class="d-flex mt-2">
                 <div class="odds-text text-center text-white flex-grow-1">
                     Under 2.5
                 </div>
-                <div class="odd text-center">
-                    2.99
+                <div class="odd">
                 </div>
             </div>
         </div>
@@ -25,41 +24,34 @@
 </template>
 
 <style scoped>
-    .star {
-        font-size: 0.8rem;
-        color: gold;
-        padding: 2rem 0.2rem;
-    }
     .odds-text {
         background-color: #ffff00a3;
         border-radius: 30px;
         padding: 0.5rem 1rem;
     }
     .odd {
-        padding: 0.4rem 1rem;
+        padding: 1rem 2rem;
         background-color: #1d7e00ad;
         border-radius: 30px;
         margin-left: 3rem;
         border: 2px solid white;
-        font-weight: bolder;
     }
 
     .both-odds {
         border-radius: 30px;
-        padding: 0.1rem 0.3rem;
+        padding: 0.5rem 1.1rem;
         background-color: rgba(128, 128, 128, 0.527);
         border: 2px solid white;
-        color: white;
-
+        font-size: 0.5rem;
     }
 
     .fancy-top-bot {
-        width: 100%;
-        height: 100px;
-        background: #ffffff85;
-        position: relative;
-        margin-top: 2.5rem;
-        padding: 0.4rem 0.3rem;
+      width: 100%;
+      height: 100px;
+      background: #ffffff85;
+      position: relative;
+      margin-top: 2.5rem;
+      padding: 0.2rem 2.5rem;
     }
 
     .fancy-top-bot:before {
@@ -84,5 +76,9 @@
     border-top: 15px solid #ffffff85;
     border-left: 15px solid #eee0;
     border-right: 15px solid #eee0;
+    }
+    .star {
+        padding: 2.5rem 1rem;
+        font-size: 2rem;
     }
 </style>

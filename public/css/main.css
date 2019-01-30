@@ -14,6 +14,8 @@ html, body, #app {
 .f-1-1 {font-size: 1.1rem !important;}
 .f-2 {font-size: 1.4rem !important;}
 .bt-1 {border-top: 1px solid black;}
+.b-0 {border: none;
+    outline: none;}
 .bg-purple {
     background-color: #073453;
     color: white;
@@ -46,7 +48,7 @@ html, body, #app {
 
 
 .result-box div h6{
-    font-size: 0.9rem;
+    font-size: 0.6rem;
 }
 
 .amount-text {
@@ -98,7 +100,7 @@ html, body, #app {
     right: 15px;
     color: white;
     background-color: rgba(255, 235, 205, 0);
-    border: 0;
+    border: none;
     font-size: 2rem;
 
 }

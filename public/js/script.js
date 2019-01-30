@@ -76,7 +76,7 @@ $(document).ready(function(){
 
     // jQuery methods go here...
     $("#login-btn").submit(function() {
-        alert("Hello");
+        
     });
 
     var errors = ["Invalid username", "Invalid Phone Number", 
@@ -180,6 +180,12 @@ $(document).ready(function(){
         $("#leaderboard").addClass("active");
         $("#my-stack").hasClass("active") ? $("#my-stack").removeClass("active") : false;
     });
+
+    // $("#oddbox").keypress(function() {
+    //     if( $(" #oddbox").val().length == 1) {
+    //         $("#oddbox").val($("#oddbox").val() + ".");
+    //     }
+    // });
     
   
   });

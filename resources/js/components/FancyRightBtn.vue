@@ -1,8 +1,16 @@
 <template>
     <div class="fancy-right text-center flex-fill">
-        ALL WINNERS
+        {{content}}
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        content: String
+    }
+}
+</script>
 
 <style>
     .fancy-right {

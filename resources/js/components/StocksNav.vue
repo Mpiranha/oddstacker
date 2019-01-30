@@ -2,9 +2,9 @@
     <div class="row mt-2">
         <div class="col-12">
             <div class="d-flex stock-nav justify-content-center">
-                <left-fancy-box class="active"></left-fancy-box>
-                <div class="stock-all text-center bg-white mr-2 flex-fill">ALL STOCKS</div>
-                <right-fancy-box></right-fancy-box>
+                <left-fancy-box class="active" :content="leftContent"></left-fancy-box>
+                <div class="stock-all text-center bg-white mr-2 flex-fill">{{ centerContent }}</div>
+                <right-fancy-box :content="rightContent"></right-fancy-box>
                 
             </div>
         </div>
@@ -13,7 +13,11 @@
 
 <script>
 export default {
-    
+    props: {
+        leftContent: String,
+        centerContent: String,
+        rightContent: String
+    }
 }
 </script>
 

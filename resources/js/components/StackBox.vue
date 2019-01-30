@@ -8,10 +8,10 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between w-100 align-items-end">
                         <h6 class="bold">Both Teams to Score</h6>
-                        <h6>05:32:15</h6>
+                        <h6 class="pr-3">05:32:15</h6>
                     </div>
                     <div class="another-shape w-100">
-                        <span class="amt-text">NGN 20, 000</span>
+                        <span class="amt-text">NGN 200 000</span>
                         <span class="cur-stack">NGN 20 000</span>
                     </div>
                     <div class="d-flex justify-content-between mt-3">

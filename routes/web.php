@@ -55,6 +55,10 @@ Route::get('/account',function (){
     return view('account');
 });
 
+Route::get('/stackshell',function (){
+    return view('stackshell');
+});
+
 
 Auth::routes();
 

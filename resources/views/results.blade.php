@@ -8,7 +8,7 @@
         <main-nav title="RESULTS"></main-nav>
         <div class="px-3">
             
-            <stock-nav></stock-nav>
+            <stock-nav left-content="STOCK" center-content="ALL STOCK" right-content="WINNERS"></stock-nav>
             <date-picker></date-picker>
 
             <stack-nav class="mt-2"></stack-nav>

@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid h-100 log-rg-bg clear-padding">
-        <div class="shades h-100">
+    <div class="container-fluid h-100 log-rg-bg scroll-y clear-padding">
+        <div class="shades">
             <odd-header></odd-header>
 
 
