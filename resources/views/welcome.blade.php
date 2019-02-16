@@ -22,7 +22,7 @@
 
             <div class="row pt-4">
                 <div class="col-12 col-sm-12">
-                    <div class="jumbotron jumbotron-fluid text-center more-pt clear-bg white-text">
+                    <div class="jumbotron jumbotron-fluid text-center more-pt clear-bg text-light">
                         <div class="container">
                             <h1 class="desc-header">Play and Win With ODDSTACKR</h1> 
                             <p class="mt-4">

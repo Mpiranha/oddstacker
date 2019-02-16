@@ -10,12 +10,13 @@
             <stock-nav left-content="H-2-H" center-content="DOUBLE UP" right-content="PREMIUM"></stock-nav>
             <stack-box></stack-box>
 
-            <div class="shell-box border-curve px-2 py-0 mt-4">
-                <second-box title="Liverpool vs Fulham"></second-box>
-                <new-box></new-box>
-                <new-box></new-box>
-                <new-box></new-box>
-                <new-box></new-box>
+            <div class="shell-box border-curve px-1 pt-0 pb-3 mt-4">
+                
+            <db-stackshell-box></db-stackshell-box>
+
+            <db-stackshell-box></db-stackshell-box>
+
+            <db-stackshell-box></db-stackshell-box>
             </div>
         </div>
     </div>

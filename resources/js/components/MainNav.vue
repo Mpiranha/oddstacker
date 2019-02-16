@@ -27,12 +27,12 @@
           </div>
           <div class="card-body">
             <div class="d-flex">
-              <div class="yes btn-lg text-uppercase text-center top">Account</div>
-              <div class="yes btn-lg text-uppercase text-center top">Cashier</div>
+              <a href="/account" class="yes btn-sm text-uppercase text-center top">Account</a>
+              <a href="/cashier" class="yes btn-sm text-uppercase text-center top">Cashier</a>
             </div>
             <div class="d-flex">
-              <div class="yes btn-lg text-uppercase text-center top">My Stocks</div>
-              <div class="yes btn-lg text-uppercase text-center top">log out</div>
+              <a href="/result" class="yes btn-sm text-uppercase text-center top">My Stocks</a>
+              <a href="" class="yes btn-sm text-uppercase text-center top">log out</a>
             </div>
           </div>
         </div>

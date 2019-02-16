@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 a {
-  font-size: 0.8rem !important;
+  font-size: 0.6rem !important;
 }
 
 .h-2-h-btn .active {

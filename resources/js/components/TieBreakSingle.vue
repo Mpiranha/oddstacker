@@ -1,27 +1,47 @@
-<template>  
+<template>
+  
         <div class="box">
             <div class="d-flex justify-content-around">
+                <div class="h-100 mt-1 star">
+                    <i v-if="state === 'normal'" @click="changeState('highlighted')" class="far fa-star text-light "></i>
+                    <i v-else @click="changeState('normal')" class="fas fa-star text-yellow"></i>
+                </div>
+
                 <div class="odd-display text-center text-uppercase text-light">
                     under 2.5
-                </div> 
-                <input id="oddbox" type="text" class="input-odd b-0 text-center text-dark" placeholder="0.00" value="" maxlength="4"/>
+                </div>
+
+                <input id="oddbox" type="text" readonly="readonly" class="input-odd b-0 text-center text-dark" placeholder="0.00" value="" maxlength="4"/>
             </div> 
         </div>           
 </template>
 <script>
 export default {
+    data() {
+        return {
+            state: 'normal'
 
+        }
+    },
+
+    methods: {
+        changeState: function(newState) {
+            this.state = newState;
+        }
+    }
     
 }
 </script>
 <style>
-    .raw{
-        display: flex;
-        justify-content: space-around;
+
+    .star {
+        font-size: 1.2rem;
+        cursor: pointer;
     }
+
     .box {
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.4);;
+        background-color: rgba(255, 255, 255, 0.4);
         font-weight: bold;
         font-size: 0.7rem;
         position: relative;

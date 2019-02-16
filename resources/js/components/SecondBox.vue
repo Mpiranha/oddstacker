@@ -1,8 +1,8 @@
 <template>
 
-     <div class="container">   
+     <div class="container px-0">   
         <div class="box-2">
-          <h1 class="sub-head text-center text-uppercase text-light">{{title}}</h1> 
+          <h1 class="sub-head text-center text-uppercase text-light f-1">{{ title.toLocaleUpperCase() }}</h1> 
   
         </div>            
     </div>
@@ -22,12 +22,9 @@ export default {
         display: flex;
         justify-content: center; 
         width: 100%;
-        height: 33px;
         font-weight: 500;
-        font-size: 28px;
         position: relative;
-        margin-top: 33px;
-        margin-bottom: 70px;
+        margin-bottom: 0.9rem;
     }
 
     .box-2:before {
@@ -35,10 +32,10 @@ export default {
         width: 100%;
         height: 0;
         position: absolute;
-        top: -6px;
+        top: 8px;
         left: 0;
         opacity: 0.8;
-        border-bottom: 30px solid #18335F;
+        border-bottom: 16px solid #18335F;
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
     }
@@ -53,7 +50,7 @@ export default {
         top: 24px;
         opacity: 0.8;
         left: 0;
-        border-top: 30px solid #18335F;
+        border-top: 16px solid #18335F;
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
     }

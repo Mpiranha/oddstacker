@@ -59,6 +59,28 @@ Route::get('/stackshell',function (){
     return view('stackshell');
 });
 
+Route::get('/change-password',function (){
+    return view('changepwd');
+});
+
+Route::get('/personal-details',function (){
+    return view('personaldetails');
+});
+
+Route::get('/shell-double',function (){
+    return view('stackshell-db');
+});
+
+Route::get('/multiebreak',function (){
+    return view('multiebreak');
+});
+
+Route::get('/singlebreak',function (){
+    return view('singlebreak');
+});
+
+
+
 
 Auth::routes();
 
