@@ -29,18 +29,18 @@
                                     
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Amount:</label>
-                                <textarea class="form-control clear-bg amount-field" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control clear-bg amount-field text-light" id="paystack-amt-box" rows="3">0</textarea>
                             </div>
                         </form>
                             
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-lg-12">
                                 <div class="d-flex justify-content-center">
-                                    <div type="button" class="btn inc btn-light">+100</div>
-                                    <div type="button" class="btn inc btn-light">+200</div>
-                                    <div type="button" class="btn inc btn-light">+400</div>
-                                    <div type="button" class="btn inc btn-light">+800</div>
-                                    <div type="button" class="btn inc btn-light">+1000</div>
+                                    <div id="paystack-add-100" type="button" class="btn inc btn-light">+100</div>
+                                    <div id="paystack-add-200" type="button" class="btn inc btn-light">+200</div>
+                                    <div id="paystack-add-300" type="button" class="btn inc btn-light">+400</div>
+                                    <div id="paystack-add-400" type="button" class="btn inc btn-light">+800</div>
+                                    <div id="paystack-add-500" type="button" class="btn inc btn-light">+1000</div>
                                 </div>
                             </div>
                         </div>
@@ -67,8 +67,8 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <form>      
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Amount:</label>
-                                <textarea class="form-control clear-bg amount-field" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="amount-input">Amount:</label>
+                                <textarea class="form-control clear-bg amount-field text-light" id="amount-input" rows="3">0</textarea>
                             </div>
                         </form>
                             
@@ -76,11 +76,11 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-lg-12">
                                 <div class="d-flex justify-content-center">
-                                <div type="button" class="btn inc btn-light">+100</div>
-                                <div type="button" class="btn inc btn-light">+200</div>
-                                <div type="button" class="btn inc btn-light">+400</div>
-                                <div type="button" class="btn inc btn-light">+800</div>
-                                <div type="button" class="btn inc btn-light">+1000</div>
+                                <div id="int-add-100" type="button" class="btn inc btn-light">+100</div>
+                                <div id="int-add-200" type="button" class="btn inc btn-light">+200</div>
+                                <div id="int-add-300" type="button" class="btn inc btn-light">+400</div>
+                                <div id="int-add-400" type="button" class="btn inc btn-light">+800</div>
+                                <div id="int-add-500" type="button" class="btn inc btn-light">+1000</div>
                             </div>
                         </div>
                     </div>

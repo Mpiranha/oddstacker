@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container-fluid h-100 log-rg-bg clear-padding">
-        <div class="shades h-100">
+    <div class="container-fluid h-100 log-rg-bg scroll-y clear-padding">
+        <div class="shades">
             <odd-header></odd-header>
 
 
@@ -10,26 +10,25 @@
             <form id="login-form" action="#" class="ml-4 mr-4 extra-mt" method="POST">
                 
             <div class="col-12 messages"></div>
-            <div class="form-group white-text">
+            <div class="form-group text-light">
                 <label for="username">Username</label>
                 <input  class="form-control"
                  type="text" id="username"
                  placeholder="bobrisky514" 
-                 pattern=".{3,}"
-                 value="" required>
+                 value="">
             </div>
 
-            <div class="form-group white-text">
+            <div class="form-group text-light">
                 <label for="pwd">Password</label>
                 <input  class="form-control"
                  type="password"
                  id="pwd"
                  placeholder=""
-                 value="" required>
+                 value="">
             </div>
 
                 <div class="form-group text-right">
-                    <a href="#">Forgot password</a>
+                    <a href="/forgot-password">Forgot password</a>
                 </div>
 
                 <button id="login-btn" type="submit" class="btn btn-primary btn-block">Login</button>
@@ -37,7 +36,7 @@
 
             <div class="row text-center mt-5">
                 <div class="col-12">
-                    <h6 class="white-text">Don't have an account? <a class="signup-link" href="/register">Create One Now</a></h6>
+                    <h6 class="text-light">Don't have an account? <a class="signup-link" href="/register">Create One Now</a></h6>
                 </div>
             </div>
         </div> 

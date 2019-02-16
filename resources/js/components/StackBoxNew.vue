@@ -10,18 +10,18 @@
                         <h6 class="bold">Both Teams to Score</h6>
                         <h6 class="bold-1 pr-3">05:32:15</h6>
                     </div>
-                    <div class="another-shape w-100">
+                    <div class="another-shape w-100 d-flex">
                         <span class="amt-text">NGN 100 000</span>
-                        <span class="cur-stack">NGN 20 000</span>
+                        <span class="cur-stack pt-1 ml-2">NGN 20 000</span>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
-                        <div class="d-flex flex-column mr-3">
+                        <div class="d-flex flex-column mr-2">
                             <h6 class="bold">STAKE</h6>
                             <h6 class="bold-1">NGN 400 000</h6>
                         </div>
 
-                        <div class="flex-grow-1 rounded-border px-3 pt-1">
-                            <div class="d-flex justify-content-between">
+                        <div class="flex-grow-1 rounded-border py-1 px-2 pt-1">
+                            <div class="d-flex justify-content-between mt-2">
                                 <h6 class="bold-1 darker">POS</h6>
                                 <h6 class="pl-2 bold-1 darker">WON</h6>
                                 <h6 class="bold-1 darker">ODDS</h6>
@@ -29,12 +29,12 @@
 
                             <div class="d-flex justify-content-between">
                                 <h6 class="bold-1 more-em">5/400</h6>
-                                <h6 class="bold-1 amount-text px-3 text-white ">2000</h6>
+                                <h6 class="bold-1 amount-text px-2 text-white ">2000</h6>
                                 <h6 class="bold-1 more-em">41.22</h6>
                             </div>
                         </div>
 
-                        <div class="d-flex flex-column ml-3">
+                        <div class="d-flex flex-column ml-2">
                             <h6 class="bold">ENTRY</h6>
                             <h6 class="bold-1">7/100</h6>
                         </div>
@@ -122,23 +122,21 @@ export default {
     .rounded-border {
         border-radius: 30px;
         border: 2px solid green;
+        align-items: center;
     }
     .amount-text {
         border-radius: 30px;
         background-color: green;
     }
     .amt-text {
-        position: absolute;
-        top: -4px;
-        left: 20px;
+        display: block;
         font-weight: bolder;
+        font-size: 0.9rem;
     }
     .cur-stack {
-        position: absolute;
-        top: 4px;
-        left: 153px;
+        display: block;
         font-weight: bolder;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .darker {
@@ -147,7 +145,7 @@ export default {
     }
 
     .more-em {
-        font-size: 0.8rem !important;
+        font-size: 0.65rem !important;
         color: #01000c;
     }
 </style>

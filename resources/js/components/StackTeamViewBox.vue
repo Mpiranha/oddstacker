@@ -1,24 +1,15 @@
 <template>
-    <div class="d-flex fancy-top-bot">
-        <div class="d-flex star">
-            <i class="fas fa-star mt-1"></i><span>(1)</span>
-        </div>
+    <div class="fancy-top-bot px-3">
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-3"></fancy-top-bottom>
-                <div class="d-flex both-odds">
-                    <span class="mr-3">0.1</span>
-                    <span>0.2</span>
-                </div>
+                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-5"></fancy-top-bottom>
             </div>
             
             <div class="d-flex mt-4">
                 <div class="odds-text text-center text-white flex-grow-1">
                     BOTH HALVES UNDER 1.5
                 </div>
-                <div class="odd text-center pt-2 px-2">
-                    2.99
-                </div>
+                <input class="shell-odd-input text-center text-light pt-2 px-2" type="text" placeholder="0.00" value="" maxlength="4">
             </div>
         </div>
     </div>
@@ -33,35 +24,27 @@
     .odds-text {
         background-color: rgba(245, 199, 11, 0.561);
         border-radius: 30px;
-        padding: 0.7rem 1rem;
-        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.6rem;
     }
-    .odd {
+    .shell-odd-input {
+        width: 25%;
         padding: 0.4rem 1rem;
         background-color: rgba(12, 220, 78, 0.24);
         border-radius: 30px;
         margin-left: 2rem;
         border: 2px solid white;
         font-weight: bolder;
+        display: block;
     }
 
-    .both-odds {
-        border-radius: 30px;
-        padding: 0.3rem 0.3rem;
-        background-color: rgba(128, 128, 128, 0.527);
-        border: 2px solid white;
-        color: white;
-        font-size: 0.6rem;
-        align-items: center;
-        align-self: center;
-    }
 
     .fancy-top-bot {
         width: 100%;
         height: 100px;
         background: #ffffff33;
         position: relative;
-        margin-top: 2.5rem;
+        margin-top: 2.2rem;
         padding: 0.4rem 0.3rem;
     }
 

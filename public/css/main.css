@@ -14,6 +14,9 @@ html, body, #app {
 .f-1-1 {font-size: 1.1rem !important;}
 .f-2 {font-size: 1.4rem !important;}
 .bt-1 {border-top: 1px solid black;}
+.f-0-6 {font-size: 0.6rem !important;}
+.b-0 {border: none;
+    outline: none;}
 .bg-purple {
     background-color: #073453;
     color: white;
@@ -24,19 +27,20 @@ html, body, #app {
     overflow-x: hidden;
 }
 
-.btn-stack, .btn-lead {
-    font-size: 0.65rem !important;
-    font-weight: 800;
-    width: 35% !important;
-}
+
 .bg-aqua {background-color: #3A8EC7 !important;}
 .bg-grey {background-color: #C7C7C7 !important;}
 .text-grey {color: rgb(128, 128, 128);}
+.text-yellow {color: yellow !important;}
 
 .border-curve {
-    border-radius: 38px 38px 0px 0px / 38px 38px 48px 31px;
-    border: 2px solid white;
-    padding: 2rem 1.3rem;
+    border-width: 16px;
+    border-style: solid;
+    border-image: url("../images/border.png") 28% round;
+    -webkit-border-image: url("../images/border.png") 28% round;
+    /*border-radius: 38px 38px 0px 0px / 38px 38px 48px 31px;*/
+    /* border: 2px solid white; */
+    padding: 2rem 0.1rem;
 }
 
 .stack-lead-btn a.active{
@@ -46,7 +50,7 @@ html, body, #app {
 
 
 .result-box div h6{
-    font-size: 0.9rem;
+    font-size: 0.6rem;
 }
 
 .amount-text {
@@ -98,7 +102,7 @@ html, body, #app {
     right: 15px;
     color: white;
     background-color: rgba(255, 235, 205, 0);
-    border: 0;
+    border: none;
     font-size: 2rem;
 
 }
@@ -113,15 +117,19 @@ html, body, #app {
     font-weight: bolder;
 }
 
+.pos-relative {
+    position: relative;
+}
+
 .ball {
     padding: 2.5rem 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #E50101;
 }
 .ball i {
     margin: 0 auto;
 }
-.d-flex h6{font-size: 0.7rem;}
+.d-flex h6{font-size: 0.5rem;}
 
 .table th, .table td {padding: 0;}
 .bold {font-weight: bold;}
@@ -191,7 +199,7 @@ html, body, #app {
     font-size: 2.5rem;
 }
 /*GENERAL*/
-.white-text {
+.text-light {
     color: white;
 }
 
@@ -212,7 +220,7 @@ html, body, #app {
 
 .prof-form label, .withdaw-form label {
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 /* LOGIN */
@@ -226,7 +234,11 @@ html, body, #app {
 .little-shade {
     background-color: rgba(26, 24, 24, 0.5);
     padding-bottom: 1rem;
+}
 
+.light-shade {
+    background-color: rgba(26, 24, 24, 0.63);
+    padding-bottom: 1rem;
 }
 .more-mt{
     margin-top: 4rem !important;
@@ -253,10 +265,9 @@ html, body, #app {
 }
 
 /* Regiteration */
-
-.white-text {
-    color: white;
-}
+    #tel-desc, #username-desc, #pass-desc, #con-desc {
+        display: none;
+    }
 
 .login-link {
     color: rgb(57, 185, 57);
@@ -314,6 +325,84 @@ html, body, #app {
     padding: 0.7rem 2rem;
     font-size: 0.9rem !important;
     font-weight: 100;
+}
+
+.btn-stack, .btn-lead {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.75rem;
+    line-height: 2rem;
+    width: 35% !important;
+    font-weight: 800;
+}
+
+.box-radius {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.box-radius:before {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    z-index: -1;
+    border-bottom: 12px solid rgba(35, 38, 41, 0.678);
+    border-left: 15px solid #eee0;
+    border-right: 15px solid #eee0
+}
+
+
+
+.box-radius:after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    z-index: -1;
+    border-top: 12px solid rgba(35, 38, 41, 0.678);
+    border-left: 15px solid #eee0;
+    border-right: 15px solid #eee0;
+}
+
+.info-box {
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 0;
+    right: -26px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 2rem;
+    background-color: rgba(238, 238, 238, 0);
+    border: none;
+}
+
+#modal-content {
+    background-color: white;
+    color: black;
+    margin-top: 14rem;
+    padding: 1rem;
+    font-size: 0.7rem;
+
+}
+
+.modal-box {
+    display: none;
 }
 
 

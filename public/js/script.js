@@ -2,7 +2,25 @@ $(document).ready(function(){
 
     // Side bar
     $("#side").click(function() {
-		$("#sidebar").animate({
+		openSideBar();
+      });
+
+      $("#close").click(function() {
+	    closeSideBar();
+    });
+
+      
+    // $(".container-fluid").click(function () {
+    //     if ( $("#sidebar").css("left") == "0px" ) {
+    //         closeSideBar();
+    //     }
+    // });
+      
+
+    
+
+    function openSideBar() {
+        $("#sidebar").animate({
             left: '0px'
         });
 
@@ -18,22 +36,24 @@ $(document).ready(function(){
             });
         }
 
-      });
-      
-      
-      
+      }
 
-    $("#close").click(function() {
-	    $("#sidebar").animate({
+    function closeSideBar() {
+        $("#sidebar").animate({
             left: '-250px'
         });
-    });
+    }
 
     //Side bar end
 
     // Top Bar
     $("#right-btn").click(function() {  
-        $("#top-bar").slideToggle("1000");
+        openCloseTopBar();   
+    });
+
+    
+        function openCloseTopBar() {
+            $("#top-bar").slideToggle("1000");
             $("#top-bar").animate({
                 top: '95px'
             });
@@ -44,10 +64,7 @@ $(document).ready(function(){
                     left: '-250px'
                 });
             }
-    });
-
-    
-           
+        }
     //Top bar End
 
     // //Filter
@@ -59,6 +76,10 @@ $(document).ready(function(){
 
     
     $("#filter").click(function() {
+        openCloseFilter();
+    });
+
+    function openCloseFilter() {
         $("#filter-bar").animate({
             right: '0'
         });
@@ -69,23 +90,29 @@ $(document).ready(function(){
                 left: '-250px'
             });
         }
-    });
+    }
 
     //Filter end
 
 
     // jQuery methods go here...
     $("#login-btn").submit(function() {
-        alert("Hello");
+        
     });
+
+    var inputs =  [
+        $("#tel"),
+        $("#username"),
+        $("#pwd"),
+        $("#con-pwd")
+    ];
 
     var errors = ["Invalid username", "Invalid Phone Number", 
     "Invalid Password", "Terms Unaccepted", "Password Mismatch"
     ];
 
-    var inputs = document.querySelectorAll("input");
     for (var i = 0; i < inputs.length; ++i) {
-        inputs.item(i).addEventListener("change", function(ev) {
+        inputs[i].on("change", function(ev) {
             if ( $("#username").val().length > 2 && /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/.test($("#username").val()) ) {
                 $("#username").addClass("good");
                 $("#username").removeClass("bad");
@@ -143,6 +170,38 @@ $(document).ready(function(){
         });
     }
 
+    $("#tel").focus(function() {
+    
+            $("#tel-desc").fadeIn();
+    });
+
+    $("#tel").blur(function() {
+            $("#tel-desc").fadeOut();
+    });
+
+    $("#username").focus(function() {
+    
+            $("#username-desc").fadeIn();
+    });
+
+    $("#username").blur(function() {
+            $("#username-desc").fadeOut();
+    });
+
+    $("#pwd").focus(function() {
+    
+            $("#pass-desc").fadeIn();
+    });
+
+    $("#pwd").blur(function() {
+    
+            $("#pass-desc").fadeOut();
+    });
+
+    $("#con-pwd").focus(function() {
+            $("#con-desc").fadeIn();
+    });
+
     $("#con-pwd").blur(function() {
         if ( $("#pwd").val() == $("#con-pwd").val() ) {
             $("#con-pwd").addClass("good");
@@ -156,6 +215,8 @@ $(document).ready(function(){
                 ( errors.includes("Password Mismatch") ) ? errors = errors : errors.push("Password Mismatch");
                 
         }
+
+        $("#con-desc").fadeOut();
 
 
     });
@@ -173,13 +234,73 @@ $(document).ready(function(){
 
     $("#my-stack").click(function() {
         $("#my-stack").addClass("active");
-        $("#leaderboard").hasClass("active") ? $("#leaderboard").removeClass("active") : false;
+        $("#leaderboard").removeClass("active");
+        $("#mystacks").addClass("active");
+        $("#leader-board").removeClass("active");
     });
     
     $("#leaderboard").click(function() {
         $("#leaderboard").addClass("active");
-        $("#my-stack").hasClass("active") ? $("#my-stack").removeClass("active") : false;
+        $("#my-stack").removeClass("active");
+        $("#leader-board").addClass("active");
+        $("#mystacks").removeClass("active");
     });
+
+    $(".input-odd, .shell-odd-input").each (function() {
+        $(this).keypress(function() {
+            if ( $(this).val().length == 1 ) {
+                $(this).val( $(this).val() + "." );
+            }
+        });
+    });
+
+
+    function depositIncrementer(targetBox) {
+        if (i == 3) {
+            targetBox.val( Number( targetBox.val() ) + Number(4 + "00") );
+            return false;
+        }else if (i == 4) {
+            targetBox.val( Number( targetBox.val() ) + Number(8 + "00") );
+            return false;
+        } else if (i == 5) {
+            targetBox.val( Number( targetBox.val() ) + Number(1 + "000") );
+            return false;
+        }
+        targetBox.val( Number( targetBox.val() ) + Number(i + "00") );
+        
+    }
+    //Deposit iincrementer
+    for (let i = 1; i < 6; i++) {
+        $("#paystack-add-" + i + "00").click(function() {
+            depositIncrementer( $("#paystack-amt-box") );
+        });
+    }
+    //Withdrawal incrementer
+    for (let i = 1; i < 6; i++) {
+        $("#add-" + i + "00").click(function() {
+            if (i == 3) {
+                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(5 + "00") );
+                return false;
+            }else if (i == 4) {
+                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(1 + "000") );
+                return false;
+            } else if (i == 5) {
+                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(5 + "000") );
+                return false;
+            }
+            $("#amount-input").val( Number( $("#amount-input").val() ) + Number(i + "00") );
+            
+        });
+    }
+
+    $(".info-box").click(function() {
+        $(".modal-box").css("display", "block");
+    });
+
+    $("#close-modal").click(function() {
+        $(".modal-box").css("display", "none");
+    });
+
     
-  
-  });
+
+});

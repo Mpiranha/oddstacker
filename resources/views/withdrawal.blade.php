@@ -7,17 +7,17 @@
         <div class="container">
             <form class="withdaw-form"  action="" method="post">
                 <div class="form-group ">
-                    <label for="exampleFormControlTextarea1">Amount:</label>
-                    <textarea class="form-control trans text-light " id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="amount-input">Amount:</label>
+                    <textarea class="form-control trans text-dark" id="amount-input" rows="3">0</textarea>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
-                            <div type="button" class="btn inc btn-light">+100</div>
-                            <div type="button" class="btn inc btn-light">+200</div>
-                            <div type="button" class="btn inc btn-light">+500</div>
-                            <div type="button" class="btn inc btn-light">+1000</div>
-                            <div type="button" class="btn inc btn-light">+5000</div>
+                            <div id="add-100" type="button" class="btn inc btn-light">+100</div>
+                            <div id="add-200" type="button" class="btn inc btn-light">+200</div>
+                            <div id="add-300" type="button" class="btn inc btn-light">+500</div>
+                            <div id="add-400" type="button" class="btn inc btn-light">+1000</div>
+                            <div id="add-500" type="button" class="btn inc btn-light">+5000</div>
                         </div>
                     </div>
                 </div>
