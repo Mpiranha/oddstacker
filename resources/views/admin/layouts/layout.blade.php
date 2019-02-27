@@ -41,44 +41,38 @@
             <ul class="nav">
                 <li class="active">
                     <a href="dashboard.html">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/users">
-                        <i class="pe-7s-user"></i>
+                        <i class="fa fa-users"></i>
                         <p>Users</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/countries">
-                        <i class="pe-7s-global"></i>
-                        <p>Countries</p>
+                        <i class="fa fa-globe"></i>
+                        <p>Sports</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.teams') }}">
+                        <i class="fa fa-flag-checkered"></i>
+                        <p>Teams</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/countries">
+                        <i class="fa fa-trophy"></i>
+                        <p>Competitions</p>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/events">
-                        <i class="pe-7s-cup"></i>
+                        <i class="fa fa-gamepad"></i>
                         <p>Events</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/leagues">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Leagues</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/teams">
-                        <i class="pe-7s-keypad"></i>
-                        <p>Teams</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>

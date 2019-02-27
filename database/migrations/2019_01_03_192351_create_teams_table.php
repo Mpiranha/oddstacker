@@ -15,6 +15,9 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 255);
+            $table->string('logo', 255)->nullable();
+            $table->enum('type', ['country', 'club', 'single'])->default('club');
             $table->timestamps();
         });
     }

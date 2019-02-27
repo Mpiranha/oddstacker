@@ -104,6 +104,4 @@ Route::get('/admin/leagues', function(){
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
-Route::get('/admin/teams', function(){
-    return view('admin.teams');
-});
+Route::get('/admin/teams', 'PagesController@teams')->name('admin.teams');
