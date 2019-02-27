@@ -1,5 +1,5 @@
 <template>
-    <div class="fancy-right text-center flex-fill">
+    <div :class="{ activated: isActive }" class="fancy-right text-center flex-fill">
         {{content}}
     </div>
 </template>
@@ -7,6 +7,7 @@
 <script>
 export default {
     props: {
+        isActive: Boolean,
         content: String
     }
 }
@@ -18,6 +19,12 @@ export default {
         position: relative;
         background-color: rgb(255, 255, 255);
         margin-top: 1rem;
+        padding-top: 0.1rem;
+    }
+
+    .activated {
+        background-color: #ceb429 !important;
+        color: white !important;
     }
     .fancy-right::before {
         content: "";

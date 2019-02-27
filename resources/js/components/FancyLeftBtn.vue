@@ -1,5 +1,5 @@
 <template>
-    <div id="fancy-left-btn" class="px-3 fancy-left text-center mr-2 flex-fill">
+    <div :class="{ activated: isActive }" id="fancy-left-btn" class="px-3 fancy-left text-center mr-2 flex-fill">
         {{content}}
     </div>
 </template>
@@ -7,6 +7,7 @@
 <script>
 export default {
     props: {
+        isActive: Boolean,
         content: String
     }
 }
@@ -21,7 +22,18 @@ export default {
         position: relative;
         background-color: rgb(255, 255, 255);
         margin-top: 1rem;
+        padding-top: 0.1rem;
     }
+
+    .activated {
+        background-color: #e50101 !important;
+        color: white !important;
+    }
+
+    .activated::before {
+        background-color: #e50101 !important;
+    }
+
     .fancy-left::before {
         content: "";
         width: 100%;
