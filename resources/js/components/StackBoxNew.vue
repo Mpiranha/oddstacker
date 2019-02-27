@@ -12,7 +12,7 @@
                     </div>
                     <div class="another-shape w-100 d-flex">
                         <span class="amt-text">NGN 100 000</span>
-                        <span class="cur-stack pt-1 ml-2">NGN 20 000</span>
+                        <span class="cur-stack pt-1 ml-2">100% Full</span>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <div class="d-flex flex-column mr-2">
@@ -21,16 +21,16 @@
                         </div>
 
                         <div class="flex-grow-1 rounded-border py-1 px-2 pt-1">
-                            <div class="d-flex justify-content-between mt-2">
-                                <h6 class="bold-1 darker">POS</h6>
-                                <h6 class="pl-2 bold-1 darker">WON</h6>
-                                <h6 class="bold-1 darker">ODDS</h6>
+                            <div class="d-flex justify-content-around mb-1">
+                                <h6 class="bold-1 darker m-0">POS</h6>
+                                <h6 class="pl-2 bold-1 m-0 darker">WON</h6>
+                                <h6 class="bold-1 darker m-0">ODDS</h6>
                             </div>
 
-                            <div class="d-flex justify-content-between">
-                                <h6 class="bold-1 more-em">5/400</h6>
-                                <h6 class="bold-1 amount-text px-2 text-white ">2000</h6>
-                                <h6 class="bold-1 more-em">41.22</h6>
+                            <div class="d-flex justify-content-around">
+                                <h6 class="bold-1 more-em m-0">5/400</h6>
+                                <h6 class="bold-1 amount-text m-0 px-2 text-white ">2000</h6>
+                                <h6 class="bold-1 more-em m-0">41.22</h6>
                             </div>
                         </div>
 
@@ -40,9 +40,9 @@
                         </div>
                     </div>
                     <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end mt-2">
-                        <h6>WIN MARGIN </h6>
-                        <h6>CODE</h6>
-                        <h6>ODDS</h6>
+                        <h6 class="m-0">WIN MARGIN </h6>
+                        <h6 class="m-0">CODE</h6>
+                        <h6 class="m-0">ODDS</h6>
                     </div>
                     <div class="d-flex justify-content-between align-items-start w-100">
                         <h6 class="bold-1 darker">FIRST ONLY</h6>

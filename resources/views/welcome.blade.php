@@ -25,7 +25,7 @@
                     <div class="jumbotron jumbotron-fluid text-center more-pt clear-bg text-light">
                         <div class="container">
                             <h1 class="desc-header">Play and Win With ODDSTACKR</h1> 
-                            <p class="mt-4">
+                            <p class="mt-4 desc-paragraph">
                                 ipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsum
                                 ipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsum
                             </p> 

@@ -13,6 +13,21 @@
 
             <stack-nav class="mt-2"></stack-nav>
 
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex">
+                        <input type="text" class="form-control w-70" name="sort-code-search" id="sort-code-search" placeholder="sort code">
+                        <select class="form-control w-30 ml-2" name="sort-sport" id="sort-sport">
+                            <option selected>Sports</option>
+                            <option value="football">Football</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="icehockey">Ice Hockey</option>
+                            <option value="tennis">Tennis</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <stack-box-new></stack-box-new>
             <stack-box-new></stack-box-new>
             <stack-box-new></stack-box-new>

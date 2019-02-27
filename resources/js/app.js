@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
+import { store } from './store/store';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -37,6 +37,8 @@ Vue.component('leader-box', require('./components/LeaderBox.vue'));
 Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue'));
 Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue'));
 Vue.component('single-breaker-box', require('./components/TieBreakSIngle.vue'));
+Vue.component('bank-details', require('./components/BankDetailBox.vue'));
+Vue.component('account-details', require('./components/AccountDetailBox.vue'));
 
 
 
@@ -55,5 +57,6 @@ Vue.component('single-breaker-box', require('./components/TieBreakSIngle.vue'));
  */
 
 const app = new Vue({
+    store: store,
     el: '#app'
 });

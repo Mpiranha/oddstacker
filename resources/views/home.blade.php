@@ -20,12 +20,12 @@
             </div>
 
             <!-- Filter Bar   -->
-            <div id="filter-bar">
+            <div id="filter-bar" class="scroll-y">
                 <button type="button" class="close-filter text-light" id="close-filter" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
 
-                <input type="text" class="form-control" id="search-box" aria-describedby="searchHelp" placeholder="Search">
+                <input type="text" class="form-control" id="search-box" aria-describedby="searchHelp" placeholder="Search Stock Lobby">
 
                 <div class="filter-cat mt-5">
                     <h1 class="filter-headers">FILTER BY CATEGORY</h1>
@@ -44,16 +44,19 @@
 
 
                 <div class="filter-type mt-5">
-                    <h1 class="filter-headers">FILTER BY TYPE</h1>
+                    <h1 class="filter-headers">FILTER BY SPORT</h1>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">League</a>
+                            <a class="nav-link active" href="#">FOOTBALL</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Both Teams To Score</a>
+                            <a class="nav-link" href="#">TENNIS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Over 2.5</a>
+                            <a class="nav-link" href="#">ICE HOCKEY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BASKET BALL</a>
                         </li>
                     </ul>
                 </div>

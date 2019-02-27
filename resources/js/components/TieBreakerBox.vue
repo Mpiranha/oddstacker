@@ -1,7 +1,8 @@
 <template>
     <div class="d-flex fancy-top-bot">
         <div class="h-100 mt-3 star">
-            <i class="far fa-star text-light" @click="doHighlight"></i>
+            <i v-if="state === 'normal'" @click="changeState('highlighted')" class="far fa-star text-light "></i>
+            <i v-else @click="changeState('normal')" class="fas fa-star text-yellow"></i>
         </div>
         <div class="d-flex flex-column justify-content-between flex-grow-1">
             <div class="d-flex">
@@ -22,12 +23,12 @@
 export default {
     data() {
         return {
-
+            state: 'normal'
         }
     },
     methods: {
-        doHighlight: function () {
-            $(".star i").toggleClass("fas text-yellow");
+        changeState: function (newState) {
+            this.state = newState;
         }
     }
 }
