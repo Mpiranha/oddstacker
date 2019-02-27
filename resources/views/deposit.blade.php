@@ -11,88 +11,218 @@
                     <div class="" id="headingOne">
                         <h5 class="mb-0">
                             <div class="box" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <h5 class="display-5 mt-2">Paystack</h5>
+                                <h5 class="display-5 mt-2">Deposit</h5>
                             </div>
                         </h5>
                     </div>
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <form>    
-                            <label for="">ATM Card:</label>
-                            <div class="form-group">
-                                <select class="form-control form-control-lg">
-                                    <option>Verve Card</option>
-                                    <option>Master Card</option>
-                                    <option>Visa Card</option>
-                                </select>
+                        <ul class="bank-nav nav nav-tabs justify-content-between mt-2 mx-3">
+                            <li id="card-nav" class="flex-fill text-center br-2"><a class="text-light text-uppercase f-0-6 active" data-toggle="tab" href="#card">Card</a></li>
+                            <li id="bank-nav" class="flex-fill text-center br-2"><a class="text-light text-uppercase f-0-6" data-toggle="tab" href="#bank">Bank</a></li>
+                            <li id="quickteller-nav" class="flex-fill text-center br-2"><a class="text-light text-uppercase f-0-6" data-toggle="tab" href="#quickteller">Quickteller</a></li>
+                            <li id="gtbank-nav" class="flex-fill text-center"><a class="text-light text-uppercase f-0-6" data-toggle="tab" href="#gtbank">gtbank</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="card" class="tab-pane fade in active show">
+                            <div class="d-flex justify-content-around f-0-6 mt-3">
+                                <span>Card Number</span>
+                                <span>Expiry</span>
                             </div>
+                            <bank-details></bank-details>
+
+                            <bank-details></bank-details>
+
+                            <div class="container px-0">
+                                <div class="pay-with-card d-flex justify-content-between align-items-center">
+                                    <div class="active-circle">
+
+                                    </div>
+                                    <strong class="pay-with-text ml-5">Pay with a new card</strong>
+                                </div>
+                            </div>
+                            
+                                <form action="" method="post" class="card-details-form">
+                                    <div class="card-input-box hide container px-0">
+                                        <div class="d-flex align-items-center">
+                                            <div class="active-circle">
+
+                                            </div>
+                                            <strong class="ml-4">Pay with a new card</strong>
+                                        </div>
                                     
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Amount:</label>
-                                <textarea class="form-control clear-bg amount-field text-light" id="paystack-amt-box" rows="3">0</textarea>
-                            </div>
-                        </form>
+                                        <div class="d-flex card-details-group justify-content-around">
+                                            <label for="card-number">Card Details</label> 
+
+                                            <div class="d-flex flex-column w-60">
+                                                <input class="form-control" type="number" name="card-number" id="card-number" value="" placeholder="Card Number">
+                                                <div class="d-flex">
+                                                    <input class="form-control" type="number" name="card-expiry" id="card-expiry" value="" placeholder="Expiry">
+                                                    <input class="form-control ml-3" type="number" name="card-cvv" id="card-cvv" maxlength="3" value="" placeholder="cvv">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group text-center d-flex flex-column mt-5">
+                                    <label for="card-amount-box">Amount(NGN)</label>
+                                    <input type="text" name="card-amount-box" id="card-amount-box" min="100" class="form-control w-70 align-self-center" placeholder="Min. 100" aria-describedby="amount">
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn top-up-btn text-uppercase">TOP UP</button>
+                                    </div>
+                                </form>
                             
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-lg-12">
-                                <div class="d-flex justify-content-center">
-                                    <div id="paystack-add-100" type="button" class="btn inc btn-light">+100</div>
-                                    <div id="paystack-add-200" type="button" class="btn inc btn-light">+200</div>
-                                    <div id="paystack-add-300" type="button" class="btn inc btn-light">+400</div>
-                                    <div id="paystack-add-400" type="button" class="btn inc btn-light">+800</div>
-                                    <div id="paystack-add-500" type="button" class="btn inc btn-light">+1000</div>
-                                </div>
                             </div>
-                        </div>
-                        <!--The two button with Red and dark color-->     
-                        <div class="row hi">
-                            <div class="col-col-xs-12 col-sm-12 col-lg-12">
-                                <div class="d-flex justify-content-center">
-                                    <div  class="btn end end-left text-uppercase">Deposit</div>
-                                    <div class="btn end end-right text-uppercase">Cancel</div>
+
+                            <div id="bank" class="tab-pane fade">
+                            <form action="" method="post" class="bank-details-form">
+                                <div class="card-input-box">
+                                    
+                                    <div class="d-flex bank-details-group justify-content-around">
+                                        <label for="bank-name">Bank Details</label> 
+
+                                        <div class="d-flex flex-column w-60">
+                                            <select class="form-control" type="number" name="bank-name" id="bank-name">
+                                                <option selected>Please select a bank</option>
+                                                <option value="access">Access Bank</option>
+                                                <option value="citibank">Citibank</option>
+                                                <option value="diamond">Diamond Bank</option>
+                                                <option value="ecobank">Ecobank</option>
+                                                <option value="fidelity">Fidelity Bank</option>
+                                                <option value="fcmb">First City Monument Bank (FCMB)</option>
+                                                <option value="fsdh">FSDH Merchant Bank</option>
+                                                <option value="gtb">Guarantee Trust Bank (GTB)</option>
+                                                <option value="heritage">Heritage Bank</option>
+                                                <option value="Keystone">Keystone Bank</option>
+                                                <option value="rand">Rand Merchant Bank</option>
+                                                <option value="skye">Skye Bank</option>
+                                                <option value="stanbic">Stanbic IBTC Bank</option>
+                                                <option value="standard">Standard Chartered Bank</option>
+                                                <option value="sterling">Sterling Bank</option>
+                                                <option value="suntrust">Suntrust Bank</option>
+                                                <option value="union">Union Bank</option>
+                                                <option value="uba">United Bank for Africa (UBA)</option>
+                                                <option value="unity">Unity Bank</option>
+                                                <option value="wema">Wema Bank</option>
+                                                <option value="zenith">Zenith Bank</option>
+                                            </select>
+                                            <div class="d-flex">
+                                                <input type="text" name="account-number-box" id="account-number-box" min="100" class="form-control w-100 align-self-center" placeholder="Account Number" aria-describedby="amount">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                    <div class="form-group text-center d-flex flex-column mt-5">
+                                    <label for="bank-amount-box">Amount(NGN)</label>
+                                    <input type="text" name="bank-amount-box" id="bank-amount-box" min="100" class="form-control w-70 align-self-center" placeholder="Min. 100" aria-describedby="amount">
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn top-up-btn text-uppercase">TOP UP</button>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                            <div id="quickteller" class="tab-pane fade">
+                                <p class="px-3 mt-3">Please Visit the link <a href="">www.quickteller.com/oddstakr</a> to carry out Transactions via Quickteller</p>
+                            </div>
+
+                            <div id="gtbank" class="tab-pane fade">
+
                             </div>
                         </div>
                     </div>
+
+
+                        
                 </div>
+            </div>
 
-                <div id="second-item">
-                    <div class="" id="headingTwo">
-                        <h5 class="mb-0">
-                            <div class="box" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <h5 class="display-5 mt-2">Interswitch Webpay</h5>
-                            </div>
-                        </h5>
+            <div id="second-item">
+                <div class="" id="headingTwo">
+                    <h5 class="mb-0">
+                        <div class="box" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <h5 class="display-5 mt-2">Withdraw</h5>
+                        </div>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="d-flex justify-content-around f-0-6 mt-3">
+                        <span>Bank</span>
+                        <span>Account Number</span>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <form>      
-                            <div class="form-group">
-                                <label for="amount-input">Amount:</label>
-                                <textarea class="form-control clear-bg amount-field text-light" id="amount-input" rows="3">0</textarea>
+
+                    <account-details></account-details>
+
+                    <account-details></account-details>
+
+                    <div class="pay-with-card d-flex align-items-center container px-0">
+                        <div class="d-flex align-items-center">
+                            <div class="active-circle">
+
                             </div>
-                        </form>
+                            <strong class="ml-5">New Account Number?</strong>
+                        </div>
+                    </div>
+
+                    <form action="" method="post" class="bank-details-form">
+                        <div class="card-input-box container px-0 hide">
+                            <div class="new-account-text d-flex align-items-center">
+                                <div class="active-circle">
+
+                                </div>
+                                <strong class="ml-5">New Account Number?</strong>
+                            </div>
                             
+                            <div class="d-flex bank-details-group justify-content-around">
+                                <label for="bank-name">Bank Details</label> 
 
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-lg-12">
-                                <div class="d-flex justify-content-center">
-                                <div id="int-add-100" type="button" class="btn inc btn-light">+100</div>
-                                <div id="int-add-200" type="button" class="btn inc btn-light">+200</div>
-                                <div id="int-add-300" type="button" class="btn inc btn-light">+400</div>
-                                <div id="int-add-400" type="button" class="btn inc btn-light">+800</div>
-                                <div id="int-add-500" type="button" class="btn inc btn-light">+1000</div>
+                                <div class="d-flex flex-column w-60">
+                                    <select class="form-control" type="number" name="bank-name" id="bank-name">
+                                        <option selected>Please select a bank</option>
+                                        <option value="access">Access Bank</option>
+                                        <option value="citibank">Citibank</option>
+                                        <option value="diamond">Diamond Bank</option>
+                                        <option value="ecobank">Ecobank</option>
+                                        <option value="fidelity">Fidelity Bank</option>
+                                        <option value="fcmb">First City Monument Bank (FCMB)</option>
+                                        <option value="fsdh">FSDH Merchant Bank</option>
+                                        <option value="gtb">Guarantee Trust Bank (GTB)</option>
+                                        <option value="heritage">Heritage Bank</option>
+                                        <option value="Keystone">Keystone Bank</option>
+                                        <option value="rand">Rand Merchant Bank</option>
+                                        <option value="skye">Skye Bank</option>
+                                        <option value="stanbic">Stanbic IBTC Bank</option>
+                                        <option value="standard">Standard Chartered Bank</option>
+                                        <option value="sterling">Sterling Bank</option>
+                                        <option value="suntrust">Suntrust Bank</option>
+                                        <option value="union">Union Bank</option>
+                                        <option value="uba">United Bank for Africa (UBA)</option>
+                                        <option value="unity">Unity Bank</option>
+                                        <option value="wema">Wema Bank</option>
+                                        <option value="zenith">Zenith Bank</option>
+                                    </select>
+                                    <div class="d-flex">
+                                        <input type="text" name="account-number-box" id="account-number-box" min="100" class="form-control w-100 align-self-center" placeholder="Account Number" aria-describedby="amount">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!--The two button with Red and dark color-->     
-                    <div class="row hi">
-                        <div class="col-col-xs-12 col-sm-12 col-lg-12">
-                            <div class="d-flex justify-content-center">
-                                <div  class="btn end end-left btn-danger text-uppercase">Deposit</div>
-                                <div class="btn end end-right btn-dark text-uppercase">Cancel</div>
-                            </div>
+
+                        <div class="form-group text-center d-flex flex-column mt-5">
+                            <label for="bank-amount-box">Amount(NGN)</label>
+                            <input type="text" name="withdraw-amount-box" id="withdraw-amount-box" min="100" class="form-control w-70 align-self-center" placeholder="Min. 100" aria-describedby="amount">
                         </div>
-                    </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn top-up-btn text-uppercase">TOP UP</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -100,20 +230,21 @@
                     <div class="" id="headingThree">
                         <h5 class="mb-0">
                             <div class="box" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                <h5 class="display-5 mt-2">Quickteller</h5>
+                                <h5 class="display-5 mt-2">Transaction History</h5>
                             </div>
                         </h5>
                     </div>
 
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <p>Please Visit the link <a href="">www.quickteller.com/oddstakr</a> to carry out Transactions via Quickteller</p>
+            
                     </div>
 
                 </div>
             </div>
         </div>
-        </div>
         <footer-comp></footer-comp>
+        </div>
+       
     </div>
 
 @endsection

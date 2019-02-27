@@ -66,7 +66,7 @@
             <div class="row mt-4">
                 <div class="col-12 col-sm-12 col-lg-12">
                     <div class="d-flex justify-content-center stack-lead-btn">
-                        <a data-toggle="tab" href="#mystacks" id="my-stack" class="btn end end-left bg-grey text-dark btn-stack text-uppercase active">MY STACK</a>
+                        <a data-toggle="tab" href="#mystacks" id="my-stack" class="btn end end-left bg-grey text-dark btn-stack text-uppercase active">STACK</a>
                         <a data-toggle="tab" href="#leader-board" id="leaderboard" class="btn end end-right bg-grey text-dark btn-lead text-uppercase">LEADERBOARD</a>
                     </div>
                 </div>

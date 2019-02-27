@@ -71,10 +71,13 @@
             <i class="fa fa-lightbulb"></i><a class="text-white" href="">Tips</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="fa fa-trophy"></i><a class="text-white" href="">All Winners</a>
+            <i class="fa fa-lightbulb"></i><a class="text-white" href="">REFERAL</a>
           </li>
           <li class="list-group-item text-light f-1-1">
             <i class="fa fa-envelope" aria-hidden="true"></i><a class="text-white" href="">Mails</a>
+          </li>
+          <li class="list-group-item text-light f-1-1">
+            <i class="fa fa-trophy"></i><a class="text-white" href="">All Winners</a>
           </li>
           <li class="list-group-item mb-10 text-light f-1-1">
             <i class="fas fa-sign-out-alt"></i><a class="text-white" href="">Logout</a>
