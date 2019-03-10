@@ -6,19 +6,17 @@
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
                 <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-3"></fancy-top-bottom>
-                <div class="d-flex both-odds">
-                    <span class="mr-3">0.1</span>
-                    <span>0.2</span>
+                <div class="d-flex both-odds mt-2">
+                    <span class="mr-3">0:1</span>
+                    <span>0:2</span>
                 </div>
             </div>
             
             <div class="d-flex mt-4">
-                <div class="odds-text text-center text-white flex-grow-1">
+                <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center align-items-center">
                     BOTH HALVES UNDER 1.5
                 </div>
-                <div class="odd text-center pt-2 px-2">
-                    2.99
-                </div>
+                <input type="text" class="odd pt-2 px-2 text-center" value="2.99" placeholder="0.00" readonly="readonly">
             </div>
         </div>
     </div>
@@ -39,6 +37,7 @@
     .odd {
         padding: 0.4rem 1rem;
         background-color: rgba(12, 220, 78, 0.24);
+        width: 30%;
         border-radius: 30px;
         margin-left: 2rem;
         border: 2px solid white;
@@ -51,7 +50,7 @@
         background-color: rgba(128, 128, 128, 0.527);
         border: 2px solid white;
         color: white;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         align-items: center;
         align-self: center;
     }

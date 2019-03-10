@@ -1,18 +1,18 @@
 <template>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 px-4">
       <div class="d-flex flex-row justify-content-center flex-wrap mb-2">
         <div class="all-btn bg-white mr-1">
-          <a :class="{ 'all-active' : allActive }" @click="changeActiveState(true, false, false, false)" class="nav-link p-2 bg-white text-dark">ALL</a>
+          <a :class="{ 'all-active' : currentActiveBtn[0].allActive }" @click="changeActiveState('allActive')" class="nav-link p-2 bg-white text-dark">ALL</a>
         </div>
         <div class="h-2-h-btn bg-white mr-1 flex-fill text-center">
-          <a :class="{ 'head-active' : headActive }" @click="changeActiveState(false, true, false, false)" class="nav-link p-2 bg-white text-dark">HEAD TO HEAD</a>
+          <a :class="{ 'head-active' : currentActiveBtn[0].headActive }" @click="changeActiveState('headActive')" class="nav-link p-2 bg-white text-dark">HEAD TO HEAD</a>
         </div>
         <div class="double-up-btn bg-white mr-1 flex-fill text-center">
-          <a :class="{ 'double-active' : doubleActive }" @click="changeActiveState(false, false, true, false)" class="nav-link p-2 bg-white text-dark">DOUBLE UP</a>
+          <a :class="{ 'double-active' : currentActiveBtn[0].doubleActive }" @click="changeActiveState('doubleActive')" class="nav-link p-2 bg-white text-dark">DOUBLE UP</a>
         </div>
         <div class="premium-btn bg-white flex-fill text-center">
-          <a :class="{ 'premium-active' : premiumActive }" @click="changeActiveState(false, false, false, true)" class="nav-link p-2 bg-white text-dark">PREMIUM</a>
+          <a :class="{ 'premium-active' : currentActiveBtn[0].premiumActive }" @click="changeActiveState('premiumActive')" class="nav-link p-2 bg-white text-dark">PREMIUM</a>
         </div>
       </div>
     </div>
@@ -23,19 +23,22 @@
 export default {
     data() {
         return {
-            allActive: true,
-            headActive: false,
-            doubleActive: false,
-            premiumActive: false
+            // allActive: true,
+            // headActive: false,
+            // doubleActive: false,
+            // premiumActive: false
         }
     },
 
     methods: {
-      changeActiveState: function(allState, headState, doubleState, premiumState) {
-        this.allActive = allState;
-        this.headActive = headState;
-        this.doubleActive = doubleState;
-        this.premiumActive = premiumState;
+      changeActiveState: function(payLoad) {
+        return this.$store.commit("changeBtnState", payLoad);
+      }
+    },
+
+    computed: {
+      currentActiveBtn() {
+        return this.$store.state.btnState;
       }
     }
 };
@@ -44,6 +47,8 @@ export default {
 <style scoped>
 a {
   font-size: 0.6rem !important;
+  color: black;
+  font-weight: bolder;
 }
 
 

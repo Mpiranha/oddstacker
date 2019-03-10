@@ -21,7 +21,7 @@ export default {
         background: rgba(0, 0, 0, 0.741);
         position: relative;
         margin-top: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     #fancy-top-bot:before {

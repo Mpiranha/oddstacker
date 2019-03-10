@@ -39,6 +39,8 @@ Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue'));
 Vue.component('single-breaker-box', require('./components/TieBreakSIngle.vue'));
 Vue.component('bank-details', require('./components/BankDetailBox.vue'));
 Vue.component('account-details', require('./components/AccountDetailBox.vue'));
+Vue.component('search-match-tab', require('./components/searchMatchTab.vue'));
+
 
 
 

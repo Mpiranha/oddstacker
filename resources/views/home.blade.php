@@ -9,15 +9,8 @@
             <date-picker></date-picker>
 
             <stack-nav class="mt-2"></stack-nav>
-
-            <div class="d-flex">
-                <div class=" cus-bg-black p-2 flex-grow-1 mr-1">
-                    <i class="far fa-futbol mr-1"></i> Football
-                </div>
-                <div id="filter" class="cus-bg-black p-2">
-                    <i class="fas fa-sliders-h"></i>
-                </div>
-            </div>
+            <search-match-tab></search-match-tab>
+            
 
             <!-- Filter Bar   -->
             <div id="filter-bar" class="scroll-y">
