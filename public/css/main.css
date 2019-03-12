@@ -1,13 +1,23 @@
+
+
+@font-face {
+    font-family: calibriRegular;
+    src: url(../assets/fonts/CALIBRIB.TTF);
+  }
+
 html, body, #app {
     width: 100%;
     height: 100%;
     overflow-x: hidden; 
     overflow-y: auto;
-    font-family: sans-serif;
+    font-family: calibriRegular;
 }
+
+
 
 .w-20 {width: 20% !important;}
 .w-30 {width: 30% !important;}
+.w-40 {width: 40% !important;}
 .w-80 {width: 80% !important;}
 .w-70 {width: 70% !important;}
 .w-60 {width: 60% !important;}
@@ -41,9 +51,12 @@ html, body, #app {
     border-style: solid;
     border-image: url("../images/border.png") 28% round;
     -webkit-border-image: url("../images/border.png") 28% round;
-    /*border-radius: 38px 38px 0px 0px / 38px 38px 48px 31px;*/
-    /* border: 2px solid white; */
+    -moz-border-image: url("../images/border.png") 28% round;
     padding: 2rem 0.1rem;
+}
+
+.sexy-btn {
+    border-radius: 30px;
 }
 
 .stack-lead-btn a.active{
@@ -125,28 +138,29 @@ html, body, #app {
 }
 
 .ball {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 0;
     font-size: 1.5rem;
-    color: #E50101;
+    color: gold;
 }
 .ball i {
     margin: 0 auto;
 }
-.d-flex h6{font-size: 0.5rem;}
+.d-flex h6{
+    font-size: 0.7rem;
+    color: rgb(63, 63, 63);
+    text-transform: uppercase;
+}
 
-.table th, .table td {padding: 0;}
+
 .bold {font-weight: bold;}
 .bold-1 {font-weight: bolder;}
 
-.table th, .table td{
-    margin-bottom: 0;
-    font-size: 0.7rem;
-}
+
 
 .cus-bg-black {
     background-color: #0D0D0D;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .bad {
@@ -156,6 +170,7 @@ html, body, #app {
 .good {
     border: 1px solid greenyellow;
 }
+
 
 .bg-home {
     background-image: url(../images/bg_home.png);
@@ -336,7 +351,7 @@ html, body, #app {
 }
 
 .btn-stack, .btn-lead {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
     padding: 0.2rem 0.75rem;
     line-height: 2rem;
     width: 35% !important;

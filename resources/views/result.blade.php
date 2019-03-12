@@ -4,7 +4,7 @@
 
 <div class="container-fluid h-100 pr-0 pl-0 scroll-y bg-land">
 
-    <div class="shades">
+    <div class="little-shade">
         <main-nav title="RESULTS"></main-nav>
         <div class="px-3">
 
@@ -21,9 +21,9 @@
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <h6 class="bold-1 text-green f-1">5/400</h6>
-                        <h6 class="bold-1 amount-text px-4 text-white f-1">2,000</h6>
-                        <h6 class="bold-1 text-green f-1">41.22</h6>
+                        <h6 class="bold-1 text-light f-1">5/400</h6>
+                        <h6 class="bold-1 amount-text px-4 text-light f-1">2,000</h6>
+                        <h6 class="bold-1 text-light f-1">41.22</h6>
                     </div>
                 </div>
             </div>
@@ -46,9 +46,9 @@
             </div>
 
             <div class="modal-box h-100 shades fixed-bottom p-4">
-                    <button type="button" class="close-modal text-light" id="close-modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <button type="button" class="close-modal text-light" id="close-modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <div id="modal-content">
                     Lorem Ipsum Dulum lorem
                     Lorem Ipsum Dulum lorem
@@ -66,7 +66,8 @@
             <div class="row mt-4">
                 <div class="col-12 col-sm-12 col-lg-12">
                     <div class="d-flex justify-content-center stack-lead-btn">
-                        <a data-toggle="tab" href="#mystacks" id="my-stack" class="btn end end-left bg-grey text-dark btn-stack text-uppercase active">STACK</a>
+                        <a data-toggle="tab" href="#mystacks" id="my-stack" class="btn end end-left bg-grey text-dark btn-stack text-uppercase active">MY
+                            STACK</a>
                         <a data-toggle="tab" href="#leader-board" id="leaderboard" class="btn end end-right bg-grey text-dark btn-lead text-uppercase">LEADERBOARD</a>
                     </div>
                 </div>
@@ -94,9 +95,9 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </div>
     <footer-comp></footer-comp>
 

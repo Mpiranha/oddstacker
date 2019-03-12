@@ -58,6 +58,14 @@ $(document).ready(function(){
                 top: '95px'
             });
 
+            if ( $(".angle-down").hasClass("fa-angle-down") ) {
+                $(".angle-down").removeClass("fa-angle-down");
+                $(".angle-down").addClass("fa-angle-up");
+            } else {
+                $(".angle-down").removeClass("fa-angle-up");
+                $(".angle-down").addClass("fa-angle-down");
+            }
+
                 //close sidebar if open
             if( $("#sidebar").css("left") == "0px" ) {
                 $("#sidebar").animate({

@@ -17,6 +17,12 @@
                 <new-box></new-box>
                 <new-box></new-box>
             </div>
+
+            <div class="row mt-2">
+                <div class="col-12 text-center">
+                    <button class="btn btn-success w-40 sexy-btn" disabled="disabled">PROCEED</button>
+                </div>
+            </div>
         </div>
     </div>
     <footer-comp></footer-comp>

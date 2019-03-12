@@ -122,7 +122,7 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn top-up-btn text-uppercase">TOP UP</button>
+                                        <button type="submit" class="btn top-up-btn text-uppercase">WITHDRAW</button>
                                     </div>
                                 </form>
 
