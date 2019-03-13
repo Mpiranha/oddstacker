@@ -5,26 +5,46 @@
     <div class="shades">
         <odd-header></odd-header>
 
-        <form id="reg-form" action="#" class="ml-4 mr-4" action="#" method="post">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form id="reg-form" action="{{ route('register') }}" class="ml-4 mr-4" method="post">
+            {{ csrf_field() }}
+            <div class="form-group text-light">
+                <label for="email">Email *</label>
+                <input class="form-control" type="email" id="email" name="email"
+                 value="{{ old('email') }}" placeholder="email@example.com">
+                <p id="email-desc" class="text-light">
+                    Must be a valid email address
+                </p>
+            </div>
+            <div class="form-group text-light">
+                <label for="username">Username *</label>
+                <input class="form-control" type="text" id="username" name="username"
+                 placeholder="bobrisky514" value="{{ old('username') }}">
+                <p id="username-desc" class="text-light">
+                    Username must contain letters and numbers only, minimum 4 characters
+                </p>
+            </div>
             <div class="form-group text-light">
                 <label for="tel">Phone Number *</label>
-                <input class="form-control" type="tel" id="tel" placeholder="+2348000000000" value="">
+                <input class="form-control" type="tel" id="tel" value="{{ old('tel') }}"
+                placeholder="+2348000000000" name="tel">
                 <p id="tel-desc" class="text-light ">
                     Enter your number in the format 08100000000
                 </p>
             </div>
 
             <div class="form-group text-light">
-                <label for="username">Username *</label>
-                <input class="form-control" type="text" id="username" placeholder="bobrisky514" value="">
-                <p id="username-desc" class="text-light">
-                    Username must contain letters and numbers only, minimum 3 characters
-                </p>
-            </div>
-
-            <div class="form-group text-light">
                 <label for="pwd">Password *</label>
-                <input class="form-control" type="password" id="pwd" placeholder="" value="">
+                <input class="form-control" type="password" id="pwd" placeholder="" name="password">
                 <p id="pass-desc" class="text-light">
                     password must contain letters and atleast one digit, minimum of 8 characters
                 </p>
@@ -32,7 +52,8 @@
 
             <div class="form-group text-light">
                 <label for="con-pwd">Confirm Password *</label>
-                <input class="form-control" type="password" id="con-pwd" placeholder="" value="">
+                <input class="form-control" type="password" name="password_confirmation" 
+                    id="con-pwd">
                 <p id="con-desc" class="text-light">
                     Must match password
                 </p>
@@ -40,7 +61,7 @@
 
             <div class="form-group text-light">
                 <label for="gender">Gender *</label>
-                <select class="form-control">
+                <select class="form-control" name="gender">
                     <option value="none" selected>None</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -49,7 +70,7 @@
 
             <div class="form-group text-light">
                 <label for="country">Country *</label>
-                <select class="form-control">
+                <select class="form-control" name="country">
                     <option value="AF">Afghanistan</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
@@ -294,18 +315,20 @@
 
             <div class="form-group text-light">
                 <label for="state">State *</label>
-                <input class="form-control" type="text" name="state" id="state" placeholder="State of Resident">
+                <input class="form-control" type="text" name="state" 
+                    value="{{ old('state') }}" id="state" placeholder="State of Resident">
             </div>
 
             <div class="form-group text-light">
                 <label for="state">Referal Code</label>
-                <input class="form-control" type="text" name="referalcode" id="referalcode" placeholder="88FTY5">
+                <input class="form-control" type="text" name="referalcode" 
+                    value="{{ old('referalcode') }}" id="referalcode" placeholder="88FTY5">
             </div>
 
 
             <div class="form-group form-check">
                 <label for="agree-terms" class="form-check-label  text-light">
-                    <input class="form-check-input" type="checkbox" id="agree-terms"> I confirm that i am over 18 Years
+                    <input class="form-check-input" type="checkbox" name="terms" id="agree-terms"> I confirm that i am over 18 Years
                     and agree to Terms & Privacy Policy
                 </label>
             </div>

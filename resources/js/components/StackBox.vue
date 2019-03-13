@@ -3,17 +3,17 @@
         <div class="row">
             <div class="d-flex" id="octagon">
                 <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn"></i>
-                <div class="d-flex h-100 mt-3 w-20 ball">
+                <div class="d-flex h-100 mt-3 w-20 ball" :class="this.class">
                     <i class="fas fa-futbol"></i>
                 </div>
                 <div class="w-80 mt-3 mr-3">
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-between w-100 align-items-end">
                             <h6 class="bold-1 top-section">Both Teams to Score</h6>
-                            <h6 class="pr-3 bold-1 top-section">05:32:15</h6>
+                            <h6 class="pr-3 bold-1 top-section">3:00pm</h6>
                         </div>
-                        <div class="another-shape w-100 d-flex">
-                            <span class="amt-text">NGN 200,000</span>
+                        <div class="another-shape w-100 d-flex" :class="this.class">
+                            <span class="amt-text">NGN{{ stock.value }}</span>
                             <!-- <span class="cur-stack pt-1 ml-2">NGN 20 000</span> -->
                         </div>
                         <div class="d-flex justify-content-between mt-3">
@@ -22,13 +22,13 @@
                             <h6 class="mb-0">ENTRY</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <h6 class="bold-1 stand-out">NGN 400</h6>
-                            <h6 class="bold-1 pr-21 stand-out">TOP HALF</h6>
-                            <h6 class="bold-1 stand-out">100</h6>
+                            <h6 class="bold-1 stand-out">NGN{{ stock.stake }}</h6>
+                            <h6 class="bold-1 pr-21 stand-out">{{ stock.margin }}</h6>
+                            <h6 class="bold-1 stand-out">{{ stock.entry }}</h6>
                         </div>
                         <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
-                            <h6>CODE: <span class="bold-1 stand-out">FF32421</span></h6>
-                            <h6>ODDS: <span class="bold-1 odd-green">44.95</span></h6>
+                            <h6>CODE: <span class="bold-1 stand-out">{{ stock.code }}</span></h6>
+                            <h6>ODDS: <span class="bold-1 odd-green" :class="this.class">{{ stock.category.odd }}</span></h6>
                         </div>
                     </div>
                 </div>
@@ -45,21 +45,30 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
+    props: ['stock'],
     data() {
         return {
             detailsIsVisible: false
         }
     },
-    state: {
-        
-    },
-    props: {
-
+    mounted: function(){
+        console.log(this.stock, this.class);
     },
     methods: {
         bringMoreDetails() {
             this.detailsIsVisible = !this.detailsIsVisible;
+        }
+    },
+    computed: {
+        class: function(){
+            if(this.stock.category.name === 'double up')
+                return 'double-up';
+            else if(this.stock.category.name === 'head to head')
+                return 'h2h'
+            else 
+                return 'premium'
         }
     }
 }
@@ -117,6 +126,14 @@ export default {
         font-weight: bolder;
     }
 
+    .h2h.another-shape{
+        background-color: red !important;
+    }
+
+    .double-up.another-shape{
+        background-color: blue !important;
+    }
+
     .another-shape::before {
         content: "";
         width: 100%;
@@ -128,6 +145,15 @@ export default {
         top: -8px;
         left: 0;
      }
+
+    .h2h.another-shape::before{
+        border-bottom: 8px solid red !important;
+    }
+
+    .double-up.another-shape::before{
+        border-bottom: 8px solid blue !important;
+    }
+
     .another-shape::after {
         content: "";
         width: 100%;
@@ -141,9 +167,26 @@ export default {
         border-right: 15px solid gold;
      }
 
+    .h2h.another-shape::after{
+        border-top: 10px solid red !important;
+        border-right: 15px solid red !important;
+    }
+
+    .double-up.another-shape::after{
+        border-top: 10px solid blue !important;
+        border-right: 15px solid blue !important;
+    }
+
      .odd-green {
          font-size: 0.8rem;
-         color: gold !important;
+         color: gold;
+     }
+
+     .h2h.odd-green{
+         color: red;
+     }
+     .double-up.odd-green{
+         color: blue;
      }
 
     #octagon:after {

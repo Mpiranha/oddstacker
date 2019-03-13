@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model
+class StockCategory extends Model
 {
-    public $fillable = ['name', 'logo', 'type'];
+    //
 }

@@ -4,15 +4,15 @@
 <div class="container-fluid m-0 p-0 h-100 scroll-y bg-home">
 
     <div class="little-shade">
-        <main-nav title="STACK LOBBY"></main-nav>
+        <main-nav title="STACK LOBBY"
+        :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
         <div class="px-3">
             <date-picker></date-picker>
 
             <stack-nav class="mt-2"></stack-nav>
             <search-match-tab></search-match-tab>
             
-
-            <!-- Filter Bar   -->
             <div id="filter-bar" class="scroll-y">
                 <button type="button" class="close-filter text-light" id="close-filter" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -54,13 +54,9 @@
                     </ul>
                 </div>
             </div>
-
-
-            <stack-box></stack-box>
-            <stack-box></stack-box>
-            <stack-box></stack-box>
-            <stack-box></stack-box>
-            <stack-box></stack-box>
+            @foreach ($stocks as $stock)
+                <stack-box :stock="{{ $stock }}"></stack-box>
+            @endforeach
         </div>
     </div>
     <footer-comp></footer-comp>

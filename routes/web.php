@@ -84,7 +84,11 @@ Route::get('/singlebreak',function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
 /* Admin Routes */
 
@@ -92,9 +96,7 @@ Route::get('/admin', function(){
     return view('admin.dashboard');
 });
 
-Route::get('/admin/users', function(){
-    return view('admin.users');
-});
+Route::get('/admin/users', 'AdminPagesController@users');
 Route::get('/admin/countries', function(){
     return view('admin.countries');
 });
@@ -104,4 +106,6 @@ Route::get('/admin/leagues', function(){
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
-Route::get('/admin/teams', 'PagesController@teams')->name('admin.teams');
+Route::get('/admin/teams', 'AdminPagesController@teams')->name('admin.teams');
+
+Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.create');

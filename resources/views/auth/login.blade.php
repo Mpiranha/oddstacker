@@ -5,27 +5,30 @@
         <div class="shades">
             <odd-header></odd-header>
 
+            <form id="login-form" action="{{ route('login') }}" class="ml-4 mr-4 extra-mt" method="POST">
+                {{ csrf_field() }}
+                <div class="col-12 messages">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group text-light">
+                    <label for="email">Email</label>
+                    <input  class="form-control" value="{{ old('email') }}"
+                    type="text" id="email" name="email">
+                </div>
 
-
-            <form id="login-form" action="#" class="ml-4 mr-4 extra-mt" method="POST">
-                
-            <div class="col-12 messages"></div>
-            <div class="form-group text-light">
-                <label for="username">Username</label>
-                <input  class="form-control"
-                 type="text" id="username"
-                 placeholder="bobrisky514" 
-                 value="">
-            </div>
-
-            <div class="form-group text-light">
-                <label for="pwd">Password</label>
-                <input  class="form-control"
-                 type="password"
-                 id="pwd"
-                 placeholder=""
-                 value="">
-            </div>
+                <div class="form-group text-light">
+                    <label for="pwd">Password</label>
+                    <input  class="form-control"
+                    type="password" name="password" id="pwd">
+                </div>
 
                 <div class="form-group text-right">
                     <a href="/forgot-password">Forgot password</a>
