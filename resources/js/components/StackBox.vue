@@ -53,9 +53,7 @@ export default {
             detailsIsVisible: false
         }
     },
-    mounted: function(){
-        console.log(this.stock, this.class);
-    },
+    mounted: function(){},
     methods: {
         bringMoreDetails() {
             this.detailsIsVisible = !this.detailsIsVisible;

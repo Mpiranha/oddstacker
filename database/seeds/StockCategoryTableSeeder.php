@@ -19,6 +19,7 @@ class StockCategoryTableSeeder extends Seeder
         foreach($arr as $item){
             DB::table('stock_categories')->insert([
                 'name' => $item,
+                'num_of_events' => 10,
                 'odd' => 50
             ]);
         }

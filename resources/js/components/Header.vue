@@ -1,7 +1,7 @@
 <template>
     <div class="row text-center">
         <div class="col-12">
-            <h1 class="header p-5">ODDSTACKR</h1>
+            <a href="/"><h1 class="header p-5">ODDSTACKR</h1></a>
         </div>
     </div>
 </template>

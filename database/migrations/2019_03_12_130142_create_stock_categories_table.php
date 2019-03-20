@@ -17,6 +17,7 @@ class CreateStockCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->double('odd', 4, 2);
+            $table->integer('num_of_events')->unsigned();
             $table->timestamps();
         });
     }

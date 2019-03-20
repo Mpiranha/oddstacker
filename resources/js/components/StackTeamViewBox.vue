@@ -2,13 +2,15 @@
     <div class="fancy-top-bot px-3">
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-5"></fancy-top-bottom>
+                <fancy-top-bottom 
+                 :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`" 
+                 class="flex-grow-1 mr-5"></fancy-top-bottom>
             </div>
             
             <div class="d-flex mt-4">
                 <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
                     <span class="odds-text-content align-self-center">
-                        BOTH HALVES UNDER 1.5
+                        {{ eventPredictions.prediction.name }}
                     </span>
                 </div>
                 <input class="shell-odd-input text-center text-dark pt-2 px-2" type="text" placeholder="0.00" value="" maxlength="4">
@@ -16,6 +18,15 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['stock', 'eventPredictions'],
+
+    mounted: function(){}
+}
+</script>
+
 
 <style scoped>
     .star {

@@ -10,7 +10,6 @@
                 <div class="odd-display text-center text-uppercase text-light">
                     under 2.5
                 </div>
-
                 <input id="oddbox" type="text" readonly="readonly" class="input-odd b-0 text-center text-dark" placeholder="0.00" value="" maxlength="4"/>
             </div> 
         </div>           

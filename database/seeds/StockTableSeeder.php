@@ -28,7 +28,7 @@ class StockTableSeeder extends Seeder
                     'code' => Str::random(5),
                     'category_id' => $category->id,
                     'commission' => $faker->randomFloat(2, 0, 100),
-                    'margin' => 'Top Half'
+                    'margin' => '10'
                 ]);
 
                 $stock->save();

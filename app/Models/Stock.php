@@ -15,4 +15,8 @@ class Stock extends Model
     {
         return $this->belongsTo('App\Models\StockCategory');
     }
+
+    public function events(){
+        return $this->hasManyThrough('App\Models\Event', 'App\Models\EventPrediction');
+    }
 }

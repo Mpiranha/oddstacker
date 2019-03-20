@@ -9,7 +9,6 @@ export default {
     props: {
         content: String
     }
-
 }
 </script>
 

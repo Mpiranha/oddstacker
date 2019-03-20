@@ -20,12 +20,12 @@ Route::get('/forgot-password',function (){
 });
 
 Route::get('/enter',function (){
-    return view('home');
+    return redirect(route('home'));
 });
 
-Route::get('/test',function (){
+/* Route::get('/test',function (){
     return view('test');
-});
+}); */
 
 Route::get('/deposit',function (){
     return view('deposit');
@@ -67,9 +67,7 @@ Route::get('/personal-details',function (){
     return view('personaldetails');
 });
 
-Route::get('/shell-double',function (){
-    return view('stackshell-db');
-});
+Route::get('/stock/{id}/shell', 'HomeController@stackShell')->name('stack_shell');
 
 Route::get('/multiebreak',function (){
     return view('multiebreak');

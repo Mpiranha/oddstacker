@@ -5,7 +5,9 @@
 <div class="container-fluid h-100 pr-0 pl-0 scroll-y bg-land">
     
     <div class="shades">
-        <main-nav title="RESULTS"></main-nav>
+        <main-nav title="RESULTS"
+          :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
         <div class="px-3">
             
             <stock-nav left-content="STOCK" center-content="ALL STOCK" right-content="WINNERS"></stock-nav>

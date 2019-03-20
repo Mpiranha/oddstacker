@@ -2,7 +2,9 @@
 
 @section('page')
 <div class="container-fluid h-100 pr-0 pl-0 bg-land scroll-y text-white">
-    <main-nav title="DEPOSIT"></main-nav>
+    <main-nav title="DEPOSIT"
+        :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
     <div class="shades">
         <div class="pr-3 pl-3">
             <label for="exampleFormControlTextarea1">Choose Method Of Payment</label>

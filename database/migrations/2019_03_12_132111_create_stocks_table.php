@@ -21,6 +21,11 @@ class CreateStocksTable extends Migration
             $table->integer('entry')->unsigned()->default(0);
             $table->integer('closes_at');
             $table->string('code');
+            $table->dateTime('schedule_date')->nullable();
+
+            $table->enum('expand', ['expand', 'end', 'duplicate'])->default('end');
+            $table->integer('expand_by')->unsigned()->default(0);
+            $table->integer('expand_mutiple')->unsigned()->default(0);
             $table->integer('category_id')->unisgned()
                 ->references('id')->on('stock_categories')->onDelete('cascade');
             $table->double('commission', 4, 2);

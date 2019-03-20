@@ -34,8 +34,7 @@
                         </li>
                     </ul>
                 </div>
-
-
+                
                 <div class="filter-type mt-5">
                     <h1 class="filter-headers">FILTER BY SPORT</h1>
                     <ul class="nav flex-column">
@@ -55,10 +54,13 @@
                 </div>
             </div>
             @foreach ($stocks as $stock)
-                <stack-box :stock="{{ $stock }}"></stack-box>
+                <a href="{{ route('stack_shell', ['id' => $stock->id]) }}" 
+                    class="stock-ref">
+                    <stack-box :stock="{{ $stock }}"></stack-box>
+                </a>
             @endforeach
         </div>
     </div>
     <footer-comp></footer-comp>
-</diV>
+</div>
 @endsection
