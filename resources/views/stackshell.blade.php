@@ -7,8 +7,20 @@
         <main-nav title="STACK SHELL"></main-nav>
 
         <div class="px-3">
-            <stock-nav left-content="H-2-H" center-content="DOUBLE UP" right-content="PREMIUM"></stock-nav>
             <stack-box></stack-box>
+
+            <div class="d-flex justify-content-between text-white">
+                <p>Min: <span>1.21</span></p>
+
+                <div class="d-flex flex-column">
+                    <p class="mb-0 text-yellow">(P) <span class="text-light">59.99</span></p>
+                    <p class="mb-0 text-red">(H) <span class="text-light">4499</span></p>
+                    <p class="mb-0 text-blue">(D) <span class="text-light">32.99</span></p>
+                </div>
+
+                <p>Max: <span>9.99</span></p>
+
+            </div>
 
             <div class="shell-box border-curve px-2 py-0 mt-4">
                 <second-box title="Liverpool vs Fulham"></second-box>

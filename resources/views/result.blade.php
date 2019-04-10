@@ -39,7 +39,7 @@
                             <span class="mr-2 text-light">3.54</span><i class="fas fa-star mt-1"></i><span>(2)</span>
                         </div>
                         <div class="info-box px-1 f-0-6">
-                            <i class="fas fa-info text-light"></i>
+                            i
                         </div>
                     </div>
                 </div>

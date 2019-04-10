@@ -2,18 +2,23 @@
     <div class="container-fluid px-0">
         <div class="row">
             <div class="d-flex" id="octagon">
-                <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn"></i>
-                <div class="d-flex h-100 mt-3 w-20 ball">
+                <div class="participated-indicator">
+                </div>
+                <div class="info-btn">
+                    <img src="/images/123-blocks2-512.png" class="img-fluid" @click="bringMoreDetails()">
+                </div>
+                
+                <div class="d-flex h-100 mt-0 w-20 ball">
                     <i class="fas fa-futbol"></i>
                 </div>
-                <div class="w-80 mt-3 mr-3">
+                <div class="w-80 mt-0 mr-3">
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-between w-100 align-items-end">
-                            <h6 class="bold-1 top-section">Both Teams to Score</h6>
-                            <h6 class="pr-3 bold-1 top-section">05:32:15</h6>
+                            <h6 class="bold-1 stand-out">Both Teams to Score</h6>
+                            <h6 class="pr-3 bold-1 stand-out">05:32:15</h6>
                         </div>
                         <div class="another-shape w-100 d-flex">
-                            <span class="amt-text">NGN 200,000</span>
+                            <span class="amt-text">₦ 200,000</span>
                             <!-- <span class="cur-stack pt-1 ml-2">NGN 20 000</span> -->
                         </div>
                         <div class="d-flex justify-content-between mt-3">
@@ -27,8 +32,8 @@
                             <h6 class="bold-1 stand-out">100</h6>
                         </div>
                         <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
-                            <h6>CODE: <span class="bold-1 stand-out">FF32421</span></h6>
-                            <h6>ODDS: <span class="bold-1 odd-green">44.95</span></h6>
+                            <h6 class="mb-0">CODE: <span class="bold-1 stand-out">FF32421</span></h6>
+                            <h6 class="mb-0">ODDS: <span class="bold-1 odd-green">44.95</span></h6>
                         </div>
                     </div>
                 </div>
@@ -103,7 +108,8 @@ export default {
       height: 100%;
       background: #ffffff85;
       position: relative;
-      margin: 0.7rem 1rem;
+      margin: 0.2rem 1rem;
+      padding-top: .3rem;
     }
 
     .another-shape {
@@ -146,14 +152,14 @@ export default {
          color: gold !important;
      }
 
-    #octagon:after {
+    #octagon::after {
         content: "";
         width: 100%;
         height: 0;
         position: absolute;
-        bottom: -15px;
+        bottom: -10px;
         left: 0;
-        border-top: 15px solid #ffffff85;
+        border-top: 10px solid #ffffff85;
         border-left: 15px solid #eee0;
         border-right: 14px solid #eee0;
     }  
@@ -165,16 +171,9 @@ export default {
         bottom: -11px;
     }
 
-    .cur-stack {
-        display: block;
-        font-weight: bolder;
-        font-size: 0.6rem;
-    }
 
-    .top-section {
-        font-size: 0.8rem !important;
-        color: #000000 !important;
-    }
+
+
 
     .stand-out {
         font-size: 0.8rem !important;
@@ -185,6 +184,16 @@ export default {
         position: absolute;
         bottom: 9px;
         left: 20px;
-        font-size: 1rem;
+        height: 20px;
+        width: 20px;
+    }
+
+    .participated-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-width: 5px;
+        border-color: green transparent transparent green;
+        border-style: solid;
     }
 </style>

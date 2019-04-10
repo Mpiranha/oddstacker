@@ -2,7 +2,7 @@
 
 @section('page')
     <div class="container-fluid h-100 log-rg-bg clear-padding">
-        <div class="shades w-100">
+        <div class="little-shade w-100">
             <odd-header></odd-header>
 
             <form action="#" class="ml-4 mr-4 more-mt">

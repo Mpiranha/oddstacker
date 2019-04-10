@@ -3,7 +3,7 @@
 @section('page')
 <div class="container-fluid px-0  bg-land">
     <main-nav title="Withdrawal"></main-nav>
-    <div class="shades">
+    <div class="little-shade">
         <div class="container">
             <form class="withdaw-form"  action="" method="post">
                 <div class="form-group ">

@@ -12,6 +12,9 @@ export const store = new Vuex.Store({
         ],
         matchStartingSoon: [
             {match: "Man U  vs Real Madrid", time: "05:32:15" }
+        ],
+        mails: [
+            {email: "customercare@odstackr.com", subject: "Welcome to Odstackr", mail: "You are humbly welcomed to odstackr and i want to get you started"}
         ]
         
         

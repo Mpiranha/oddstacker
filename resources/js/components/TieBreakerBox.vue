@@ -6,11 +6,11 @@
         </div>
         <div class="d-flex flex-column justify-content-between flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-4"></fancy-top-bottom>
+                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-2"></fancy-top-bottom>
             </div>
             
             <div class="d-flex mt-2">
-                <div class="odds-text text-center text-white flex-grow-1">
+                <div class="odds-text d-flex justify-content-center align-items-center text-white flex-grow-1">
                     Under 2.5
                 </div>
                 <input class="shell-odd-input text-center text-light pt-2 px-2" readonly type="text" placeholder="0.00" value="" maxlength="4">
@@ -39,7 +39,7 @@ export default {
         background-color: rgba(245, 199, 11, 0.561);
         border-radius: 30px;
         padding: 0.4rem 1rem;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
     .shell-odd-input {
         width: 25%;

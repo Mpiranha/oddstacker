@@ -79,6 +79,31 @@ Route::get('/singlebreak',function (){
     return view('singlebreak');
 });
 
+Route::get('/referal',function (){
+    return view('referal');
+});
+
+Route::get('/token',function (){
+    return view('token');
+});
+
+Route::get('/contact',function (){
+    return view('contact');
+});
+
+Route::get('/mail',function (){
+    return view('mail');
+});
+
+Route::get('/terms',function (){
+    return view('terms');
+});
+
+Route::get('/feedback',function (){
+    return view('feedback');
+});
+
+
 
 
 

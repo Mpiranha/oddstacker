@@ -3,7 +3,7 @@
 @section('page')
 <div class="container-fluid px-0 scroll-y bg-land">
     
-    <div class="light-shade">
+    <div class="little-shade">
         <main-nav title="STACK SHELL"></main-nav>
 
         <div class="px-3">
@@ -15,7 +15,7 @@
                     <div class="d-flex text-light justify-content-center">
                         <p class="f-0-6 mb-0 bold-1 pos-relative">SELECT SIX PREDICTIONS AS TIE BREAKER
                             <span class="info-box f-0-6">
-                                <i class="fas fa-info text-light"></i>
+                               i
                             </span>
                         </p>
 

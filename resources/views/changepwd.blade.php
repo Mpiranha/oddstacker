@@ -3,7 +3,7 @@
 @section('page')
 <div class="container-fluid px-0 bg-land">
 
-        <div class="shades h-100">
+        <div class="little-shade h-100">
                 <main-nav title="profile"></main-nav>
                 <div class="container pb-5">
                         <form class="prof-form" action="" method="post">

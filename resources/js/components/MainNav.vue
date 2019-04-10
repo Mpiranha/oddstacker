@@ -62,6 +62,9 @@
             <i class="fas fa-scroll"></i><a class="text-white" href="/enter">Stock Lobby</a>
           </li>
           <li class="list-group-item text-light f-1-1">
+            <i class="fas fa-coins mr-3"></i><a class="text-white" href="/token">Token</a>
+          </li>
+          <li class="list-group-item text-light f-1-1">
             <i class="far fa-file-alt mr-4"></i><a class="text-white" href="/results">Results</a>
           </li>
           <li class="list-group-item text-light f-1-1">

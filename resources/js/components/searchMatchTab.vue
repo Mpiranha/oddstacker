@@ -1,13 +1,29 @@
 <template>
     <div class="row">
         <div class="col-12">
-            <div v-if="currentActiveBtn[0].allActive" class="d-flex search-container">
-                <div class="search-bar flex-grow-1">
-                    <input type="text" class="form-control mr-1" value="" placeholder="Search">
-                </div>
-                <div class="search-btn ml-2 align-self-center">
-                    <i class="fas fa-search"></i>
-                </div>
+            <div v-if="currentActiveBtn[0].allActive">
+                <form action="" method="get">
+                    <div class="d-flex mb-1">
+                        <div class="d-flex search-container px-0">
+                            <div class="search-bar flex-grow-1">
+                                <input type="text" class="form-control mr-1" value="" placeholder="Search">
+                            </div>
+                            <div class="search-btn ml-2 align-self-center">
+                                <button class="btn clear-bg b-0">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <select class="form-control w-30 ml-2" name="sort-sport" id="sort-sport">
+                            <option selected>Sports</option>
+                            <option value="football">Football</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="icehockey">Ice Hockey</option>
+                            <option value="tennis">Tennis</option>
+                        </select>
+                    </div>
+                    
+                </form>
             </div>
 
             <div v-else-if="matchStartingSoon.length> 0" class="cus-bg-red">
@@ -59,8 +75,9 @@ export default {
     .search-container {
         background-color: rgba(14, 13, 13, 0.374);
         border-radius: 30px;
-        padding: .3rem .7rem;
+        padding: 0 .7rem;
         border: 1px solid rgb(255, 255, 255);
+        width: 70%;
     }
     .search-btn {
         font-size: 1.2rem;

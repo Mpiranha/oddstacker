@@ -3,16 +3,16 @@
     <div class="col-12 px-4">
       <div class="d-flex flex-row justify-content-center flex-wrap mb-2">
         <div class="all-btn bg-white mr-1">
-          <a :class="{ 'all-active' : currentActiveBtn[0].allActive }" @click="changeActiveState('allActive')" class="nav-link p-2 bg-white text-dark">ALL</a>
+          <a :class="{ 'all-active' : currentActiveBtn[0].allActive }" @click="changeActiveState('allActive')" class="nav-link bg-white text-dark">ALL</a>
         </div>
         <div class="h-2-h-btn bg-white mr-1 flex-fill text-center">
-          <a :class="{ 'head-active' : currentActiveBtn[0].headActive }" @click="changeActiveState('headActive')" class="nav-link p-2 bg-white text-dark">HEAD TO HEAD</a>
+          <a :class="{ 'head-active' : currentActiveBtn[0].headActive }" @click="changeActiveState('headActive')" class="nav-link bg-white text-dark">HEAD TO HEAD</a>
         </div>
         <div class="double-up-btn bg-white mr-1 flex-fill text-center">
-          <a :class="{ 'double-active' : currentActiveBtn[0].doubleActive }" @click="changeActiveState('doubleActive')" class="nav-link p-2 bg-white text-dark">DOUBLE UP</a>
+          <a :class="{ 'double-active' : currentActiveBtn[0].doubleActive }" @click="changeActiveState('doubleActive')" class="nav-link bg-white text-dark">DOUBLE UP</a>
         </div>
         <div class="premium-btn bg-white flex-fill text-center">
-          <a :class="{ 'premium-active' : currentActiveBtn[0].premiumActive }" @click="changeActiveState('premiumActive')" class="nav-link p-2 bg-white text-dark">PREMIUM</a>
+          <a :class="{ 'premium-active' : currentActiveBtn[0].premiumActive }" @click="changeActiveState('premiumActive')" class="nav-link bg-white text-dark">PREMIUM</a>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@ export default {
 
 <style scoped>
 a {
-  font-size: 0.6rem !important;
+  font-size: 0.8rem !important;
   color: black;
   font-weight: bolder;
 }

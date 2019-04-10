@@ -4,7 +4,7 @@
 
 <div class="container-fluid h-100 pr-0 pl-0 scroll-y bg-land">
     
-    <div class="shades">
+    <div class="little-shade">
         <main-nav title="RESULTS"></main-nav>
         <div class="px-3">
             

@@ -262,44 +262,7 @@ $(document).ready(function(){
         });
     });
 
-
-    function depositIncrementer(targetBox) {
-        if (i == 3) {
-            targetBox.val( Number( targetBox.val() ) + Number(4 + "00") );
-            return false;
-        }else if (i == 4) {
-            targetBox.val( Number( targetBox.val() ) + Number(8 + "00") );
-            return false;
-        } else if (i == 5) {
-            targetBox.val( Number( targetBox.val() ) + Number(1 + "000") );
-            return false;
-        }
-        targetBox.val( Number( targetBox.val() ) + Number(i + "00") );
-        
-    }
-    //Deposit iincrementer
-    for (let i = 1; i < 6; i++) {
-        $("#paystack-add-" + i + "00").click(function() {
-            depositIncrementer( $("#paystack-amt-box") );
-        });
-    }
-    //Withdrawal incrementer
-    for (let i = 1; i < 6; i++) {
-        $("#add-" + i + "00").click(function() {
-            if (i == 3) {
-                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(5 + "00") );
-                return false;
-            }else if (i == 4) {
-                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(1 + "000") );
-                return false;
-            } else if (i == 5) {
-                $("#amount-input").val( Number( $("#amount-input").val() ) + Number(5 + "000") );
-                return false;
-            }
-            $("#amount-input").val( Number( $("#amount-input").val() ) + Number(i + "00") );
-            
-        });
-    }
+    
 
     $(".info-box").click(function() {
         $(".modal-box").css("display", "block");
