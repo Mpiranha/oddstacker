@@ -8,7 +8,7 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue';
 
 /**
  * The following block of code may be used to automatically register your
@@ -18,25 +18,25 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('odd-header', require('./components/Header.vue'));
-Vue.component('stack-nav', require('./components/StackNav.vue'));
-Vue.component('stack-box', require('./components/StackBox.vue'));
-Vue.component('amount-box', require('./components/AmountBox.vue'));
-Vue.component('right-fancy-box', require('./components/FancyRightBtn.vue'));
-Vue.component('left-fancy-box', require('./components/FancyLeftBtn.vue'));
-Vue.component('fancy-top-bottom', require('./components/FancyTopBotBtn.vue'));
-Vue.component('main-nav', require('./components/MainNav.vue'));
-Vue.component('footer-comp', require('./components/Footer.vue'));
-Vue.component('stock-nav', require('./components/StocksNav.vue'));
-Vue.component('date-picker', require('./components/DatePicker.vue'));
-Vue.component('stack-box-new', require('./components/StackBoxNew.vue'));
-Vue.component('team-view-box', require('./components/TeamViewBox.vue'));
-Vue.component('new-box', require('./components/Newbox.vue')); 
-Vue.component('second-box', require('./components/SecondBox.vue'));
-Vue.component('leader-box', require('./components/LeaderBox.vue'));
-Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue'));
-Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue'));
-Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue'));
+Vue.component("odd-header", require("./components/Header.vue").default);
+Vue.component('stack-nav', require('./components/StackNav.vue').default);
+Vue.component('stack-box', require('./components/StackBox.vue').default);
+Vue.component('amount-box', require('./components/AmountBox.vue').default);
+Vue.component('right-fancy-box', require('./components/FancyRightBtn.vue').default);
+Vue.component('left-fancy-box', require('./components/FancyLeftBtn.vue').default);
+Vue.component('fancy-top-bottom', require('./components/FancyTopBotBtn.vue').default);
+Vue.component('main-nav', require('./components/MainNav.vue').default);
+Vue.component("footer-comp", require("./components/Footer.vue").default);
+Vue.component('stock-nav', require('./components/StocksNav.vue').default);
+Vue.component('date-picker', require('./components/DatePicker.vue').default);
+Vue.component('stack-box-new', require('./components/StackBoxNew.vue').default);
+Vue.component('team-view-box', require('./components/TeamViewBox.vue').default);
+Vue.component('new-box', require('./components/Newbox.vue').default); 
+Vue.component('second-box', require('./components/SecondBox.vue').default);
+Vue.component('leader-box', require('./components/LeaderBox.vue').default);
+Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue').default);
+Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue').default);
+Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').default);
 
 
 
@@ -55,5 +55,5 @@ Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue'));
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });
