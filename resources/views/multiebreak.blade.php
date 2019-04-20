@@ -4,7 +4,9 @@
 <div class="container-fluid px-0 scroll-y bg-land">
     
     <div class="light-shade">
-        <main-nav title="STACK SHELL"></main-nav>
+        <main-nav title="STACK SHELL" :user="{{ Auth::user() }}" 
+            :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
 
         <div class="px-3">
             <stock-nav left-content="H-2-H" center-content="DOUBLE UP" right-content="PREMIUM"></stock-nav>
@@ -13,8 +15,8 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="d-flex text-light justify-content-center">
-                        <p class="f-0-6 mb-0 bold-1 pos-relative">SELECT SIX PREDICTION AS TIE BREAKER
-                            <span class="info-box px-1 f-0-6">
+                        <p class="f-0-6 mb-0 bold-1 pos-relative">SELECT SIX PREDICTIONS AS TIE BREAKER
+                            <span class="info-box f-0-6">
                                 <i class="fas fa-info text-light"></i>
                             </span>
                         </p>

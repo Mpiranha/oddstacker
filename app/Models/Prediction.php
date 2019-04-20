@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Prediction extends Model
 {
-    //
+    public function sport(){
+        
+    }
 }

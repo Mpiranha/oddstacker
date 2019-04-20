@@ -2,13 +2,15 @@
 
 @section('page')
 <div class="container-fluid px-0  bg-land">
-    <main-nav title="Withdrawal"></main-nav>
+    <main-nav title="WITHDRAWAL"
+        :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
     <div class="shades">
         <div class="container">
             <form class="withdaw-form"  action="" method="post">
                 <div class="form-group ">
                     <label for="amount-input">Amount:</label>
-                    <textarea class="form-control trans text-dark" id="amount-input" rows="3">0</textarea>
+                    <input class="form-control trans text-dark" id="amount-input" type="number" rows="3">0/>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -79,10 +81,7 @@
 
                 </div>
             </form>
-
         </div>
-
-        
     </div>
 
     <footer-comp></footer-comp>

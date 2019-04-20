@@ -2,18 +2,31 @@
     <div class="fancy-top-bot px-3">
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-5"></fancy-top-bottom>
+                <fancy-top-bottom 
+                 :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`" 
+                 class="flex-grow-1 mr-5"></fancy-top-bottom>
             </div>
             
             <div class="d-flex mt-4">
-                <div class="odds-text text-center text-white flex-grow-1">
-                    BOTH HALVES UNDER 1.5
+                <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
+                    <span class="odds-text-content align-self-center">
+                        {{ eventPredictions.prediction.name }}
+                    </span>
                 </div>
-                <input class="shell-odd-input text-center text-light pt-2 px-2" type="text" placeholder="0.00" value="" maxlength="4">
+                <input class="shell-odd-input text-center text-dark pt-2 px-2" type="text" placeholder="0.00" value="" maxlength="4">
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['stock', 'eventPredictions'],
+
+    mounted: function(){}
+}
+</script>
+
 
 <style scoped>
     .star {
@@ -22,18 +35,20 @@
         padding: 2rem 0.2rem;
     }
     .odds-text {
+        position: relative;
         background-color: rgba(245, 199, 11, 0.561);
         border-radius: 30px;
         padding: 0.4rem 1rem;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
+
     .shell-odd-input {
         width: 25%;
         padding: 0.4rem 1rem;
-        background-color: rgba(12, 220, 78, 0.24);
+        background-color: rgb(255, 255, 255);
         border-radius: 30px;
         margin-left: 2rem;
-        border: 2px solid white;
+        border: none;
         font-weight: bolder;
         display: block;
     }

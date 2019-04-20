@@ -4,7 +4,9 @@
 <div class="container-fluid px-0 bg-land">
 
         <div class="shades h-100">
-                <main-nav title="profile"></main-nav>
+                <main-nav title="PROFILE"
+        :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
                 <div class="container pb-5">
                         <form class="prof-form" action="" method="post">
                                 <div class="form-group">

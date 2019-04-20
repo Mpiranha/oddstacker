@@ -2,7 +2,7 @@
 
 @section('page')
 <div class="container-fluid h-100 pr-0 pl-0 bg-land scroll-y text-white">
-    <main-nav title="CASHIER"></main-nav>
+    <main-nav title="ACCOUNT"></main-nav>
     <div class="shades h-75">
         <div class="pr-2 pl-2">
             <div class="d-flex flex-column">
@@ -10,7 +10,7 @@
                 <div class="pt-4">
                 
                     <div class="box">
-                        <a href="/deposit" class="cash-items display-5 mt-2">Change Password</a>
+                        <a href="/change-password" class="cash-items display-5 mt-2">Change Password</a>
                     </div>
                 </div>
 

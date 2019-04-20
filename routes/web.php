@@ -20,12 +20,12 @@ Route::get('/forgot-password',function (){
 });
 
 Route::get('/enter',function (){
-    return view('home');
+    return redirect(route('home'));
 });
 
-Route::get('/test',function (){
+/* Route::get('/test',function (){
     return view('test');
-});
+}); */
 
 Route::get('/deposit',function (){
     return view('deposit');
@@ -67,9 +67,7 @@ Route::get('/personal-details',function (){
     return view('personaldetails');
 });
 
-Route::get('/shell-double',function (){
-    return view('stackshell-db');
-});
+Route::get('/stock/{id}/shell', 'HomeController@stackShell')->name('stack_shell');
 
 Route::get('/multiebreak',function (){
     return view('multiebreak');
@@ -84,7 +82,11 @@ Route::get('/singlebreak',function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
 
 /* Admin Routes */
 
@@ -92,9 +94,7 @@ Route::get('/admin', function(){
     return view('admin.dashboard');
 });
 
-Route::get('/admin/users', function(){
-    return view('admin.users');
-});
+Route::get('/admin/users', 'AdminPagesController@users');
 Route::get('/admin/countries', function(){
     return view('admin.countries');
 });
@@ -104,6 +104,6 @@ Route::get('/admin/leagues', function(){
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
-Route::get('/admin/teams', function(){
-    return view('admin.teams');
-});
+Route::get('/admin/teams', 'AdminPagesController@teams')->name('admin.teams');
+
+Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.create');

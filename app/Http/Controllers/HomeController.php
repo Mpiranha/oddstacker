@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
+use App\Models\EventPrediction;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $stocks = Stock::with('category')->get();
+        return view('home', [
+            'stocks' => $stocks,
+        ]);
+    }
+
+    public function stackShell(Request $request, $id)
+    {
+        $stock = Stock::with('category')->findOrFail($id);
+        ##  TODO::PROTECT THIS ROUTE:: SHOW ONLY PUBLISHED STOCKS
+        $eventPredictions = EventPrediction::where('stock_id', $stock->id)
+            ->with('event')->with('prediction')->get();
+
+        return view('stackshell-db', [
+            'stock' => $stock,
+            'eventPredictions' => $eventPredictions
+        ]);
     }
 }

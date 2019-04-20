@@ -6,7 +6,7 @@
           <i class="fa fa-bars fa-2x f-2"></i>
         </span>
         <h1 class="text-center text-uppercase f-2 m-0 pl-2">ODDSTACKER</h1>
-        <button id="right-btn" class="btn right-btn pt-0 pb-0 pr-2 pl-2 text-center">N0.00</button>
+        <button id="right-btn" class="btn right-btn pt-0 pb-0 pr-2 pl-2 text-center">N{{ wallet.balance }} <i class="fas fa-angle-down ml-1 angle-down"></i></button>
       </nav>
       <h2 class="text-uppercase text-center f-1 mt-3">{{ title }}</h2>
     </div>
@@ -20,9 +20,9 @@
               <i class="fa fa-user-circle fa-5x icon"></i>
             </div>
             <div class="flex-grow-1 d-flex flex-column">
-              <div class="name-2">Testaccount12</div>
+              <div class="name-2">{{ user.username }}</div>
               <div class="name-2">User ID: 4313522</div>
-              <div class="job">N0.00</div>
+              <div class="job">N{{ wallet.balance }}</div>
             </div>
           </div>
           <div class="card-body">
@@ -47,8 +47,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <i class="fa fa-user-circle text-white fa-5x"></i>
-          <div class="name">Username</div>
-          <div class="job">N0.00</div>
+          <div class="name">{{ user.username }}</div>
+          <div class="job">N{{ wallet.balance }}</div>
           <button class="btn red-btn">
             <a class="text-uppercase text-light">Top up</a>
           </button>
@@ -62,19 +62,25 @@
             <i class="fas fa-scroll"></i><a class="text-white" href="/enter">Stock Lobby</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="far fa-file-alt"></i><a class="text-white" href="/results">Results</a>
+            <i class="far fa-file-alt mr-4"></i><a class="text-white" href="/results">Results</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="fa fa-question-circle"></i><a class="text-white" href="">How to Play</a>
+            <i class="fa fa-question-circle mr-3"></i><a class="text-white" href="">How to Play</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="fa fa-lightbulb"></i><a class="text-white" href="">Tips</a>
+            <i class="fa fa-lightbulb mr-4"></i><a class="text-white" href="">Tips</a>
+          </li>
+          <li class="list-group-item text-light f-1-1">
+            <i class="fas fa-handshake"></i><a class="text-white" href="">REFERAL</a>
+          </li>
+          <li class="list-group-item text-light f-1-1">
+            <i class="fa fa-envelope mr-3"></i><a class="text-white" href="">Mails</a>
           </li>
           <li class="list-group-item text-light f-1-1">
             <i class="fa fa-trophy"></i><a class="text-white" href="">All Winners</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="fa fa-envelope" aria-hidden="true"></i><a class="text-white" href="">Mails</a>
+            <i class="fas fa-comments"></i><a class="text-white" href="">FEED BACK</a>
           </li>
           <li class="list-group-item mb-10 text-light f-1-1">
             <i class="fas fa-sign-out-alt"></i><a class="text-white" href="">Logout</a>
@@ -87,9 +93,9 @@
 
 <script>
 export default {
-  props: {
-    title: String
-  }
+  props: ['user', 'title', 'wallet'],
+
+  mounted: function(){}
 };
 </script>
 <style>
@@ -250,4 +256,3 @@ export default {
   color: white;
 }
 </style>
-

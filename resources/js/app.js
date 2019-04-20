@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
+import { store } from './store/store';
 require('./bootstrap');
 
 import Vue from 'vue';
@@ -18,42 +18,44 @@ import Vue from 'vue';
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component("odd-header", require("./components/Header.vue").default);
-Vue.component('stack-nav', require('./components/StackNav.vue').default);
-Vue.component('stack-box', require('./components/StackBox.vue').default);
-Vue.component('amount-box', require('./components/AmountBox.vue').default);
-Vue.component('right-fancy-box', require('./components/FancyRightBtn.vue').default);
-Vue.component('left-fancy-box', require('./components/FancyLeftBtn.vue').default);
-Vue.component('fancy-top-bottom', require('./components/FancyTopBotBtn.vue').default);
-Vue.component('main-nav', require('./components/MainNav.vue').default);
-Vue.component("footer-comp", require("./components/Footer.vue").default);
-Vue.component('stock-nav', require('./components/StocksNav.vue').default);
-Vue.component('date-picker', require('./components/DatePicker.vue').default);
-Vue.component('stack-box-new', require('./components/StackBoxNew.vue').default);
-Vue.component('team-view-box', require('./components/TeamViewBox.vue').default);
-Vue.component('new-box', require('./components/Newbox.vue').default); 
-Vue.component('second-box', require('./components/SecondBox.vue').default);
-Vue.component('leader-box', require('./components/LeaderBox.vue').default);
-Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue').default);
-Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue').default);
-Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').default);
+Vue.component('odd-header', require('./components/Header.vue').default);
+Vue.component('stack-nav', require('./components/StackNav.vue').default);;
+Vue.component('stack-box', require('./components/StackBox.vue').default);;
+Vue.component('amount-box', require('./components/AmountBox.vue').default);;
+Vue.component('right-fancy-box', require('./components/FancyRightBtn.vue').default);;
+Vue.component('left-fancy-box', require('./components/FancyLeftBtn.vue').default);;
+Vue.component('fancy-top-bottom', require('./components/FancyTopBotBtn.vue').default);;
+Vue.component('main-nav', require('./components/MainNav.vue').default);;
+Vue.component('footer-comp', require('./components/Footer.vue').default);;
+Vue.component('stock-nav', require('./components/StocksNav.vue').default);;
+Vue.component('date-picker', require('./components/DatePicker.vue').default);;
+Vue.component('stack-box-new', require('./components/StackBoxNew.vue').default);;
+Vue.component('team-view-box', require('./components/TeamViewBox.vue').default);;
+Vue.component('new-box', require('./components/Newbox.vue').default);;
+Vue.component('second-box', require('./components/SecondBox.vue').default);;
+Vue.component('leader-box', require('./components/LeaderBox.vue').default);;
+Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue').default);;
+Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue').default);;
+Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').default);;
+Vue.component('bank-details', require('./components/BankDetailBox.vue').default);;
+Vue.component('account-details', require('./components/AccountDetailBox.vue').default);;
+Vue.component('search-match-tab', require('./components/searchMatchTab.vue').default);;
 
-
-
-
-
-// const files = require.context('./', true, /\.vue$/i)
-
-// files.keys().map(key => {
-//     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))
-// })
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 
 const app = new Vue({
+    store: store,
     el: '#app',
+    data: function(){
+        return {
+            showingTab: 'all'
+        }
+    },
+    mounted: function(){
+        
+    },
+    methods: {
+        setShowingTab: function(showingTab){
+            this.showingTab = showingTab
+        }
+    }
 });
