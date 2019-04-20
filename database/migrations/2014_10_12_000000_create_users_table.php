@@ -17,15 +17,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('email')->unique();
-<<<<<<< HEAD
             $table->enum('role', ['admin', 'user'])->default('user');
-=======
             $table->string('tel');
             $table->enum('gender', ['none', 'male', 'female']);
             $table->string('country');
             $table->string('state');
             $table->string('referal')->nullable();
->>>>>>> master
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
