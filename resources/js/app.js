@@ -43,7 +43,7 @@ Vue.component('search-match-tab', require('./components/searchMatchTab.vue').def
 
 
 const app = new Vue({
-    store: store,
+    store,
     el: '#app',
     data: function(){
         return {
