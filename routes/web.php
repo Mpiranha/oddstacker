@@ -63,6 +63,8 @@ Route::get('/change-password',function (){
     return view('changepwd');
 });
 
+Route::post('/change-password/{id}','HomeController@changePassword')->name('change_password');
+
 Route::get('/personal-details',function (){
     return view('personaldetails');
 });
