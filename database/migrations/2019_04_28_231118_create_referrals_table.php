@@ -15,7 +15,7 @@ class CreateReferralsTable extends Migration
     {
         Schema::create('referrals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('referral_id', 255);
+            $table->integer('referral_id')->unsigned();
             $table->string('referred', 255);
             $table->boolean('active')->default(false);
             $table->foreign('referral_id')->references('id')->on('users')->onDelete('cascade');
