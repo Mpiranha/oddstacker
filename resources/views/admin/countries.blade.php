@@ -42,12 +42,26 @@
                                             <img src="{{ $country->logo }}" height="30px" alt="{{ $country->name }} image"/>
                                         </td>
                                         <td class="text-center">
-                                            <form action="{{ route('country.delete', $country->id) }}" method="POST">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <span type="submit"><i class="fa fa-trash cursor" ></i></span>
-                                            </form>
-                                            <span><i class="fa fa-edit"></i></span>
+                                            <a href="#" style="color: black"
+                                                onclick="
+                                                    let result = confirm('Are you sure you want to delete this country?');
+                                                    if (result){
+                                                        let sure = confirm('really sure');
+                                                        if (sure){
+                                                            event.preventDefault();
+                                                        document.getElementById('delete-form-{{$country->id}}').submit();
+                                                        }
+                                                    }"
+                                                >
+                                                    <i class="fa fa-trash cursor" ></i>
+                                            </a>
+                                            <form action="{{ route('country.delete', $country->id) }}" method="POST"
+                                                style="display: none;" id="delete-form-{{$country->id}}">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    </button>
+                                                </form>
+                                            {{-- <span><i class="fa fa-edit"></i></span> --}}
                                         </td>
                                     </tr>
                                 @endforeach

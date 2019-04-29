@@ -97,10 +97,11 @@ Route::get('/admin', function(){
 });
 
 Route::get('/admin/users', 'AdminPagesController@users')->name('admin.users');
+
 // Countrty
 Route::get('/admin/countries', 'CountryController@countries')->name('admin.countries');
 Route::post('/admin/countries/create', 'CountryController@create')->name('country.create');
-Route::delete('/admin/countries/delete/{id}', 'CountryController@create')->name('country.delete');
+Route::delete('/admin/countries/delete/{id}', 'CountryController@delete')->name('country.delete');
 
 Route::get('/admin/leagues', function(){
     return view('admin.leagues');

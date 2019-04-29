@@ -26,10 +26,11 @@ class CountryController extends Controller
             'name' => $request->name,
             'logo' => $request->logo,
         ]);
-        return back();
+        return back()->with('success', 'Country Added');
     }
 
     public function delete($id) {
-        return $id;
+       (new Country())->find($id)->delete();
+       return back()->with('success', 'Country Deleted successflly');
     }
 }
