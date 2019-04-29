@@ -24,6 +24,7 @@
                             <th>S/N</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Username</th>
                             <th>Registered</th>
                             <th>Action</th>
                         </thead>
@@ -36,6 +37,7 @@
                                     <td>{{ ++$count }}</td>
                                     <td>$user->name</td>
                                     <td>$user->email</td>
+                                    <td>$user->username</td>
                                     <td>$user->created_at</td>
                                     <td>ACTION</td>
                                 </tr>   

@@ -19,6 +19,7 @@
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="/assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+    <link href="/assets/css/custom.css" rel="stylesheet"/>
 
 
     <!--     Fonts and icons     -->
@@ -39,37 +40,43 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li class="{{Request::is('admin') ? "active" : ""  }}" >
                     <a href="dashboard.html">
                         <i class="fa fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/users">
+                <li class="{{Request::is('admin/users') ? "active" : ""  }}">
+                    <a href="{{ route('admin.users') }}">
                         <i class="fa fa-users"></i>
                         <p>Users</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
+                    <a href="/admin/countries">
+                        <i class="fa fa-flag"></i>
+                        <p>Countries</p>
+                    </a>
+                </li>
+                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
                     <a href="/admin/countries">
                         <i class="fa fa-globe"></i>
                         <p>Sports</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/teams') ? "active" : ""  }}">
                     <a href="{{ route('admin.teams') }}">
                         <i class="fa fa-flag-checkered"></i>
                         <p>Teams</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
                     <a href="/admin/countries">
                         <i class="fa fa-trophy"></i>
                         <p>Competitions</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/events') ? "active" : ""  }}">
                     <a href="/admin/events">
                         <i class="fa fa-gamepad"></i>
                         <p>Events</p>
@@ -180,6 +187,35 @@
         </footer>
     </div>
 </div>
+<div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle">ADD Country</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('country.create') }}" method="POST">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Country Name</label>
+                        <input type="text" name="name" required class="form-control" placeholder="Nigeria">
+                    </div>
+                    <div class="form-group">
+                        <label>Country Logo</label>
+                        <input type="url" name="logo" required class="form-control" placeholder="Image URL" value="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">ADD Country</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

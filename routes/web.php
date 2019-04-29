@@ -96,10 +96,12 @@ Route::get('/admin', function(){
     return view('admin.dashboard');
 });
 
-Route::get('/admin/users', 'AdminPagesController@users');
-Route::get('/admin/countries', function(){
-    return view('admin.countries');
-});
+Route::get('/admin/users', 'AdminPagesController@users')->name('admin.users');
+// Countrty
+Route::get('/admin/countries', 'CountryController@countries')->name('admin.countries');
+Route::post('/admin/countries/create', 'CountryController@create')->name('country.create');
+Route::delete('/admin/countries/delete/{id}', 'CountryController@create')->name('country.delete');
+
 Route::get('/admin/leagues', function(){
     return view('admin.leagues');
 });
