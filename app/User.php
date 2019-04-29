@@ -35,4 +35,8 @@ class User extends Authenticatable
     public function referral() {
         return $this->hasMany('App\Models\Referral');
     }
+
+    public function exists($username) {
+        return User::where('username', $username)->first();
+    }
 }
