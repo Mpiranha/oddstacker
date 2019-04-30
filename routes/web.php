@@ -108,6 +108,11 @@ Route::get('/admin/leagues', 'LeagueController@league')->name('admin.league');
 Route::post('/admin/leagues', 'LeagueController@create')->name('league.create');
 Route::delete('/admin/leagues/delete/{id}', 'LeagueController@delete')->name('league.delete');
 
+//sport
+Route::get('/admin/sports', 'SportsController@sports')->name('admin.sport');
+Route::post('/admin/sports', 'SportsController@create')->name('sport.create');
+Route::delete('/admin/sports/delete/{id}', 'SportsController@delete')->name('sport.delete');
+
 Route::get('/admin/events', function(){
     return view('admin.events');
 });

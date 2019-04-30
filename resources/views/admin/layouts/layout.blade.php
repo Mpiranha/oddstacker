@@ -58,8 +58,8 @@
                         <p>Countries</p>
                     </a>
                 </li>
-                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
-                    <a href="/admin/countries">
+                <li class="{{Request::is('admin/sports') ? "active" : ""  }}">
+                    <a href="/admin/sports">
                         <i class="fa fa-globe"></i>
                         <p>Sports</p>
                     </a>
