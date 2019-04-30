@@ -29,7 +29,11 @@ class CountryController extends Controller
     }
 
     public function delete($id) {
-       (new Country())->find($id)->delete();
-       return back()->with('success', 'Country Deleted successflly');
+        try {
+            (new Country())->findorfail($id)->delete();
+            return back()->with('success', 'Country Deleted successflly');
+        } catch (\Exception $e) {
+            return back()->with('error', 'error must have occurred');
+        }
     }
 }

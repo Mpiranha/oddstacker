@@ -67,7 +67,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100@foreach ($leagues as $league)%" class="text-center">NO LEAGUE AVAILABLE</td>
+                                    <td colspan="100%" class="text-center">NO LEAGUE AVAILABLE</td>
                                 </tr>
                             @endif
                         </tbody>

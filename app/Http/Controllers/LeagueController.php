@@ -38,7 +38,11 @@ class LeagueController extends Controller
     }
 
     public function delete($id) {
-        (new League())->find($id)->delete();
-        return back()->with('success', 'League Deleted successflly');
+        try {
+            (new League())->findorfail($id)->delete();
+            return back()->with('success', 'League Deleted successflly');
+        } catch (\Exception $e) {
+            return back()->with('error', 'error must have occurred');
+        }
     }
 }

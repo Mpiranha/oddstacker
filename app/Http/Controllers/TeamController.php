@@ -59,8 +59,12 @@ class TeamController extends Controller
     }
 
     public function delete($id) {
-        (new Team())->find($id)->delete();
-        return back()->with('success', ' Team deleted successflly');
+        try {
+            (new Team())-> findorfail($id)->delete();
+            return back()->with('success', ' Team deleted successflly');
+        } catch (\Exception $e) {
+            return back()->with('error', 'error must have occurred');
+        }
     }
 
 }

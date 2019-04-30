@@ -18,28 +18,48 @@
                         <thead>
                             <th class="text-center">S/N</th>
                             <th class="text-center">Name</th>
-                            <th class="text-center">Image</th>
+                            <th class="text-center">Alias</th>
+                            <th class="text-center">sport</th>
                             <th class="text-center">Action</th>
                         </thead>
                         <tbody>
-                            @if (true)
+                            @if (count($predictions) > 0)
                                 @php
                                     $count = 0;
                                 @endphp
-                                {{-- @foreach ($leagues as $league) --}}
+                                @foreach ($predictions as $prediction)
                                     <tr>
-                                        {{-- <td class="text-center">{{ ++$count }}</td>
-                                        <td class="text-center">{{ $league->name }}</td> --}}
+                                        <td class="text-center">{{ ++$count }}</td>
+                                        <td class="text-center">{{ $prediction->name }}</td>
+                                        <td class="text-center">{{ $prediction->alias }}</td>
+                                    <td class="text-center">{{$sport_name}}</td>
                                         <td class="text-center">
-                                            {{-- <img src="{{ $league->logo }}" height="30px" alt="{{ $league->name }} image"/> --}}
-                                        </td>
-                                        <td class="text-center">
+                                          <a href="#" style="color: black"
+                                                onclick="
+                                                    let result = confirm('Are you sure you want to delete this prediction?');
+                                                    if (result){
+                                                        let sure = confirm('really sure');
+                                                        if (sure){
+                                                            event.preventDefault();
+                                                        document.getElementById('delete-form-{{$prediction->id}}').submit();
+                                                        }
+                                                    }"
+                                                >
+                                                    <i class="fa fa-trash cursor" ></i>
+                                            </a>
+                                            <form action="{{ route('prediction.delete', $prediction->id) }}" method="POST"
+                                                style="display: none;" id="delete-form-{{$prediction->id}}">
+                                                    {{ method_field('DELETE') }}
+                                                    {{ csrf_field() }}
+                                                    </button>
+                                                </form>
+                                            <span><i class="fa fa-edit"></i></span>
                                         </td>
                                     </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100@foreach ($leagues as $league)%" class="text-center"></td>
+                                    <td colspan="100%" class="text-center">Add predictions</td>
                                 </tr>
                             @endif
                         </tbody>
@@ -59,20 +79,20 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('prediction.view') }}" method="POST">
+                <form action="{{ route('prediction.create') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Arsenal">
+                            <input type="text" name="name" class="form-control" placeholder="home win">
                         </div>
                         <div class="form-group">
-                            <label>League Logo</label>
-                            <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
+                            <label>Alias</label>
+                            <input type="text" name="logo" class="form-control" placeholder="1x" value="">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">ADD LEAGUE</button>
+                        <button type="submit" class="btn btn-primary">Add Prediction</button>
                     </div>
                 </form>
             </div>

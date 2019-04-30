@@ -28,7 +28,11 @@ class SportsController extends Controller
     }
 
     public function delete($id) {
-        (new Sport())->find($id)->delete();
-        return back()->with('success', ' Sport successflly');
+        try {
+            (new Sport())->findorfail($id)->delete();
+            return back()->with('success', ' Sport successflly');
+        } catch (\Exception $e) {
+            return back()->with('error', 'error must have occurred');
+        }
     }
 }
