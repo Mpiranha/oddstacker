@@ -16,7 +16,6 @@ class CountryController extends Controller
     }
 
     public function create(Request $request) {
-        // return $request->all();
         $this->validate($request, [
             'name' => 'required',
             'logo' => 'required',

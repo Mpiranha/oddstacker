@@ -18,7 +18,9 @@ class CreateLeaguesTable extends Migration
             $table->string('name', 255);
             $table->string('logo', 255)->nullable();
             $table->integer('country_id')->unsigned();
+            $table->integer('sport_id')->unsigned();
             $table->foreign('country_id')->references('id')->on( 'countries')->onDelete('cascade');
+            $table->foreign( 'sport_id')->references('id')->on( 'sports')->onDelete('cascade');
             $table->timestamps();
         });
     }

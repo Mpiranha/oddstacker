@@ -9,7 +9,7 @@
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-info btn-fill" 
                             data-toggle="modal" data-target="#addCountry">
-                            ADD NEW COUNTRY
+                            ADD COUNTRY
                         </button>
                     </div>
                     <div class="col-md-6">

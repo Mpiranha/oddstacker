@@ -103,9 +103,11 @@ Route::get('/admin/countries', 'CountryController@countries')->name('admin.count
 Route::post('/admin/countries/create', 'CountryController@create')->name('country.create');
 Route::delete('/admin/countries/delete/{id}', 'CountryController@delete')->name('country.delete');
 
-Route::get('/admin/leagues', function(){
-    return view('admin.leagues');
-});
+// League
+Route::get('/admin/leagues', 'LeagueController@league')->name('admin.league');
+Route::post('/admin/leagues', 'LeagueController@create')->name('league.create');
+Route::delete('/admin/leagues/delete/{id}', 'LeagueController@delete')->name('league.delete');
+
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
