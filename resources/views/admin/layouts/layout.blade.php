@@ -52,6 +52,12 @@
                         <p>Users</p>
                     </a>
                 </li>
+                <li class="{{Request::is('admin/predictions*') ? "active" : ""  }}">
+                    <a href="{{ route('admin.prediction') }}">
+                        <i class="fa fa-lightbulb-o"></i>
+                        <p>Predictions</p>
+                    </a>
+                </li>
                 <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
                     <a href="/admin/countries">
                         <i class="fa fa-flag"></i>
@@ -69,6 +75,7 @@
                         <i class="fa fa-flag-checkered"></i>
                         <p>Teams</p>
                     </a>
+                </li>
                 </li>
                 <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
                     <a href="/admin/countries">

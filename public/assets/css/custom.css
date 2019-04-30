@@ -1,3 +1,6 @@
 .cursor {
   cursor: pointer;
 }
+.ml-5 {
+  margin-left: 3%;
+}

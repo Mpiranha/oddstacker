@@ -118,6 +118,10 @@ Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.creat
 Route::get('/admin/teams', 'TeamController@teams')->name('admin.teams');
 Route::delete('/admin/teams/delete/{id}', 'TeamController@delete')->name('team.delete');
 
+// Predictions
+Route::get('/admin/predictions', 'PredictionController@predictions')->name('admin.prediction');
+Route::get('/admin/predictions/view/{name}/{id}', 'PredictionController@view')->name('prediction.view');
+
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
