@@ -17,7 +17,7 @@ class PredictionController extends Controller
 
     public function view($name, $id) {
         $name = strtolower($name);
-        $sport = Sport::where('name',$name)->where('id', $id)->first();
+        $sport = (new Sport())->sport_exists($name, $id);
         if (is_null($sport)) {
             return back();
         }
@@ -25,6 +25,7 @@ class PredictionController extends Controller
         return view('admin.predictions.view', [
             'predictions' => $predictions,
             'sport_name' => $name,
+            'sport_id' => $id
         ]);
     }
 
@@ -37,7 +38,20 @@ class PredictionController extends Controller
         }
     }
 
-    public function create(Request $request) {
-        return $request->all();
+    public function create(Request $request, $sport_name, $sport_id) {
+        $sport = (new Sport())->sport_exists($sport_name, $sport_id);
+        if (is_null($sport)) {
+            return back()->with('error', 'not found');
+        }
+        $this->validate($request, [
+            'name' => 'required',
+            'alias' => 'required',
+        ]);
+        Prediction::create([
+            'name' => $request->name,
+            'alias' => $request->alias,
+            'sport_id' => $sport_id,
+        ]);
+        return back()->with('success', 'Added successfully');
     }
 }

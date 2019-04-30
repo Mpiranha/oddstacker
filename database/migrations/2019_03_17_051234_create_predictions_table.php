@@ -17,8 +17,8 @@ class CreatePredictionsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('alias')->nullable();
-            $table->integer('sport_id')
-                ->references('id')->on('sports')->onDelete('cascade');
+            $table->integer('sport_id')->unsigned();
+            $table->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -79,7 +79,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('prediction.create') }}" method="POST">
+                <form action="{{ route('prediction.create', [$sport_name, $sport_id]) }}" method="POST">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="form-group">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="form-group">
                             <label>Alias</label>
-                            <input type="text" name="logo" class="form-control" placeholder="1x" value="">
+                            <input type="text" name="alias" class="form-control" placeholder="1x" value="">
                         </div>
                     </div>
                     <div class="modal-footer">

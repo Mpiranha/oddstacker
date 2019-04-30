@@ -121,7 +121,7 @@ Route::delete('/admin/teams/delete/{id}', 'TeamController@delete')->name('team.d
 // Predictions
 Route::get('/admin/predictions', 'PredictionController@predictions')->name('admin.prediction');
 Route::get( '/admin/predictions/{name}/view/{id}', 'PredictionController@view')->name('prediction.view');
-Route::post('/admin/predictions/create', 'PredictionController@create')->name('prediction.create');
+Route::post('/admin/predictions/create/{sport_name}/{sport_id}', 'PredictionController@create')->name('prediction.create');
 Route::delete('/admin/predictions/delete/{id}', 'PredictionController@delete')->name( 'prediction.delete');
 
 Route::get('/admin/events', function(){

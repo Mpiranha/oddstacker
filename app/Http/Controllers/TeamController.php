@@ -66,5 +66,4 @@ class TeamController extends Controller
             return back()->with('error', 'error must have occurred');
         }
     }
-
 }
