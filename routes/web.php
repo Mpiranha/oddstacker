@@ -123,8 +123,8 @@ Route::get('/admin/predictions', 'PredictionController@predictions')->name('admi
 Route::get( '/admin/predictions/{name}/view/{id}', 'PredictionController@view')->name('prediction.view');
 Route::post('/admin/predictions/create/{sport_name}/{sport_id}', 'PredictionController@create')->name('prediction.create');
 Route::delete('/admin/predictions/delete/{id}', 'PredictionController@delete')->name('prediction.delete');
-Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit.view');
-Route::post('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit');
+Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit');
+Route::post('/admin/predictions/update/{id}', 'PredictionController@update')->name('prediction.update');
 
 Route::get('/admin/events', function(){
     return view('admin.events');

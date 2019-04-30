@@ -54,7 +54,7 @@
                                                     </button>
                                                 </form>
                                             <span>
-                                            <a href="{{route('prediction.edit.view', [$prediction->id])}}" style="color:black">
+                                            <a href="{{route('prediction.edit', [$prediction->id])}}" style="color:black">
                                                 <i class="fa fa-edit"></i></span>
                                               </a>
                                         </td>

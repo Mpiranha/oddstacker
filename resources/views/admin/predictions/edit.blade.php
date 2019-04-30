@@ -12,7 +12,7 @@
                           <div class="modal-header">
                               <h4 class="modal-title" id="exampleModalLongTitle">Edit Field</h4>
                           </div>
-                          <form action="{{ route('prediction.edit', [$id]) }}" method="POST">
+                          <form action="{{ route('prediction.update', [$id]) }}" method="POST">
                               {{ csrf_field() }}
                               <div class="modal-body">
                                   <div class="form-group">

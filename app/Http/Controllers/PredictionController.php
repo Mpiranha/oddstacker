@@ -41,6 +41,23 @@ class PredictionController extends Controller
         }
     }
 
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'name' => 'required',
+            'alias' => 'required',
+        ]);
+        try {
+            $prediction = Prediction::findorfail($id);
+            $prediction->update([
+                'name' => $request->name,
+                'alias' => $request->alias,
+            ]);
+            return back()->with('success', 'Updated successfully');
+        } catch (\Throwable $th) {
+            return back()->with('error', 'error must have occurred');
+        }
+    }
+
     public function delete($id) {
         try {
             (new Prediction())->findorfail($id)->delete();
