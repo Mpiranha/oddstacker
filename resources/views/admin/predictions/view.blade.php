@@ -30,7 +30,7 @@
                                 @foreach ($predictions as $prediction)
                                     <tr>
                                         <td class="text-center">{{ ++$count }}</td>
-                                        <td class="text-center">{{ $prediction->name }}</td>
+                                        <td class="text-center">{{ toUpperCase($prediction->name)}}</td>
                                         <td class="text-center">{{ $prediction->alias }}</td>
                                     <td class="text-center">{{$sport_name}}</td>
                                         <td class="text-center">
