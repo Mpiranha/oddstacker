@@ -29,6 +29,18 @@ class PredictionController extends Controller
         ]);
     }
 
+    public function edit($id) {
+        try {
+            $prediction = Prediction::findorfail($id);
+            return view('admin.predictions.edit', [
+                'prediction' => $prediction,
+                'id' => $id,
+            ]);
+        } catch (\Exception $e) {
+            return back()->with('error', 'not Found');
+        }
+    }
+
     public function delete($id) {
         try {
             (new Prediction())->findorfail($id)->delete();

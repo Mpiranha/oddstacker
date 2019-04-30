@@ -53,7 +53,10 @@
                                                     {{ csrf_field() }}
                                                     </button>
                                                 </form>
-                                            <span><i class="fa fa-edit"></i></span>
+                                            <span>
+                                            <a href="{{route('prediction.edit.view', [$prediction->id])}}" style="color:black">
+                                                <i class="fa fa-edit"></i></span>
+                                              </a>
                                         </td>
                                     </tr>
                                 @endforeach
