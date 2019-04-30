@@ -222,42 +222,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLongTitle">ADD NEW TEAM</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="{{ route('team.create') }}" method="POST">
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Team Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Arsenal">
-                    </div>
-                    <div class="form-group">
-                        <label>Team Logo</label>
-                        <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Team Type</label>
-                        <select class="form-control" name="type">
-                            <option value="country">Country</option>
-                            <option value="club" selected>Team</option>
-                            <option value="single" selected>Single</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">ADD TEAM</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 </body>
 
     <!--   Core JS Files   -->

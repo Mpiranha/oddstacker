@@ -113,9 +113,12 @@ Route::get('/admin/sports', 'SportsController@sports')->name('admin.sport');
 Route::post('/admin/sports', 'SportsController@create')->name('sport.create');
 Route::delete('/admin/sports/delete/{id}', 'SportsController@delete')->name('sport.delete');
 
+// Team
+Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.create');
+Route::get('/admin/teams', 'TeamController@teams')->name('admin.teams');
+Route::delete('/admin/teams/delete/{id}', 'TeamController@delete')->name('team.delete');
+
 Route::get('/admin/events', function(){
     return view('admin.events');
 });
-Route::get('/admin/teams', 'AdminPagesController@teams')->name('admin.teams');
 
-Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.create');
