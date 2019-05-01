@@ -14,4 +14,16 @@ class AdminPagesController extends Controller
         ]);
     }
 
+    public function revoke($id, $revoke = false) {
+        $role  = $revoke ? 'user' : 'admin';
+        try {
+            $user = User::findorfail($id);
+            $user->update([
+                'role' => $role,
+            ]);
+            return back();
+        } catch (\Exception $e) {
+            return back()->with('error', 'An error occurred');
+        }
+    }
 }

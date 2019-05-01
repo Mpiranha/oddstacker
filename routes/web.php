@@ -97,6 +97,7 @@ Route::get('/admin', function(){
 });
 
 Route::get('/admin/users', 'AdminPagesController@users')->name('admin.users');
+Route::put('/admin/users/revoke/{id}/{revoke?}', 'AdminPagesController@revoke')->name('user.revoke');
 
 // Countrty
 Route::get('/admin/countries', 'CountryController@countries')->name('admin.countries');
