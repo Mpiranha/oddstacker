@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="header">
                     <div class="col-md-12">
-                        <h3 class="text-center">Sports</h3>
+                        <h3 class="text-center">Country</h3>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
@@ -22,20 +22,20 @@
                                 @php
                                     $count = 0;
                                 @endphp
-                                @foreach ($sports as $sport)
+                                @foreach ($countries as $country)
                                     <tr>
                                         <td class="text-center">{{ ++$count }}</td>
                                         <td class="text-center">
-                                        <a href="{{route('prediction.view', [$sport->name, $sport->id])}}">{{$sport->name}}</a> 
+                                        <a href="{{route('league.view', [$country->name, $country->id])}}">{{$country->name}}</a> 
                                         </td>
                                         <td class="text-center">
-                                            <img src="{{ $sport->image }}" height="30px" alt="{{ $sport->name }} image"/>
+                                            <img src="{{ $country->logo }}" height="30px" alt="{{ $country->name }} image"/>
                                         </td>
                                     </tr>
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100%" class="text-center">No set up yet </td>
+                                    <td colspan="100@foreach ($leagues as $league)%" class="text-center">Not set up yet </td>
                                 </tr>
                             @endif
                         </tbody>

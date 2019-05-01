@@ -83,7 +83,7 @@
                         <p>Competitions</p>
                     </a>
                 </li>
-                <li class="{{Request::is('admin/leagues') ? "active" : ""  }}">
+                <li class="{{Request::is('admin/leagues*') ? "active" : ""  }}">
                     <a href="/admin/leagues">
                         <i class="fa fa-trophy"></i>
                         <p>Leagues</p>

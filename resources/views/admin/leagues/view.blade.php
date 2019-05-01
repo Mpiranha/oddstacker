@@ -26,7 +26,9 @@
                                     <tr>
                                         <td class="text-center">{{ ++$count }}</td>
                                         <td class="text-center">
-                                        <a href="{{route('prediction.view', [$sport->name, $sport->id])}}">{{$sport->name}}</a> 
+                                        <a href="{{route('league.show', [$country_name, $country_id ,$sport->name, $sport->id])}}">
+                                            {{$sport->name}}
+                                        </a> 
                                         </td>
                                         <td class="text-center">
                                             <img src="{{ $sport->image }}" height="30px" alt="{{ $sport->name }} image"/>
@@ -35,7 +37,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100%" class="text-center">No set up yet </td>
+                                    <td colspan="100%" class="text-center">Not set up yet </td>
                                 </tr>
                             @endif
                         </tbody>

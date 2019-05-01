@@ -21,4 +21,9 @@ class Country extends Model
     {
         return $this->belongsToMany('App\Models\Sport');
     }
+
+    public function country_exists($country_name, $country_id)
+    {
+        return Country::where('name', $country_name)->where('id', $country_id)->first();
+    }
 }

@@ -9,16 +9,11 @@
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-info btn-fill" 
                             data-toggle="modal" data-target="#league-add">
-                            ADD LEAGUE
+                            ADD
                         </button>
                     </div>
                     <div class="col-md-6">
-                        {{-- <div class="form-group">
-                            <form action="" method="GET">
-                                <input type="text" class="form-control" name="user" 
-                                placeholder="Search" value="{{ \request('user') }}">
-                            </form>
-                        </div> --}}
+                    <h4 style="margin:0">{{toUpperCase($country_name)}}-{{$sport_name}}</h4>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
@@ -72,7 +67,7 @@
                             @endif
                         </tbody>
                     </table>
-                    {{ $leagues->links() }}
+                    {{-- {{ $leagues->links() }} --}}
                 </div>
             </div>
         </div>
@@ -88,7 +83,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('league.create') }}" method="POST">
+                <form action="{{ route('league.create', [$country_id, $sport_id]) }}" method="POST">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="form-group">
@@ -98,22 +93,6 @@
                         <div class="form-group">
                             <label>League Logo</label>
                             <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Country</label>
-                            <select class="form-control" name="country">
-                                @foreach ($countries as $country)
-                            <option value="{{$country->id}}">{{$country->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="type">Sports</label>
-                            <select class="form-control" name="sport">
-                                @foreach ($sports as $sport)
-                            <option value="{{$sport->id}}">{{$sport->name}}</option>
-                                @endforeach
-                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">

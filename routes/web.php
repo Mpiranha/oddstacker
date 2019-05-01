@@ -105,7 +105,9 @@ Route::delete('/admin/countries/delete/{id}', 'CountryController@delete')->name(
 
 // League
 Route::get('/admin/leagues', 'LeagueController@league')->name('admin.league');
-Route::post('/admin/leagues', 'LeagueController@create')->name('league.create');
+Route::get('/admin/leagues/{name}/view/{id}', 'LeagueController@view')->name('league.view');
+Route::get('/admin/leagues/{country}/{country_id}/{sport}/view/{id}', 'LeagueController@sport')->name('league.show');
+Route::post( '/admin/leagues/{country_id}/{sport_id}', 'LeagueController@create')->name('league.create');
 Route::delete('/admin/leagues/delete/{id}', 'LeagueController@delete')->name('league.delete');
 
 //sport
