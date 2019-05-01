@@ -34,7 +34,7 @@
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="#" class="simple-text">
                     ODDSTACKER
                 </a>
             </div>

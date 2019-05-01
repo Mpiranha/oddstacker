@@ -16,7 +16,8 @@ class CreateCompetitonsTable extends Migration
         Schema::create('competitions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('sport_id')->references('id')->on('sports');
+            $table->integer('sport_id')->unsigned();
+            $table->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
             $table->enum('shows', [0, 1])->default(1)->comment('1 - shows, 0 not shows');
             $table->text('teams')->nullable();
             $table->timestamps();
