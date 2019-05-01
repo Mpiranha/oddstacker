@@ -89,7 +89,7 @@
                         <p>Leagues</p>
                     </a>
                 </li>
-                <li class="{{Request::is('admin/events') ? "active" : ""  }}">
+                <li class="{{Request::is('admin/events*') ? "active" : ""  }}">
                     <a href="/admin/events">
                         <i class="fa fa-gamepad"></i>
                         <p>Events</p>
