@@ -165,6 +165,8 @@
             </div>
         </nav>
         <div class="content" id="app">
+            @include('admin.partials.error')
+            @include('admin.partials.success')
             @yield('content')
         </div>
         <footer class="footer">
