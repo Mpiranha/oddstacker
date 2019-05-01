@@ -18,7 +18,7 @@
                             <th class="text-center">Image</th>
                         </thead>
                         <tbody>
-                            @if (true)
+                            @if (count($sports) > 0)
                                 @php
                                     $count = 0;
                                 @endphp

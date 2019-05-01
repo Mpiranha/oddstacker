@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="header">
                     <div class="col-md-12">
-                        <h3 class="text-center">Country</h3>
+                        <h3 class="text-center">League</h3>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
@@ -18,18 +18,19 @@
                             <th class="text-center">Image</th>
                         </thead>
                         <tbody>
-                            @if (count($countries) > 0)
+                            @if (count($leagues) > 0)
                                 @php
                                     $count = 0;
                                 @endphp
-                                @foreach ($countries as $country)
+                                @foreach ($leagues as $league)
                                     <tr>
                                         <td class="text-center">{{ ++$count }}</td>
                                         <td class="text-center">
-                                        <a href="{{route('league.view', [$country->name, $country->id])}}">{{$country->name}}</a> 
+                                        <a href="{{route('team.show', [$country_name, $country_id ,$sport_name, $sport_id,
+                                        $league->name, $league->id])}}">{{$league->name}}</a>
                                         </td>
                                         <td class="text-center">
-                                            <img src="{{ $country->logo }}" height="30px" alt="{{ $country->name }} image"/>
+                                            <img src="{{ $league->logo }}" height="30px" alt="{{ $league->name }} image"/>
                                         </td>
                                     </tr>
                                 @endforeach

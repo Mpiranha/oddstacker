@@ -70,7 +70,7 @@
                         <p>Sports</p>
                     </a>
                 </li>
-                <li class="{{Request::is('admin/teams') ? "active" : ""  }}">
+                <li class="{{Request::is('admin/teams*') ? "active" : ""  }}">
                     <a href="{{ route('admin.teams') }}">
                         <i class="fa fa-flag-checkered"></i>
                         <p>Teams</p>

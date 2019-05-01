@@ -116,7 +116,10 @@ Route::post('/admin/sports', 'SportsController@create')->name('sport.create');
 Route::delete('/admin/sports/delete/{id}', 'SportsController@delete')->name('sport.delete');
 
 // Team
-Route::post('admin/teams/create', 'TeamController@addNewTeam')->name('team.create');
+Route::post('admin/teams/create/{country_id}/{sport_id}/{league_id}', 'TeamController@addNewTeam')->name('team.create');
+Route::get('/admin/teams/{name}/view/{id}', 'TeamController@view')->name('team.view');
+Route::get('/admin/teams/{country}/{country_id}/{sport}/view/{id}', 'TeamController@league')->name('team.league');
+Route::get('/admin/teams/{country}/{country_id}/{sport}/{sport_id}/{league_name}/{league_id}', 'TeamController@getTeams')->name('team.show');
 Route::get('/admin/teams', 'TeamController@teams')->name('admin.teams');
 Route::delete('/admin/teams/delete/{id}', 'TeamController@delete')->name('team.delete');
 

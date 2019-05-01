@@ -75,7 +75,6 @@
                             @endif
                         </tbody>
                     </table>
-                    {{ $teams->links() }}
                 </div>
             </div>
         </div>
@@ -92,7 +91,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('team.create') }}" method="POST">
+            <form action="{{ route('team.create', [$country_id, $sport_id, $league_id]) }}" method="POST">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
@@ -109,15 +108,6 @@
                             <option value="country">Country</option>
                             <option value="club" selected>Team</option>
                             <option value="single" selected>Single</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="type">League</label>
-                        <select class="form-control" name="league">
-                            @foreach ($leagues as $league)
-                            <option value="{{$league->id}}">{{$league->name}}</option>
-                            @endforeach
                         </select>
                     </div>
                 </div>

@@ -26,7 +26,7 @@
                                     <tr>
                                         <td class="text-center">{{ ++$count }}</td>
                                         <td class="text-center">
-                                        <a href="{{route('league.view', [$country->name, $country->id])}}">{{$country->name}}</a> 
+                                        <a href="{{route('team.view', [$country->name, $country->id])}}">{{$country->name}}</a> 
                                         </td>
                                         <td class="text-center">
                                             <img src="{{ $country->logo }}" height="30px" alt="{{ $country->name }} image"/>
