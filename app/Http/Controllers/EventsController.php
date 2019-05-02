@@ -42,7 +42,7 @@ class EventsController extends Controller
             return back();
         }
         $compt = Competition::where('country_id', $country_id)->where('sport_id', $sport_id)->get();
-        return view('admin.events.league', [
+        return view('admin.events.compt', [
             'competition' => $compt,
             'country_name' => $country,
             'country_id' => $country_id,

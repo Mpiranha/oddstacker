@@ -89,31 +89,33 @@
     </div>
 </div>
 @endsection
-    <div class="modal fade" id="addsport" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalLongTitle">ADD SPORT</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ route('sport.create') }}" method="POST">
-                    {{ csrf_field() }}
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Sport Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="soccer">
-                        </div>
-                        <div class="form-group">
-                            <label>Sport Logo</label>
-                            <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">ADD SPORT</button>
-                    </div>
-                </form>
+@section('out')
+<div class="modal fade" id="addsport" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle">ADD SPORT</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form action="{{ route('sport.create') }}" method="POST">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Sport Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="soccer">
+                    </div>
+                    <div class="form-group">
+                        <label>Sport Logo</label>
+                        <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">ADD SPORT</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
+@endsection

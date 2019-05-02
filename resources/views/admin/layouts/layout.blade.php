@@ -202,6 +202,8 @@
         </footer>
     </div>
 </div>
+
+@yield('out')
 <div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -233,18 +235,18 @@
 
 </body>
 
-    <!--   Core JS Files   -->
+<!--   Core JS Files   -->
     <script src="/js/app.js"></script>
     <script src="/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-
+    
 	<!--  Charts Plugin -->
 	<script src="/assets/js/chartist.min.js"></script>
-
+    
     <!--  Notifications Plugin    -->
     <script src="/assets/js/bootstrap-notify.js"></script>
-
-
+    
+    
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="/assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 

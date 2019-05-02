@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="header">
                     <div class="col-md-12">
-                        <h3 class="text-center">Events</h3>
+                        <h3 class="text-center black">Events</h3>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
