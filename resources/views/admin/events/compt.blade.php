@@ -21,7 +21,7 @@
                                 @foreach ($competition as $compt)
                                     <tr>
                                         <td class="text-center">
-                                        <a href="{{route('event.compt')}}">{{$compt->name}}</a>
+                                        <a href="{{route('event.compt', [$compt->id])}}">{{$compt->name}}</a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -51,7 +51,15 @@ class EventsController extends Controller
         ]);
     }
 
-    public function createView() {
-      return view('admin.events.create-view');
+    public function createView($id) {
+      try {
+        $compt = Competition::findorfail($id);
+        return view('admin.events.create-view',[
+          'competition' => $compt,
+
+        ]);
+      } catch (\Exception $e) {
+        return back()->with('error', $e);
+      }
     }
 }

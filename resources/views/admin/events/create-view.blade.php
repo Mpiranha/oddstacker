@@ -5,10 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="header">
-                    
-                </div>
-                <event-create></event-create>
+                <event-create :competition="{{$competition}}"></event-create>
             </div>
         </div>
     </div>
