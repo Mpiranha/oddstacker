@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\Sport;
 use App\Models\League;
+use App\Models\Competition;
 
 class EventsController extends Controller
 {
@@ -40,9 +41,9 @@ class EventsController extends Controller
         if (is_null($sport)) {
             return back();
         }
-        $leagues = League::where('country_id', $country_id)->where('sport_id', $sport_id)->get();
+        $compt = Competition::where('country_id', $country_id)->where('sport_id', $sport_id)->get();
         return view('admin.events.league', [
-            'leagues' => $leagues,
+            'competition' => $compt,
             'country_name' => $country,
             'country_id' => $country_id,
             'sport_name' => $sport_name,
