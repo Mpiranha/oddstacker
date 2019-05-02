@@ -77,9 +77,9 @@
                     </a>
                 </li>
                 </li>
-                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
-                    <a href="/admin/countries">
-                        <i class="fa fa-trophy"></i>
+                <li class="{{Request::is('admin/competition*') ? "active" : ""  }}">
+                    <a href="/admin/competition">
+                        <i class="fa fa-bicycle"></i>
                         <p>Competitions</p>
                     </a>
                 </li>

@@ -136,3 +136,10 @@ Route::get('/admin/events', 'EventsController@index')->name('event.index');
 Route::get('/admin/events/view', 'EventsController@view')->name('event.view');
 Route::get('/admin/events/{country}/view/{id}', 'EventsController@sport')->name('event.sport');
 Route::get('/admin/events/{country}/{country_id}/{sport}/view/{id}', 'EventsController@league')->name('event.league');
+
+// Competitions
+Route::get('/admin/competition', 'CompetitionsController@index')->name('compt.index');
+Route::get('/admin/competition/country/{sport_id}', 'CompetitionsController@view')->name('compt.view');
+Route::get('/admin/competition/show/{country_name}/{country_id}/{sport_id}', 'CompetitionsController@show')->name('compt.show');
+Route::post( '/admin/competition/create/{country_id}/{sport_id}', 'CompetitionsController@create')->name('compt.create');
+Route::delete('/admin/competition/delete/{id}', 'CompetitionsController@delete')->name('compt.delete');
