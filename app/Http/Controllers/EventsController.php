@@ -50,4 +50,8 @@ class EventsController extends Controller
             'sport_id' => $sport_id,
         ]);
     }
+
+    public function createView() {
+      return view('admin.events.create-view');
+    }
 }

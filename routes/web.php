@@ -136,6 +136,7 @@ Route::get('/admin/events', 'EventsController@index')->name('event.index');
 Route::get('/admin/events/view', 'EventsController@view')->name('event.view');
 Route::get('/admin/events/{country}/view/{id}', 'EventsController@sport')->name('event.sport');
 Route::get('/admin/events/{country}/{country_id}/{sport}/view/{id}', 'EventsController@league')->name('event.league');
+Route::get('/admin/events/competition', 'EventsController@createView')->name('event.compt');
 
 // Competitions
 Route::get('/admin/competition', 'CompetitionsController@index')->name('compt.index');

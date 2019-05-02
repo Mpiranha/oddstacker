@@ -29,7 +29,7 @@
 </head>
 <body>
 
-<div class="wrapper">
+<div class="wrapper" id="app">
     <div class="sidebar" data-color="purple" data-image="/assets/img/sidebar-5.jpg">
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
     	<div class="sidebar-wrapper">
@@ -164,7 +164,7 @@
                 </div>
             </div>
         </nav>
-        <div class="content" id="app">
+        <div class="content" id="">
             @include('admin.partials.error')
             @include('admin.partials.success')
             @yield('content')
@@ -233,6 +233,7 @@
 </body>
 
     <!--   Core JS Files   -->
+    <script src="/js/app.js"></script>
     <script src="/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
 
