@@ -84,6 +84,7 @@ class EventsController extends Controller
           'teamB_id' => 'required',
           'teamA_id' => 'required',
           'competition_id' => 'required',
+          'event_schedule' => 'required',
       ]);
 
       if ($validator->fails()) {
@@ -92,10 +93,13 @@ class EventsController extends Controller
               'errors' => $validator->errors()
           ]);
       }
+      $time = $request->event_schedule;
+      $time = date('Y-m-d H:i:s ', strtotime("$time"));
       Event::create([
         'teamA_id' => $request->teamA_id,
         'teamB_id' => $request->teamB_id,
-        'competition_id' => $request->competition_id
+        'competition_id' => $request->competition_id,
+        'event_schedule' => $time
       ]);
 
       return response()->json([
