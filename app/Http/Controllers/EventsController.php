@@ -58,11 +58,14 @@ class EventsController extends Controller
       try {
         $compt = Competition::findorfail($id);
         $countries = Country::all();
+        $events = Event::where('competition_id',$id)->orderBy('created_at', 'desc')->get();
         $leagues = League::where('sport_id', $compt->sport_id)->get();
+
         return view('admin.events.create-view',[
           'competition' => $compt,
           'countries' => $countries,
-          'leagues' => $leagues
+          'leagues' => $leagues,
+          'events' => $events
         ]);
       } catch (\Exception $e) {
         return back()->with('error', $e);
