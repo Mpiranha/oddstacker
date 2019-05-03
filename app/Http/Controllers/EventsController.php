@@ -7,6 +7,9 @@ use App\Models\Country;
 use App\Models\Sport;
 use App\Models\League;
 use App\Models\Competition;
+use App\Models\Team;
+use App\Models\Event;
+use Validator;
 
 class EventsController extends Controller
 {
@@ -54,12 +57,47 @@ class EventsController extends Controller
     public function createView($id) {
       try {
         $compt = Competition::findorfail($id);
+        $countries = Country::all();
+        $leagues = League::where('sport_id', $compt->sport_id)->get();
         return view('admin.events.create-view',[
           'competition' => $compt,
-
+          'countries' => $countries,
+          'leagues' => $leagues
         ]);
       } catch (\Exception $e) {
         return back()->with('error', $e);
       }
+    }
+
+    public function getTeams($country_id, $league_id) {
+      $teams = Team::where('country_id', $country_id)->where('league_id', $league_id)->get();
+      return response()->json([
+        'teams' => $teams
+      ]);
+    }
+
+    public function createEvent(Request $request) {
+      $validator = Validator::make($request->all(), [
+          'teamB_id' => 'required',
+          'teamA_id' => 'required',
+          'competition_id' => 'required',
+      ]);
+
+      if ($validator->fails()) {
+          return response()->json([
+              'status' => false,
+              'errors' => $validator->errors()
+          ]);
+      }
+      Event::create([
+        'teamA_id' => $request->teamA_id,
+        'teamB_id' => $request->teamB_id,
+        'competition_id' => $request->competition_id
+      ]);
+
+      return response()->json([
+        'status' => true,
+        'message' => 'created Successfully',
+      ]);
     }
 }

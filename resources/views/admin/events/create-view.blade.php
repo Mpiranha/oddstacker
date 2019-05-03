@@ -11,3 +11,6 @@
     </div>
 </div>
 @endsection
+@section('out')
+<settings-modal :countries="{{$countries}}" :leagues="{{$leagues}}"></settings-modal>
+@endsection

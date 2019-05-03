@@ -9,6 +9,11 @@ import { store } from './store/store';
 require('./bootstrap');
 
 import Vue from 'vue';
+ import Datetime from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
+
+Vue.use(Datetime);
 
 /**
  * The following block of code may be used to automatically register your
@@ -41,6 +46,8 @@ Vue.component('bank-details', require('./components/BankDetailBox.vue').default)
 Vue.component('account-details', require('./components/AccountDetailBox.vue').default);
 Vue.component('search-match-tab', require('./components/searchMatchTab.vue').default);
 Vue.component('event-create', require('./components/admin/events/createView.vue').default);
+Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
+Vue.component('datetime', Datetime.default);
 
 
 const app = new Vue({

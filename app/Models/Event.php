@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    protected $fillable = ['teamA_id', 'teamB_id', 'competition_id' ];
     public $with = ['teamA', 'teamB'];
 
     public function competition(){

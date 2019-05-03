@@ -29,8 +29,9 @@
     <link href="/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 <body>
+<div id="app">
 
-<div class="wrapper" id="app">
+<div class="wrapper" id="">
     <div class="sidebar" data-color="purple" data-image="/assets/img/sidebar-5.jpg">
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
     	<div class="sidebar-wrapper">
@@ -231,6 +232,7 @@
             </form>
         </div>
     </div>
+</div>
 </div>
 
 </body>

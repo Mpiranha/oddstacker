@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Event
+Route::get('/teams/{country_id}/{league_id}', 'EventsController@getTeams');
+Route::post('/event/create', 'EventsController@createEvent');
