@@ -91,19 +91,21 @@ export default {
                 alert('Team A and Team B cannot be the same team');
                 return;
             }
+            let that = this;
             let time = new Date(this.event_time);
-            // time = time.getTime();
             const data = {
                 teamA_id: this.teamA,
                 teamB_id: this.teamB,
                 competition_id: this.competition.id,
                 event_schedule: time,
             }
-            console.log('===>>',data);
             axios.post('/api/event/create',
                 data,
             ).then((res) => {
-                console.log('===>', res.data);
+                alert('created Successfully');
+                that.teamA = null;
+                that.teamB = null;
+                that.event_time = null;
             }).catch((e) => {
                 console.log(e);
             });
