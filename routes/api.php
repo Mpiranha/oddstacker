@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Event
 Route::get('/teams/{country_id}/{league_id}', 'EventsController@getTeams');
 Route::post('/event/create', 'EventsController@createEvent');
+Route::delete( '/event/delete/{id}', 'EventsController@deleteEvent');

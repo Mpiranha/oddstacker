@@ -132,11 +132,13 @@ Route::delete('/admin/predictions/delete/{id}', 'PredictionController@delete')->
 Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit');
 Route::post('/admin/predictions/update/{id}', 'PredictionController@update')->name('prediction.update');
 
+//Event
 Route::get('/admin/events', 'EventsController@index')->name('event.index');
 Route::get('/admin/events/view', 'EventsController@view')->name('event.view');
 Route::get('/admin/events/{country}/view/{id}', 'EventsController@sport')->name('event.sport');
 Route::get('/admin/events/{country}/{country_id}/{sport}/view/{id}', 'EventsController@league')->name('event.league');
 Route::get('/admin/events/competition/{id}', 'EventsController@createView')->name('event.compt');
+Route::get('/admin/events/eventPage/{id}', 'EventsController@viewEventPage')->name('event.page');
 
 // Competitions
 Route::get('/admin/competition', 'CompetitionsController@index')->name('compt.index');

@@ -106,6 +106,7 @@ export default {
                 that.teamA = null;
                 that.teamB = null;
                 that.event_time = null;
+                location.reload();
             }).catch((e) => {
                 console.log(e);
             });

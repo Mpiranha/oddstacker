@@ -58,8 +58,10 @@ class EventsController extends Controller
       try {
         $compt = Competition::findorfail($id);
         $countries = Country::all();
-        $events = Event::where('competition_id',$id)->orderBy('created_at', 'desc')->get();
+        $events = Event::where('competition_id',$id)->orderBy('event_schedule', 'desc')->paginate(10);
+        // $events = Event::where('competition_id',$id)->orderBy('event_schedule', 'desc')->get();
         $leagues = League::where('sport_id', $compt->sport_id)->get();
+        // return $events[0]->created_at->diffForHumans();
 
         return view('admin.events.create-view',[
           'competition' => $compt,
@@ -106,5 +108,24 @@ class EventsController extends Controller
         'status' => true,
         'message' => 'created Successfully',
       ]);
+    }
+
+    public function deleteEvent($id) {
+      try {
+        (new Event())->findorfail($id)->delete();
+        return response()->json([
+          'status' => true,
+          'message' => 'Deleted successfully',
+        ]);
+      } catch (\Exception $e) {
+        return response()->json([
+          'status' => false,
+          'message' => 'An Error must have occurred try again',
+        ]);
+      }
+    }
+
+    public function viewEventPage($id) {
+      return $id;
     }
 }

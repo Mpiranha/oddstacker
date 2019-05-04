@@ -45,6 +45,7 @@ Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').d
 Vue.component('bank-details', require('./components/BankDetailBox.vue').default);
 Vue.component('account-details', require('./components/AccountDetailBox.vue').default);
 Vue.component('search-match-tab', require('./components/searchMatchTab.vue').default);
+Vue.component('event-show', require('./components/admin/events/show.vue').default);
 Vue.component('event-create', require('./components/admin/events/createView.vue').default);
 Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
 Vue.component('datetime', Datetime.default);
