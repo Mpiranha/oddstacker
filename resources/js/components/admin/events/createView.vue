@@ -158,11 +158,3 @@ export default {
     },
 }
 </script>
-
-<style>
-#event_time {
-
-}
-    
-</style>
-
