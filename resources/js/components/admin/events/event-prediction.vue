@@ -7,8 +7,8 @@
               <th class="">Alias</th>
               <th class="">Rating</th>
           </thead>
-          <tbody v-if="this.event_prediction.length > 0">
-              <tr v-for="(ft, i) in event_prediction" :key="i" :value="ft.id">
+          <tbody v-if="this.values.length > 0">
+              <tr v-for="(ft, i) in values" :key="i" :value="ft.id">
                   <td class="">
                     {{ft.prediction.name}}
                   </td>
@@ -39,7 +39,31 @@
 <script>
 import {EventBus} from '../../event-bus';
 export default {
-  props: ['event_prediction']
+  mounted() {
+    const that = this;
+    console.log('evevev', this.event_prediction);
+    this.values =  this.event_prediction
+    EventBus.$on('getEventPredictions', function (event_id) {
+      console.log('event_id-----',event_id);
+      axios.get(`/api/event/event_prediction/get/${event_id}`)
+      .then((res) => {
+        that.values = res.data
+      }).catch((e) => {
+        console.log('=-=-', e);
+      })
+    });
+  },
+  props: ['event_prediction'],
+  data() {
+    return {
+      values: []
+    }
+  },
+  watch: {
+    event_prediction(newVal, oldVal) {
+
+    }
+  },
 }
 </script>
 

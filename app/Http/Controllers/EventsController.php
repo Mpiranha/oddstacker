@@ -145,6 +145,10 @@ class EventsController extends Controller
       }
     }
 
+    public function eventPrediction($event_id) {
+      return $event_prediction = EventPrediction::where('event_id', $event_id)->with('prediction')->get();
+    }
+
     public function addPrediction(Request $request) {
       try {
         $event_prediction = (new EventPrediction())->eventPredictionExist($request->event_id, $request->prediction_id);
