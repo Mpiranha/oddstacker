@@ -192,4 +192,22 @@ class EventsController extends Controller
         ]);
       }
     }
+
+    public function rate(Request $request) {
+      try {
+        $event = EventPrediction::findorfail($request->id);
+        $event->update([
+          'rating' => $request->name
+        ]);
+        return response()->json([
+          'status' => true,
+          'rate' => $request->name,
+        ]);
+      } catch (\Throwable $th) {
+        return response()->json([
+          'status' => false,
+          'message' => 'An Error must have occurred'
+        ]);
+      }
+    }
 }

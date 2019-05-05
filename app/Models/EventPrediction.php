@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventPrediction extends Model
 {
-    protected $fillable = ['prediction_id', 'event_id'];
+    protected $fillable = ['prediction_id', 'event_id', 'rating'];
     public function event(){
         return $this->belongsTo('App\Models\Event');
     }
