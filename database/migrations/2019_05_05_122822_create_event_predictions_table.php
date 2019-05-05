@@ -17,7 +17,7 @@ class CreateEventPredictionsTable extends Migration
             $table->increments('id');
             $table->integer('event_id')->unsigned();
             $table->integer('prediction_id')->unsigned();
-
+            $table->enum('rating', ['undefined', 'unlikely', 'fifty', 'likely'])->default('undefined');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->foreign('prediction_id')->references('id')->on('predictions')->onDelete('cascade');
             $table->timestamps();

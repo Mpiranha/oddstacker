@@ -6,6 +6,7 @@
               <th class="">Name</th>
               <th class="">Alias</th>
               <th class="">Rating</th>
+              <th class="">Rated</th>
           </thead>
           <tbody v-if="this.values.length > 0">
               <tr v-for="(ft, i) in values" :key="i" :value="ft.id">
@@ -16,8 +17,14 @@
                     {{ft.prediction.alias}}
                   </td>
                   <td>
-                    
+                    <div>
+                      <i class="fa fa-star grey cursor scale" aria-hidden="true" title="Undefined"></i>
+                      <i class="fa fa-star red cursor scale" aria-hidden="true" title="UnLikely" ></i>
+                      <i class="fa fa-star blue cursor scale" aria-hidden="true" title="Fifty Fifty"></i>
+                      <i class="fa fa-star green cursor scale" aria-hidden="true" title="Likely"></i>
+                    </div>
                   </td>
+                  <div></div>
               </tr>
           </tbody>
           <tbody v-else>
