@@ -17,7 +17,6 @@
                           <th class="">Name</th>
                           <th class="">Alias</th>
                           <th class="text-center">Add</th>
-                          <!-- <th class="">has</th> -->
                       </thead>
                       <tbody v-if="this.predictions.length > 0">
                           <tr v-for="(ft, i) in predictions" :key="i" :value="ft.id">
@@ -36,7 +35,6 @@
                                   <span class="checkmark"></span>
                                 </label>
                               </td>
-                              <!-- <td></td> -->
                           </tr>
                       </tbody>
                       <tbody v-else>
@@ -56,7 +54,7 @@
 
 <script>
 
-// import {EventBus} from '../event-bus';
+import {EventBus} from '../../event-bus';
 export default {
   props: ['predictions', 'event_id', 'event_prediction'],
   mounted() {

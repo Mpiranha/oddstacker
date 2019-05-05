@@ -21,7 +21,9 @@
                     {{$event->teamB->name}}
                 </div>
             </div>
-            <div class="card mt-5" style="height:fit-content"></div>
+            <div class="card mt-5" style="height:fit-content">
+            <event-prediction :event_prediction="{{$event_prediction}}"></event-prediction>
+            </div>
 
         </div>
     </div>
