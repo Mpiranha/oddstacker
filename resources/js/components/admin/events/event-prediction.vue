@@ -44,7 +44,6 @@ export default {
     console.log('evevev', this.event_prediction);
     this.values =  this.event_prediction
     EventBus.$on('getEventPredictions', function (event_id) {
-      console.log('event_id-----',event_id);
       axios.get(`/api/event/event_prediction/get/${event_id}`)
       .then((res) => {
         that.values = res.data

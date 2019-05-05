@@ -97,7 +97,6 @@ export default {
         event_id: this.event_id
       }).
       then((res) => {
-        console.log('==-===', res)
         if (res.data.status) {
           EventBus.$emit('getEventPredictions', this.event_id);
         }
@@ -110,7 +109,6 @@ export default {
         prediction_id: id,
         event_id: this.event_id
       }).then((res) => {
-        console.log(res);
           EventBus.$emit('getEventPredictions', this.event_id);
       }).catch((e) => {
         console.log(e);
