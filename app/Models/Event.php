@@ -10,11 +10,10 @@ class Event extends Model
     public $with = ['teamA', 'teamB'];
 
     public function competition(){
-
+        return $this->belongsTo('App\Models\Competition');
     }
 
     public function sport(){
-
     }
 
     public function predictions(){

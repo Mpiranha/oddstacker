@@ -10,6 +10,8 @@ use App\Models\Competition;
 use App\Models\Team;
 use App\Models\Event;
 use Validator;
+use App\Models\Prediction;
+use App\Models\EventPrediction;
 
 class EventsController extends Controller
 {
@@ -59,9 +61,7 @@ class EventsController extends Controller
         $compt = Competition::findorfail($id);
         $countries = Country::all();
         $events = Event::where('competition_id',$id)->orderBy('event_schedule', 'desc')->paginate(10);
-        // $events = Event::where('competition_id',$id)->orderBy('event_schedule', 'desc')->get();
         $leagues = League::where('sport_id', $compt->sport_id)->get();
-        // return $events[0]->created_at->diffForHumans();
 
         return view('admin.events.create-view',[
           'competition' => $compt,
@@ -126,6 +126,66 @@ class EventsController extends Controller
     }
 
     public function viewEventPage($id) {
-      return $id;
+      try {
+        $event = Event::findorfail($id);
+        $competition = $event->competition;
+        $sport = $event->competition->sport;
+        $sport_id = $sport->id;
+        $event_prediction = EventPrediction::where('event_id', $event->id)->with('prediction')->get();
+        $predictions = Prediction::where('sport_id',$sport_id)->get();
+        return view('admin.events.event-page', [
+          'event' => $event,
+          'competition' => $competition,
+          'sport' => $sport,
+          'predictions' => $predictions,
+          'event_prediction' => $event_prediction
+        ]);
+      } catch (\Exception $e) {
+        return back();
+      }
+    }
+
+    public function addPrediction(Request $request) {
+      try {
+        $event_prediction = (new EventPrediction())->eventPredictionExist($request->event_id, $request->prediction_id);
+        if($event_prediction) {
+          return response()->json([
+            'status' => false,
+            'message' => 'already Added',
+          ]);  
+        }
+        EventPrediction::create([
+          'event_id' => $request->event_id,
+          'prediction_id' => $request->prediction_id,
+        ]);
+        return response()->json([
+          'status' => true,
+          'message' => 'Added successfully',
+        ]);
+      } catch (\Exception $e) {
+        return response()->json([
+          'status' => false,
+          'message' => 'An Error must have occurred try again',
+        ]);
+      }
+    }
+
+    public function deletePrediction(Request $request) {
+      try {
+        $event_prediction = (new EventPrediction())->eventPredictionExist($request->event_id, $request->prediction_id);
+        if(!$event_prediction) {
+          throw new \Exception();
+        }
+        $event_prediction->delete();
+        return response()->json([
+          'status' => true,
+          'message' => 'Deleted successfully',
+        ]);
+      } catch (\Exception $e) {
+        return response()->json([
+          'status' => false,
+          'message' => 'An Error must have occurred try again',
+        ]);
+      }
     }
 }

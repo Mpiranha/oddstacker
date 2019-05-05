@@ -49,6 +49,7 @@ Vue.component('event-show', require('./components/admin/events/show.vue').defaul
 Vue.component('event-create', require('./components/admin/events/createView.vue').default);
 Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
 Vue.component('datetime', Datetime.default);
+Vue.component('prediction-view', require('./components/admin/events/prediction-view.vue').default);
 
 
 const app = new Vue({

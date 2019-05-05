@@ -15,9 +15,11 @@ class CreateEventPredictionsTable extends Migration
     {
         Schema::create('event_predictions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('stock_id')->references('id')->on('stocks')->onDelete('cascade');
-            $table->integer('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->integer('prediction_id')->references('id')->on('predictions');
+            $table->integer('event_id')->unsigned();
+            $table->integer('prediction_id')->unsigned();
+
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('prediction_id')->references('id')->on('predictions')->onDelete('cascade');
             $table->timestamps();
         });
     }
