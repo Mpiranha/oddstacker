@@ -20,12 +20,12 @@
                     <tbody>
                         <tr>
                             <td class="text-center">
-                                <select v-model="country">
+                                <select v-model="country" class="form-control form-control-sm">
                                   <option v-for="(ft, i) in countries" :key="i" :value="ft.id">{{ft.name}}</option>
                                 </select>
                             </td>
                             <td class="text-center">
-                                <select v-model="league">
+                                <select v-model="league" class="form-control form-control-sm">
                                   <option v-for="(ft, i) in leagues" :key="i" :value="ft.id">{{ft.name}}</option>
                                 </select>
                             </td>

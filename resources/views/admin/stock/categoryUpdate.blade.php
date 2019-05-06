@@ -28,7 +28,7 @@
                               <div class="modal-body">
                                   <div class="form-group">
                                       <label>Odd</label>
-                                  <input type="number" name="odd" value="{{$stockCategory->odd}}" class="form-control" placeholder="odd">
+                                  <input type="text" name="odd" value="{{$stockCategory->odd}}" class="form-control" placeholder="odd">
                                   </div>
                                   <div class="form-group">
                                       <label>Boxes</label>

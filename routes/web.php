@@ -153,3 +153,4 @@ Route::get('/admin/stocks/category', 'StockController@category')->name('stock.ca
 Route::get('/admin/stocks/category/update/{id}', 'StockController@categoryEdit')->name('stock.category.update');
 Route::post('/admin/stocks/category/update/{id}', 'StockController@categoryUpdate')->name('stock.category.update');
 Route::get('/admin/stocks/type', 'StockController@type')->name('stock.types');
+Route::get('/admin/stocks/create-view', 'StockController@createView')->name('stock.create');

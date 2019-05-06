@@ -25,7 +25,7 @@
                                     <a href="{{route('stock.types')}}" class="black">Stock Types</a>
                                 </td>
                                 <td class="">
-                                    <a href="#" class="black">All Events</a>
+                                    <a href="{{route('stock.create')}}" class="black">Create Stock</a>
                                 </td>
                             </tr>
                         </tbody>

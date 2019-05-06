@@ -51,7 +51,7 @@ Vue.component('settings-modal', require('./components/modal/settings-modal.vue')
 Vue.component('datetime', Datetime.default);
 Vue.component('prediction-view', require('./components/admin/events/prediction-view.vue').default);
 Vue.component('event-prediction', require('./components/admin/events/event-prediction.vue').default);
-
+Vue.component('stock-index', require('./components/admin/stock/index.vue').default);
 
 const app = new Vue({
     store,

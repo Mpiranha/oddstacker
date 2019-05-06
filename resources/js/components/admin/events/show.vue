@@ -6,9 +6,9 @@
     <div class="content table-responsive table-full-width">
         <table class="table table-hover table-striped">
             <thead>
-                <th class="text-center">event</th>
-                <th class="text-center">Name</th>
-                <th class="text-center">Image</th>
+                <th class="text-center">Team A</th>
+                <th class="text-center">Team B</th>
+                <th class="text-center">Schedule</th>
                 <th class="text-center">Action</th>
             </thead>
             <tbody v-if="this.events_length">

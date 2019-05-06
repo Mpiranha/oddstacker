@@ -34,3 +34,16 @@
   -webkit-transform: scale(1.5); /* Safari */
   transform: scale(1.5);
 }
+
+.od-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex {
+  display: flex;
+}
+
+.justify-con-center {
+  justify-content: center
+}
