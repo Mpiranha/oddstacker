@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Country;
+use App\Models\Sport;
+use App\Models\League;
 
 class TeamsTableSeeder extends Seeder
 {
@@ -39,10 +42,18 @@ class TeamsTableSeeder extends Seeder
             ]
         ];
 
+
+        $country = Country::findOrFail(1);
+        $sport = Sport::findOrFail(1);
+        $league = League::findOrFail(1);
+
         foreach ($arr as $item) {
             DB::table('teams')->insert([
                 'name' => $item['name'],
                 'logo' => $item['logo'],
+                'league_id' => $league->id,
+                'sport_id' => $sport->id,
+                'country_id' => $country->id,
             ]);
         }
     }

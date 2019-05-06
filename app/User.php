@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password', 'tel', 'username', 'gender',
-        'country','state', 'referal'
+        'country','state', 'referal', 'role'
     ];
 
     /**
@@ -30,5 +30,13 @@ class User extends Authenticatable
 
     public function wallet(){
         return $this->hasOne('App\Models\Wallet');
+    }
+
+    public function referral() {
+        return $this->hasMany('App\Models\Referral');
+    }
+
+    public function exists($username) {
+        return User::where('username', $username)->first();
     }
 }

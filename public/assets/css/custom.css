@@ -1,0 +1,49 @@
+.cursor {
+  cursor: pointer;
+}
+.ml-5 {
+  margin-left: 3%;
+}
+
+.green {
+  color: #4cae4c;
+}
+
+.red {
+  color:#ac2925;
+}
+
+.black {
+  color: black;
+}
+
+.fit-content {
+  height:fit-content
+}
+
+.grey {
+  color: gray;
+}
+
+.blue {
+  color: blue;
+}
+
+.scale:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari */
+  transform: scale(1.5);
+}
+
+.od-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex {
+  display: flex;
+}
+
+.justify-con-center {
+  justify-content: center
+}

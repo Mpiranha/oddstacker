@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="/assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<title>ODDSTACKER ADMIN</title>
 
@@ -19,6 +20,7 @@
 
     <!--  Light Bootstrap Table core CSS    -->
     <link href="/assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+    <link href="/assets/css/custom.css" rel="stylesheet"/>
 
 
     <!--     Fonts and icons     -->
@@ -27,52 +29,78 @@
     <link href="/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 <body>
+<div id="app">
 
-<div class="wrapper">
+<div class="wrapper" id="">
     <div class="sidebar" data-color="purple" data-image="/assets/img/sidebar-5.jpg">
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="#" class="simple-text">
                     ODDSTACKER
                 </a>
             </div>
 
             <ul class="nav">
-                <li class="active">
+                <li class="{{Request::is('admin') ? "active" : ""  }}" >
                     <a href="dashboard.html">
                         <i class="fa fa-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/users">
+                <li class="{{Request::is('admin/users') ? "active" : ""  }}">
+                    <a href="{{ route('admin.users') }}">
                         <i class="fa fa-users"></i>
                         <p>Users</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/predictions*') ? "active" : ""  }}">
+                    <a href="{{ route('admin.prediction') }}">
+                        <i class="fa fa-lightbulb-o"></i>
+                        <p>Predictions</p>
+                    </a>
+                </li>
+                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
                     <a href="/admin/countries">
+                        <i class="fa fa-flag"></i>
+                        <p>Countries</p>
+                    </a>
+                </li>
+                <li class="{{Request::is('admin/sports') ? "active" : ""  }}">
+                    <a href="/admin/sports">
                         <i class="fa fa-globe"></i>
                         <p>Sports</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/teams*') ? "active" : ""  }}">
                     <a href="{{ route('admin.teams') }}">
                         <i class="fa fa-flag-checkered"></i>
                         <p>Teams</p>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/countries">
-                        <i class="fa fa-trophy"></i>
+                </li>
+                <li class="{{Request::is('admin/competition*') ? "active" : ""  }}">
+                    <a href="/admin/competition">
+                        <i class="fa fa-bicycle"></i>
                         <p>Competitions</p>
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::is('admin/leagues*') ? "active" : ""  }}">
+                    <a href="/admin/leagues">
+                        <i class="fa fa-trophy"></i>
+                        <p>Leagues</p>
+                    </a>
+                </li>
+                <li class="{{Request::is('admin/events*') ? "active" : ""  }}">
                     <a href="/admin/events">
                         <i class="fa fa-gamepad"></i>
                         <p>Events</p>
+                    </a>
+                </li>
+                <li class="{{Request::is('admin/stocks*') ? "active" : ""  }}">
+                    <a href="/admin/stocks">
+                        <i class="fa fa-stack-overflow"></i>
+                        <p>Stocks</p>
                     </a>
                 </li>
             </ul>
@@ -144,12 +172,14 @@
                 </div>
             </div>
         </nav>
-        <div class="content" id="app">
+        <div class="content" id="">
+            @include('admin.partials.error')
+            @include('admin.partials.success')
             @yield('content')
         </div>
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="pull-left">
+                {{-- <nav class="pull-left">
                     <ul>
                         <li>
                             <a href="#">
@@ -172,63 +202,59 @@
                             </a>
                         </li>
                     </ul>
-                </nav>
+                </nav> --}}
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
+                    &copy; {{date('Y')}}
             </div>
         </footer>
     </div>
 </div>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+@yield('out')
+<div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLongTitle">ADD NEW TEAM</h4>
+                <h4 class="modal-title" id="exampleModalLongTitle">ADD Country</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('team.create') }}" method="POST">
+            <form action="{{ route('country.create') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Team Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Arsenal">
+                        <label>Country Name</label>
+                        <input type="text" name="name" required class="form-control" placeholder="Nigeria">
                     </div>
                     <div class="form-group">
-                        <label>Team Logo</label>
-                        <input type="text" name="logo" class="form-control" placeholder="Image URL" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="type">Team Type</label>
-                        <select class="form-control" name="type">
-                            <option value="country">Country</option>
-                            <option value="club" selected>Team</option>
-                            <option value="single" selected>Single</option>
-                        </select>
+                        <label>Country Logo</label>
+                        <input type="url" name="logo" required class="form-control" placeholder="Image URL" value="">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">ADD TEAM</button>
+                    <button type="submit" class="btn btn-primary">ADD Country</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+</div>
+
 </body>
 
-    <!--   Core JS Files   -->
+<!--   Core JS Files   -->
+    <script src="/js/app.js"></script>
     <script src="/assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-
+    
 	<!--  Charts Plugin -->
 	<script src="/assets/js/chartist.min.js"></script>
-
+    
     <!--  Notifications Plugin    -->
     <script src="/assets/js/bootstrap-notify.js"></script>
-
-
+    
+    
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="/assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 

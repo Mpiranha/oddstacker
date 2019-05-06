@@ -14,9 +14,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = new User([
-            'username' => 'pensnaku',
-            'email' => 'pensnaku@gmail.com',
-            'tel' => '08066080762',
+            'username' => 'frankieme',
+            'email' => 'frankieetchy@gmail.com',
+            'tel' => '07069297676',
             'gender' => 'male',
             'country' => 'NG',
             'state' => 'Rivers State',

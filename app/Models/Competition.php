@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Competition extends Model
 {
+
+    protected $fillable = [
+        'name', 'country_id', 'sport_id'
+    ];
     public function teams($teamType = null)
     {
         $teams = [];
@@ -22,6 +26,6 @@ class Competition extends Model
 
     public function sport()
     {
-        return $this->belongsTo('App\Sport');
+        return $this->belongsTo('App\Models\Sport');
     }
 }

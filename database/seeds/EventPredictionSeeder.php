@@ -15,20 +15,16 @@ class EventPredictionSeeder extends Seeder
      */
     public function run()
     {
-        $stocks = Stock::all();
         $events = Event::all();
         $predictions = Prediction::all()->toArray();
 
-        foreach ($stocks as $stock) {
-            foreach ($events as $event) {
-                $eventPrediction = new EventPrediction([
-                    'stock_id' => $stock->id,
-                    'event_id' => $event->id,
-                    'prediction_id' => $predictions[array_rand($predictions)]['id']
-                ]);
+        foreach ($events as $event) {
+            $eventPrediction = new EventPrediction([
+                'event_id' => $event->id,
+                'prediction_id' => $predictions[array_rand($predictions)]['id']
+            ]);
 
-                $eventPrediction->save();
-            }
+            $eventPrediction->save();
         }
     }
 }

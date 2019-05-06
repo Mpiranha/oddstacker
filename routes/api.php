@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Event
+Route::get('/teams/{country_id}/{league_id}', 'EventsController@getTeams');
+Route::get('/event/event_prediction/get/{event_id}', 'EventsController@eventPrediction');
+Route::post( '/event/event_prediction/rate', 'EventsController@rate');
+Route::post('/event/create', 'EventsController@createEvent');
+Route::post('/event/prediction/add-value', 'EventsController@addPrediction');
+Route::post('/event/prediction/delete', 'EventsController@deletePrediction');
+Route::delete('/event/delete/{id}', 'EventsController@deleteEvent');
+Route::get('/stock/competitions/{country_id}/{sport_id}', 'StockController@competition');
+Route::get('/stock/events/{competition_id}', 'StockController@events');

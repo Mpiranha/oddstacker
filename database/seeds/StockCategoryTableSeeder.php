@@ -13,13 +13,13 @@ class StockCategoryTableSeeder extends Seeder
     public function run()
     {
         $arr = [
-            'premium', 'head to head', 'double up'
+            'premium', 'h-2-h', 'double'
         ];
 
         foreach($arr as $item){
             DB::table('stock_categories')->insert([
                 'name' => $item,
-                'num_of_events' => 10,
+                'boxes' => 10,
                 'odd' => 50
             ]);
         }

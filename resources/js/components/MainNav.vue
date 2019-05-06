@@ -83,7 +83,7 @@
             <i class="fas fa-comments"></i><a class="text-white" href="">FEED BACK</a>
           </li>
           <li class="list-group-item mb-10 text-light f-1-1">
-            <i class="fas fa-sign-out-alt"></i><a class="text-white" href="">Logout</a>
+            <i class="fas fa-sign-out-alt"></i><a class="text-white" href="/logout">Logout</a>
           </li>
         </ul>
       </div>

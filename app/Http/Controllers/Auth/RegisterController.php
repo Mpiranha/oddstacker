@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Events\AddNewUser;
 
 class RegisterController extends Controller
 {
@@ -69,11 +70,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $has_referal_code = $data['referalcode'];
+        
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
         $wallet = Wallet::create([
             'user_id' => $user->id
         ]);
+        $new_user = $user;
+        if ($has_referal_code) {
+            $referal_user_name = $has_referal_code;
+            event(new AddNewUser($referal_user_name, $new_user));
+        }
 
         return $user;
     }

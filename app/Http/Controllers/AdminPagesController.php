@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Models\Team;
 
 class AdminPagesController extends Controller
 {
@@ -15,10 +14,16 @@ class AdminPagesController extends Controller
         ]);
     }
 
-    public function teams(){
-        $teams = Team::paginate(20);
-        return view('admin.teams', [
-            'teams' => $teams
-        ]);
+    public function revoke($id, $revoke = false) {
+        $role  = $revoke ? 'user' : 'admin';
+        try {
+            $user = User::findorfail($id);
+            $user->update([
+                'role' => $role,
+            ]);
+            return back();
+        } catch (\Exception $e) {
+            return back()->with('error', 'An error occurred');
+        }
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompetitonsTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCompetitonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('competitions', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('sport_id')->references('id')->on('sports');
-            $table->enum('shows', [0, 1])->default(1)->comment('1 - shows, 0 not shows');
-            $table->text('teams')->nullable();
+            $table->string('name', 255);
+            $table->string('logo', 255)->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCompetitonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competitions');
+        Schema::dropIfExists('countries');
     }
 }
