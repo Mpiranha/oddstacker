@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             EventsTableSeeder::class,
             StockCategoryTableSeeder::class,
             StockTableSeeder::class,
-            EventPredictionSeeder::class
+            EventPredictionSeeder::class,
+            StockTypesTableSeeder::class
         ]);
     }
 }

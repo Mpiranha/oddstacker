@@ -146,3 +146,6 @@ Route::get('/admin/competition/country/{sport_id}', 'CompetitionsController@view
 Route::get('/admin/competition/show/{country_name}/{country_id}/{sport_id}', 'CompetitionsController@show')->name('compt.show');
 Route::post( '/admin/competition/create/{country_id}/{sport_id}', 'CompetitionsController@create')->name('compt.create');
 Route::delete('/admin/competition/delete/{id}', 'CompetitionsController@delete')->name('compt.delete');
+
+// stocks
+Route::get('/admin/stocks', 'StockController@index')->name('stock.index');

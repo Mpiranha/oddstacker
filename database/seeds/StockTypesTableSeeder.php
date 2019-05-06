@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class StockCategoryTableSeeder extends Seeder
+class StockTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,14 +13,12 @@ class StockCategoryTableSeeder extends Seeder
     public function run()
     {
         $arr = [
-            'premium', 'h-2-h', 'double'
+            'event', 'prediciton', 'multiple'
         ];
 
-        foreach($arr as $item){
-            DB::table('stock_categories')->insert([
+        foreach ($arr as $item) {
+            DB::table('stock_types')->insert([
                 'name' => $item,
-                'boxes' => 10,
-                'odd' => 50
             ]);
         }
     }
