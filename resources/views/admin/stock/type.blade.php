@@ -7,27 +7,22 @@
             <div class="card" style="height:fit-content">
                 <div class="header">
                     <div class="col-md-12">
-                        <h3 class="text-center black">Stock</h3>
+                        <h3 class="text-center black">Stock Types</h3>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                         <thead>
-                            <th class=""></th>
-                            <th class=""></th>
+                            <th class="text-center">Name</th>
                         </thead>
                         <tbody>
+                          @foreach ($types as $sc)
                             <tr>
-                                <td class="">
-                                    <a href="{{route('stock.category')}}" class="black">Stock Category</a> 
-                                </td>
-                                <td class="">
-                                    <a href="{{route('stock.types')}}" class="black">Stock Types</a>
-                                </td>
-                                <td class="">
-                                    <a href="#" class="black">All Events</a>
+                                <td class="text-center">
+                                  {{$sc->name}}
                                 </td>
                             </tr>
+                          @endforeach
                         </tbody>
                     </table>
                 </div>

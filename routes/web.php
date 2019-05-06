@@ -149,3 +149,7 @@ Route::delete('/admin/competition/delete/{id}', 'CompetitionsController@delete')
 
 // stocks
 Route::get('/admin/stocks', 'StockController@index')->name('stock.index');
+Route::get('/admin/stocks/category', 'StockController@category')->name('stock.category');
+Route::get('/admin/stocks/category/update/{id}', 'StockController@categoryEdit')->name('stock.category.update');
+Route::post('/admin/stocks/category/update/{id}', 'StockController@categoryUpdate')->name('stock.category.update');
+Route::get('/admin/stocks/type', 'StockController@type')->name('stock.types');

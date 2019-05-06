@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class StockCategory extends Model
 {
-    //
+    protected $fillable = ['odd', 'boxes'];
 }
