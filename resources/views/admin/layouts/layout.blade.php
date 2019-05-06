@@ -97,6 +97,12 @@
                         <p>Events</p>
                     </a>
                 </li>
+                <li class="{{Request::is('admin/stocks*') ? "active" : ""  }}">
+                    <a href="/admin/stocks">
+                        <i class="fa fa-stack-overflow"></i>
+                        <p>Stocks</p>
+                    </a>
+                </li>
             </ul>
     	</div>
     </div>

@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card" style="height:fit-content">
                 <div class="header">
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-info btn-fill" 

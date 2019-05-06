@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card" style="height:fit-content">
                 <div class="header">
                 </div>
                   <div class="modal-dialog modal-dialog-centered" role="document">
