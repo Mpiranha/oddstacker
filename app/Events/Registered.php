@@ -10,11 +10,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class AddNewUser
+class Registered
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $referal_user_name;
-    public $new_user;
+    public $user;
     /**
      * Create a new event instance.
      *
@@ -23,7 +23,7 @@ class AddNewUser
     public function __construct($referal_user_name, $new_user)
     {
         $this->referal_user_name = $referal_user_name;
-        $this->new_user = $new_user;
+        $this->user = $new_user;
     }
 
     /**

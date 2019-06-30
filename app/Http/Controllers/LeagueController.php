@@ -10,44 +10,26 @@ use App\Models\Sport;
 class LeagueController extends Controller
 {
     public function league() {
-        $countries = Country::paginate(20);
+        $sports = Sport::paginate(20);
         return view('admin.leagues.show',[
-            'countries' => $countries,
+            'sports' => $sports,
         ]);
     }
 
-    public function sport($country, $country_id, $sport, $sport_id) {
-        $sport_name = strtolower($sport);
-        $sport = (new Sport())->sport_exists($sport_name, $sport_id);
+    public function sport($sport_id) {
+        $sport = (new Sport())->sport_exists($sport_id);
         if (is_null($sport)) {
             return back();
         }
-        $leagues = League::where('country_id', $country_id)->where('sport_id', $sport_id)->get();
+        $leagues = League::where('sport_id', $sport_id)->get();
         return view('admin.leagues.league', [
             'leagues' => $leagues,
-            'country_name' => $country,
-            'country_id' => $country_id,
-            'sport_name' => $sport_name,
-            'sport_id' => $sport_id,
+            'sport_name' => $sport->name,
+            'sport_id' => $sport->id,
         ]);
     }
 
-    public function view($name, $id)
-    {
-        $name = strtolower($name);
-        $country = (new Country())->country_exists($name, $id);
-        if (is_null($country)) {
-            return back();
-        }
-        $sports = Sport::paginate(20);
-        return view('admin.leagues.view', [
-            'sports' => $sports,
-            'country_name' => $name,
-            'country_id' => $id
-        ]);
-    }
-
-    public function create(Request $request, $country_id, $sport_id) {
+    public function create(Request $request, $sport_id) {
         $this->validate($request, [
             'name' => 'required',
             'logo' => 'required'
@@ -56,7 +38,6 @@ class LeagueController extends Controller
         League::create([
             'name' => $request->name,
             'logo' => $request->logo,
-            'country_id' => $country_id,
             'sport_id' => $sport_id,
         ]);
         return back()->with('success', 'successfully added');

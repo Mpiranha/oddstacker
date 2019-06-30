@@ -15,17 +15,16 @@ class PredictionController extends Controller
         ]);
     }
 
-    public function view($name, $id) {
-        $name = strtolower($name);
-        $sport = (new Sport())->sport_exists($name, $id);
+    public function view($id) {
+        $sport = (new Sport())->sport_exists($id);
         if (is_null($sport)) {
             return back();
         }
-        $predictions = Prediction::where('sport_id', $id)->get();
+        $predictions = Prediction::where('sport_id', $id)->paginate(20);
         return view('admin.predictions.view', [
             'predictions' => $predictions,
-            'sport_name' => $name,
-            'sport_id' => $id
+            'sport_name' => $sport->name,
+            'sport_id' => $sport->id
         ]);
     }
 
@@ -61,14 +60,14 @@ class PredictionController extends Controller
     public function delete($id) {
         try {
             (new Prediction())->findorfail($id)->delete();
-            return back()->with('success', 'League Deleted successflly');
+            return back()->with('success', 'League Deleted successfully');
         } catch (\Exception $e) {
             return back()->with('error', 'error must have occurred');
         }
     }
 
-    public function create(Request $request, $sport_name, $sport_id) {
-        $sport = (new Sport())->sport_exists($sport_name, $sport_id);
+    public function create(Request $request, $sport_id) {
+        $sport = (new Sport())->sport_exists($sport_id);
         if (is_null($sport)) {
             return back()->with('error', 'not found');
         }

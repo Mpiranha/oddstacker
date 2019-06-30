@@ -24,16 +24,16 @@
                         </button>
                     </div>
                     <div class="col-md-6">
-                    <h4 style="margin:0">{{toUpperCase($country_name)}}-{{$sport_name}}</h4>
+                    <h4 style="margin:0">{{$sport_name}}</h4>
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                         <thead>
-                            <th class="text-center">S/N</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Image</th>
-                            <th class="text-center">Action</th>
+                            <th>S/N</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
                             @if (count($leagues) > 0)
@@ -42,17 +42,17 @@
                                 @endphp
                                 @foreach ($leagues as $league)
                                     <tr>
-                                        <td class="text-center">{{ ++$count }}</td>
-                                        <td class="text-center">{{ $league->name }}</td>
-                                        <td class="text-center">
+                                        <td>{{ ++$count }}</td>
+                                        <td>
                                             <img src="{{ $league->logo }}" height="30px" alt="{{ $league->name }} image"/>
                                         </td>
-                                        <td class="text-center">
+                                        <td>{{ $league->name }}</td>
+                                        <td>
                                             <a href="#" style="color: black"
                                                 onclick="
-                                                    let result = confirm('Are you sure you want to delete this League?');
+                                                    var result = confirm('Are you sure you want to delete this League?');
                                                     if (result){
-                                                        let sure = confirm('really sure');
+                                                        var sure = confirm('really sure');
                                                         if (sure){
                                                             event.preventDefault();
                                                         document.getElementById('delete-form-{{$league->id}}').submit();
@@ -73,7 +73,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100%" class="text-center">NO LEAGUE AVAILABLE</td>
+                                    <td colspan="100%" class="text-center">No league available under {{$sport_name}}</td>
                                 </tr>
                             @endif
                         </tbody>
@@ -94,12 +94,12 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ route('league.create', [$country_id, $sport_id]) }}" method="POST">
+                <form action="{{ route('league.create', [$sport_id]) }}" method="POST">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="form-group">
                             <label>League Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Arsenal">
+                            <input type="text" name="name" class="form-control" placeholder="eg Champions League">
                         </div>
                         <div class="form-group">
                             <label>League Logo</label>

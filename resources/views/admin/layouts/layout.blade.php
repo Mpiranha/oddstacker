@@ -32,7 +32,7 @@
 <div id="app">
 
 <div class="wrapper" id="">
-    <div class="sidebar" data-color="purple" data-image="/assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="blue" data-image="/assets/img/sidebar-5.jpg">
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
     	<div class="sidebar-wrapper">
             <div class="logo">
@@ -43,7 +43,7 @@
 
             <ul class="nav">
                 <li class="{{Request::is('admin') ? "active" : ""  }}" >
-                    <a href="dashboard.html">
+                    <a href="{{ route('admin') }}">
                         <i class="fa fa-home"></i>
                         <p>Dashboard</p>
                     </a>
@@ -54,16 +54,16 @@
                         <p>Users</p>
                     </a>
                 </li>
+                <li class="{{Request::is('admin/users') ? "active" : ""  }}">
+                    <a href="{{ route('admin.users') }}">
+                        <i class="fa fa-image"></i>
+                        <p>Sliders</p>
+                    </a>
+                </li>
                 <li class="{{Request::is('admin/predictions*') ? "active" : ""  }}">
                     <a href="{{ route('admin.prediction') }}">
                         <i class="fa fa-lightbulb-o"></i>
                         <p>Predictions</p>
-                    </a>
-                </li>
-                <li class="{{Request::is('admin/countries') ? "active" : ""  }}">
-                    <a href="/admin/countries">
-                        <i class="fa fa-flag"></i>
-                        <p>Countries</p>
                     </a>
                 </li>
                 <li class="{{Request::is('admin/sports') ? "active" : ""  }}">
@@ -211,34 +211,7 @@
 </div>
 
 @yield('out')
-<div class="modal fade" id="addCountry" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLongTitle">ADD Country</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="{{ route('country.create') }}" method="POST">
-                {{ csrf_field() }}
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Country Name</label>
-                        <input type="text" name="name" required class="form-control" placeholder="Nigeria">
-                    </div>
-                    <div class="form-group">
-                        <label>Country Logo</label>
-                        <input type="url" name="logo" required class="form-control" placeholder="Image URL" value="">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">ADD Country</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+
 </div>
 
 </body>

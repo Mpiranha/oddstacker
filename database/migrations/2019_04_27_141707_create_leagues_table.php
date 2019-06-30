@@ -16,10 +16,8 @@ class CreateLeaguesTable extends Migration
         Schema::create('leagues', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('logo', 255)->nullable();
-            $table->integer('country_id')->unsigned();
+            $table->string('logo', 2000)->nullable();
             $table->integer('sport_id')->unsigned();
-            $table->foreign('country_id')->references('id')->on( 'countries')->onDelete('cascade');
             $table->foreign( 'sport_id')->references('id')->on( 'sports')->onDelete('cascade');
             $table->timestamps();
         });

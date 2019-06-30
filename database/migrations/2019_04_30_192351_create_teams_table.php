@@ -16,13 +16,9 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('logo', 255)->nullable();
-            $table->enum('type', ['country', 'club', 'single'])->default('club');
-            $table->integer('country_id')->unsigned();
+            $table->string('logo', 2000)->nullable();
+            $table->enum('type', ['country', 'club'])->default('club');
             $table->integer('sport_id')->unsigned();
-            $table->integer('league_id')->unsigned();
-            $table->foreign('league_id')->references('id')->on('leagues')->onDelete('cascade');
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
             $table->timestamps();
         });
