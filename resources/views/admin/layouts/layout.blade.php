@@ -54,8 +54,8 @@
                         <p>Users</p>
                     </a>
                 </li>
-                <li class="{{Request::is('admin/users') ? "active" : ""  }}">
-                    <a href="{{ route('admin.users') }}">
+                <li class="{{Request::is('admin/sliders') ? "active" : ""  }}">
+                    <a href="{{ route('admin.sliders') }}">
                         <i class="fa fa-image"></i>
                         <p>Sliders</p>
                     </a>
@@ -76,13 +76,6 @@
                     <a href="{{ route('admin.teams') }}">
                         <i class="fa fa-flag-checkered"></i>
                         <p>Teams</p>
-                    </a>
-                </li>
-                </li>
-                <li class="{{Request::is('admin/competition*') ? "active" : ""  }}">
-                    <a href="/admin/competition">
-                        <i class="fa fa-bicycle"></i>
-                        <p>Competitions</p>
                     </a>
                 </li>
                 <li class="{{Request::is('admin/leagues*') ? "active" : ""  }}">

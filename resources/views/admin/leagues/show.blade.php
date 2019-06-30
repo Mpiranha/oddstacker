@@ -26,7 +26,7 @@
                                     <tr>
                                         <td>{{ ++$count }}</td>
                                         <td>
-                                            <img src="{{ $sport->logo }}" height="30px"
+                                            <img src="{{ $sport->image }}" height="30px"
                                                  alt="{{ $sport->name }} image"/>
                                         </td>
                                         <td>
