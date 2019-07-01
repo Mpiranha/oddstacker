@@ -60,6 +60,12 @@
                         <p>Sliders</p>
                     </a>
                 </li>
+                <li class="{{Request::is('admin/settings') ? "active" : ""  }}">
+                    <a href="{{ route('admin.settings') }}">
+                        <i class="fa fa-gears"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
                 <li class="{{Request::is('admin/predictions*') ? "active" : ""  }}">
                     <a href="{{ route('admin.prediction') }}">
                         <i class="fa fa-lightbulb-o"></i>
@@ -224,4 +230,5 @@
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="/assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
+@yield('extra_script')
 </html>

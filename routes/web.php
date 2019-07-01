@@ -115,11 +115,9 @@ Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('p
 Route::post('/admin/predictions/update/{id}', 'PredictionController@update')->name('prediction.update');
 
 //Event
-Route::get('/admin/events', 'EventsController@index')->name('event.index');
-Route::get('/admin/events/view', 'EventsController@view')->name('event.view');
-Route::get('/admin/events/{country}/view/{id}', 'EventsController@sport')->name('event.sport');
-Route::get('/admin/events/{country}/{country_id}/{sport}/view/{id}', 'EventsController@league')->name('event.league');
-Route::get('/admin/events/competition/{id}', 'EventsController@createView')->name('event.compt');
+Route::get('/admin/events', 'EventsController@view')->name('event.index');
+Route::get('/admin/events/view/{id}', 'EventsController@league')->name('event.league');
+Route::get('/admin/events/league/{id}', 'EventsController@createView')->name('event.league_view');
 Route::get('/admin/events/eventPage/{id}', 'EventsController@viewEventPage')->name('event.page');
 
 // stocks
@@ -134,3 +132,7 @@ Route::get('/admin/stocks/create-view', 'StockController@createView')->name('sto
 Route::get('/admin/sliders', 'SliderController@view')->name('admin.sliders');
 Route::post('/admin/slider/create', 'SliderController@save')->name('slider.create');
 Route::delete('/admin/slider/delete/{id}', 'SliderController@delete')->name('slider.delete');
+
+// Settings
+Route::get('/admin/settings', 'SettingController@view')->name('admin.settings');
+Route::post('/admin/settings/save', 'SettingController@save')->name('settings.update');

@@ -8,7 +8,7 @@
                 <div class="header text-center">
                     <button class="btn btn-sm btn-primary"
                     data-toggle="modal" data-target="#predition">add prediction</button>
-                    <p class="black">{{$competition->name}} - {{$sport->name}}</p>
+                    <p class="black">{{$league->name}} - {{$sport->name}}</p>
                 </div>
             </div>
             <div class="row mb-4" style="margin-bottom:15px">

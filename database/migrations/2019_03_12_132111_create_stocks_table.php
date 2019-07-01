@@ -15,20 +15,23 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('value', 12, 0);
-            $table->double('stake', 12, 0);
-            $table->string('margin');
+            $table->decimal('amount', 17, 2);
+            $table->decimal('value', 17, 2);
+            $table->decimal('commission', 17, 2);
+            $table->decimal('stake', 17, 2);
             $table->integer('entry')->unsigned()->default(0);
-            $table->integer('closes_at');
             $table->string('code');
             $table->dateTime('schedule_date')->nullable();
-
+            $table->integer('stock_type')->unisgned()
+                ->references('id')->on('stock_types')->onDelete('cascade');
             $table->enum('expand', ['expand', 'end', 'duplicate'])->default('end');
             $table->integer('expand_by')->unsigned()->default(0);
-            $table->integer('expand_mutiple')->unsigned()->default(0);
+            $table->integer('expand_multiple')->unsigned()->default(0);
             $table->integer('category_id')->unisgned()
                 ->references('id')->on('stock_categories')->onDelete('cascade');
-            $table->double('commission', 4, 2);
+            $table->integer('no_winners')->unsigned()->default(1);
+            $table->boolean('is_show')->default(false);
+            $table->boolean('bonus')->default(false);
             $table->timestamps();
         });
     }

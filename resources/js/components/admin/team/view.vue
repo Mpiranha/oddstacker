@@ -160,7 +160,9 @@
                     this.league_selected[item_name].push(id);
                     this.addValue(id, team);
                 } else {
+                    console.log("NONONO")
                     let index = this.league_selected[item_name].indexOf(id);
+                    console.log("INDEX: ", index)
                     if (index > -1) {
                         this.league_selected[item_name].splice(index, 1);
                         this.deleteValue(id, team);

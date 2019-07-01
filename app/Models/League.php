@@ -14,6 +14,11 @@ class League extends Model
         return League::where('name', $league_name)->where('id', $league_id)->first();
     }
 
+    public function sport()
+    {
+        return $this->belongsTo('App\Models\Sport');
+    }
+
     public function teams(){
         return $this->belongsToMany( 'App\Models\Team', 'teams_leagues', 'league_id', 'team_id' );
     }

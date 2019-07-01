@@ -15,9 +15,12 @@ class CreateStockCategoriesTable extends Migration
     {
         Schema::create('stock_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->double('odd', 4, 2);
-            $table->integer('boxes')->unsigned();
+            $table->string('name')->default('n/a');
+            $table->decimal('odd', 4, 2)->default(2.00);
+            $table->integer('boxes')->unsigned()->default(0);
+            $table->integer('tie_breaker')->default(5);
+            $table->integer('tie_breaker_one')->default(2);
+            $table->integer('tie_breaker_two')->default(3);
             $table->timestamps();
         });
     }
