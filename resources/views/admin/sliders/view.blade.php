@@ -47,8 +47,8 @@
                                             <img src="{{ $slider->image }}" height="30px"/>
                                         </td>
                                         <td>
-                                            <a href="{{$slider->link}}" style="color: black">
-                                                <i class="fa fa-anchor cursor" ></i>
+                                            <a href="{{$slider->link}}" style="color: black" target="_blank">
+                                                <i class="fa fa-link cursor" ></i>
                                             </a>
                                         </td>
                                         <td>
