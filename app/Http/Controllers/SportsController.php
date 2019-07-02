@@ -17,7 +17,7 @@ class SportsController extends Controller
     public function create(Request $request) {
         $this->validate($request, [
             'name' => 'required',
-            'logo' => 'required',
+            'logo' => 'required|max:1000',
         ]);
 
         Sport::create([

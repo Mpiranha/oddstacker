@@ -16,7 +16,7 @@ class TeamController extends Controller
         $this->validate($request, [
             'name' => 'required|string|min:2',
             'type' => 'required|in:country,club',
-            'logo' => 'required|url'
+            'logo' => 'required|url:max:1000'
         ]);
 
         $response = TeamsHelper::createTeam([

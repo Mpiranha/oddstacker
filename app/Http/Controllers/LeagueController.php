@@ -32,7 +32,7 @@ class LeagueController extends Controller
     public function create(Request $request, $sport_id) {
         $this->validate($request, [
             'name' => 'required',
-            'logo' => 'required'
+            'logo' => 'required|max:1000'
         ]);
 
         League::create([
