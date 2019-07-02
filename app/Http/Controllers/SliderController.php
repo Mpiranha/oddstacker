@@ -16,7 +16,7 @@ class SliderController extends Controller
 
     public function save(Request $request){
         $this->validate($request, [
-            'image' => 'required'
+            'image' => 'required|max:1000'
         ]);
 
         Slider::create([
