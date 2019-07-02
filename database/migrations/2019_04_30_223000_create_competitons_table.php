@@ -17,11 +17,9 @@ class CreateCompetitonsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('sport_id')->unsigned();
-            $table->integer('country_id')->unsigned();
             $table->enum('shows', [0, 1])->default(1)->comment('1 - shows, 0 not shows');
             $table->text('teams')->nullable();
             $table->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->timestamps();
         });
     }

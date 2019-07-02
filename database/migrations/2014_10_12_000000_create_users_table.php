@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->enum('role', ['admin', 'user'])->default('user');
             $table->string('tel');
-            $table->enum('gender', ['none', 'male', 'female']);
+            $table->enum('gender', ['male', 'female']);
             $table->string('country');
             $table->string('state');
             $table->string('referal')->nullable();

@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="header">
-            <h4 class="text-center black">{{competition.name}}</h4>
+            <h4 class="text-center black">{{league.name}}</h4>
         </div>
          <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -70,14 +70,12 @@ export default {
         const that = this;
         EventBus.$on('changeSettings', function (data) {
             that.league_id = data.league_id;
-            that.country_id = data.country_id
             that.getTeams();
         });
     },
-    props: ['competition'],
+    props: ['league'],
     data() {
         return {
-            country_id: null,
             league_id: null,
             teamA: null,
             teamB: null,
@@ -96,7 +94,7 @@ export default {
             const data = {
                 teamA_id: this.teamA,
                 teamB_id: this.teamB,
-                competition_id: this.competition.id,
+                league_id: this.league.id,
                 event_schedule: time,
             }
             axios.post('/api/event/create',
@@ -115,9 +113,8 @@ export default {
             this.teamA = null;
             this.teamB = null;
             const league_id = this.league_id;
-            const country_id = this.country_id;
             const that = this;
-            axios.get(`/api/teams/${country_id}/${league_id}`)
+            axios.get(`/api/teams/${league_id}`)
             .then((res) => {
                 that.teams = res.data.teams;
             })
@@ -148,9 +145,6 @@ export default {
     watch: {
         league_id(newVal, oldVal) {
             this.league_id = newVal
-        },
-        country_id(newVal, oldVal) {
-            this.country_id = newVal
         },
         teams(newVal, oldVal) {
 

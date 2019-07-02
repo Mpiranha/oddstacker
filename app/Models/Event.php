@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $fillable = ['teamA_id', 'teamB_id', 'competition_id', 'event_schedule' ];
+    protected $fillable = ['teamA_id', 'teamB_id', 'league_id', 'event_schedule' ];
     public $with = ['teamA', 'teamB'];
 
-    public function competition(){
-        return $this->belongsTo('App\Models\Competition');
+    public function league(){
+        return $this->belongsTo('App\Models\League');
     }
 
     public function sport(){

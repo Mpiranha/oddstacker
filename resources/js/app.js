@@ -52,6 +52,7 @@ Vue.component('datetime', Datetime.default);
 Vue.component('prediction-view', require('./components/admin/events/prediction-view.vue').default);
 Vue.component('event-prediction', require('./components/admin/events/event-prediction.vue').default);
 Vue.component('stock-index', require('./components/admin/stock/index.vue').default);
+Vue.component('team-table', require('./components/admin/team/view.vue').default);
 
 const app = new Vue({
     store,

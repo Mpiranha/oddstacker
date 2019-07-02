@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\Register;
-use App\Events\AddNewUser;
+use App\Events\Registered;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\User;
@@ -24,14 +24,14 @@ class AddReferral
     /**
      * Handle the event.
      *
-     * @param  Register  $event
+     * @param Registered $event
      * @return void
      */
-    public function handle(AddNewUser $event)
+    public function handle(Registered $event)
     {
         // dd('=-=-', $event);
         $referal_user_name = $event->referal_user_name;
-        $user_name = $event->new_user->username;
+        $user_name = $event->user->username;
         $user = new User();
         $user = $user->exists($referal_user_name);
         if($user) {

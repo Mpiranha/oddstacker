@@ -13,17 +13,11 @@
               <div class="content table-responsive table-full-width">
                 <table class="table table-hover table-striped">
                     <thead>
-                        <th class="text-center">Countries</th>
                         <th class="text-center">Leagues</th>
                         <th class="text-center">Action</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-center">
-                                <select v-model="country" class="form-control form-control-sm">
-                                  <option v-for="(ft, i) in countries" :key="i" :value="ft.id">{{ft.name}}</option>
-                                </select>
-                            </td>
                             <td class="text-center">
                                 <select v-model="league" class="form-control form-control-sm">
                                   <option v-for="(ft, i) in leagues" :key="i" :value="ft.id">{{ft.name}}</option>
@@ -47,15 +41,13 @@
 
 import {EventBus} from '../event-bus';
 export default {
-  props: ['countries', 'leagues'],
+  props: ['leagues'],
   mounted() {
-    this.country = this.countries[0].id;
     this.league = this.leagues[0].id;
   },
   methods: {
     setTeam() {
       const data = {
-        country_id: this.country,
         league_id: this.league
       }
       EventBus.$emit('changeSettings', data);
@@ -63,7 +55,6 @@ export default {
   },
   data() {
     return {
-      country: null,
       league: null,
     }
   },
