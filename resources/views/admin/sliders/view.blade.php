@@ -32,6 +32,7 @@
                             <thead>
                             <th>S/N</th>
                             <th>Image</th>
+                            <th>Link</th>
                             <th>Action</th>
                             </thead>
                             <tbody>
@@ -44,6 +45,11 @@
                                         <td>{{ ++$count }}</td>
                                         <td>
                                             <img src="{{ $slider->image }}" height="30px"/>
+                                        </td>
+                                        <td>
+                                            <a href="{{$slider->link}}" style="color: black">
+                                                <i class="fa fa-anchor cursor" ></i>
+                                            </a>
                                         </td>
                                         <td>
                                             <a href="#" style="color: black"
@@ -98,6 +104,10 @@
                     <div class="form-group">
                         <label>Slider Image</label>
                         <input type="text" name="image" class="form-control" placeholder="Image URL" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Slider Link</label>
+                        <input type="text" name="link" class="form-control" placeholder="Link URL" value="">
                     </div>
                 </div>
                 <div class="modal-footer">
