@@ -22,6 +22,9 @@
                                     data-toggle="modal" data-target="#predict-add">
                                 ADD PREDICTION
                             </button>
+                            <a class="btn btn-info btn-fill" href="{{ route('admin.prediction.group') }}">
+                                PREDICTION GROUPS
+                            </a>
                         </div>
                     </div>
                     <div class="content table-responsive table-full-width">
@@ -30,6 +33,7 @@
                             <th>S/N</th>
                             <th>Name</th>
                             <th>Alias</th>
+                            <th>Group</th>
                             <th>Action</th>
                             </thead>
                             <tbody>
@@ -42,6 +46,7 @@
                                         <td>{{ ++$count }}</td>
                                         <td>{{ toUpperCase($prediction->name)}}</td>
                                         <td>{{ $prediction->alias }}</td>
+                                        <td>{{ $prediction->group->name }}</td>
                                         <td>
                                             <a href="#" style="color: black"
                                                onclick="
@@ -103,6 +108,15 @@
                     <div class="form-group">
                         <label>Alias</label>
                         <input type="text" name="alias" class="form-control" placeholder="1x" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Group</label>
+                        <select class="form-control" name="group">
+                            <option value="" selected disabled>Select Group</option>
+                            @foreach($groups as $group)
+                                <option value="{{ $group->id }}">{{ $group->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">

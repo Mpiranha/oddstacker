@@ -114,6 +114,10 @@ Route::delete('/admin/predictions/delete/{id}', 'PredictionController@delete')->
 Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit');
 Route::post('/admin/predictions/update/{id}', 'PredictionController@update')->name('prediction.update');
 
+// Group predictions
+Route::get('/admin/predictions/groups', 'PredictionController@prediction_groups')->name('admin.prediction.group');
+Route::post('/admin/predictions/groups/create', 'PredictionController@create_prediction_groups')->name('admin.prediction.group_create');
+
 //Event
 Route::get('/admin/events', 'EventsController@view')->name('event.index');
 Route::get('/admin/events/view/{id}', 'EventsController@league')->name('event.league');
