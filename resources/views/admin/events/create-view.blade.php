@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card" style="height:fit-content">
-                <event-create :league="{{$league}}"></event-create>
+                <event-create :league="{{$league}}" :sport="{{$sport_id}}"></event-create>
             </div>
 
             <div class="card" style="height:fit-content">
@@ -23,5 +23,4 @@
 </div>
 @endsection
 @section('out')
-<settings-modal :leagues="{{$leagues}}"></settings-modal>
 @endsection

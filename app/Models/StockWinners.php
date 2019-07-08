@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StockWinners extends Model
 {
-    protected $fillable = ['position', 'amount'];
+    protected $fillable = ['position', 'amount', 'stock_id'];
+
+
 }

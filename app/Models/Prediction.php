@@ -9,6 +9,9 @@ class Prediction extends Model
     protected $fillable = [
         'name', 'alias', 'sport_id', 'group_id'
     ];
+
+    public $with = ['group'];
+
     public function sport(){
         
     }

@@ -29,4 +29,6 @@ Route::post('/event/prediction/add-value', 'EventsController@addPrediction');
 Route::post('/event/prediction/delete', 'EventsController@deletePrediction');
 Route::delete('/event/delete/{id}', 'EventsController@deleteEvent');
 Route::get('/stock/leagues/{sport_id}', 'StockController@league');
-Route::get('/stock/events/{league_id}', 'StockController@events');
+Route::get('/stock/events/{sport_id}', 'StockController@events');
+Route::post('/stock/save', 'StockController@saveStock');
+Route::post('/stock/publish', 'StockController@createStock');

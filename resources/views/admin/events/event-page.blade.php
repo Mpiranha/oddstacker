@@ -6,8 +6,6 @@
         <div class="col-md-12">
             <div class="card" style="height:fit-content">
                 <div class="header text-center">
-                    <button class="btn btn-sm btn-primary"
-                    data-toggle="modal" data-target="#predition">add prediction</button>
                     <p class="black">{{$league->name}} - {{$sport->name}}</p>
                 </div>
             </div>
@@ -30,6 +28,5 @@
 </div>
 @endsection
 @section('out')
-<prediction-view :predictions="{{$predictions}}" :event_id="{{$event->id}}"
-    :event_prediction="{{$event_prediction}}"></prediction-view>
+
 @endsection

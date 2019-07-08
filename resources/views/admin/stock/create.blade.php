@@ -11,7 +11,7 @@
                     </div>
                 </div>
               <stock-index :stockcategories="{{$stockCategories}}" :types="{{$types}}"
-              :sports="{{$sports}}" ></stock-index>
+              :sports="{{$sports}}"></stock-index>
             </div>
         </div>
     </div>
