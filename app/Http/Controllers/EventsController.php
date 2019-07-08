@@ -19,7 +19,7 @@ class EventsController extends Controller
 
     public function view()
     {
-        $sports = Sport::paginate(20);
+        $sports = Sport::orderBy('id', 'desc')->paginate(20);
         return view('admin.events.view', [
             'sports' => $sports,
         ]);
@@ -31,7 +31,7 @@ class EventsController extends Controller
         if (is_null($sport)) {
             return back();
         }
-        $league = League::where('sport_id', $sport_id)->get();
+        $league = League::where('sport_id', $sport_id)->orderBy('id', 'desc')->get();
         return view('admin.events.league', [
             'leagues' => $league,
             'sport_name' => $sport->name,
@@ -44,12 +44,11 @@ class EventsController extends Controller
         try {
             $league = League::findorfail($id);
             $events = Event::where('league_id', $id)->orderBy('event_schedule', 'desc')->paginate(10);
-            $leagues = League::where('sport_id', $league->sport_id)->get();
 
             return view('admin.events.create-view', [
-                'leagues' => $leagues,
                 'league' => $league,
-                'events' => $events
+                'events' => $events,
+                'sport_id' => $league->sport_id
             ]);
         } catch (\Exception $e) {
             return back()->with('error', $e);
@@ -70,7 +69,9 @@ class EventsController extends Controller
             'teamB_id' => 'required',
             'teamA_id' => 'required',
             'league_id' => 'required',
+            'sport_id' => 'required',
             'event_schedule' => 'required',
+            'event_ending' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -81,12 +82,27 @@ class EventsController extends Controller
         }
         $time = $request->event_schedule;
         $time = date('Y-m-d H:i:s ', strtotime("$time"));
-        Event::create([
+
+        $time_end = $request->event_ending;
+        $time_end = date('Y-m-d H:i:s ', strtotime("$time_end"));
+
+        $event = Event::create([
             'teamA_id' => $request->teamA_id,
             'teamB_id' => $request->teamB_id,
             'league_id' => $request->league_id,
-            'event_schedule' => $time
+            'sport_id' => $request->sport_id,
+            'event_schedule' => $time,
+            'event_ending' => $time_end
         ]);
+
+        $predictions = Prediction::where('sport_id', $request->sport_id)->orderBy('id', 'desc')->get();
+
+        foreach($predictions as $prediction){
+            EventPrediction::create([
+                'event_id' => $event->id,
+                'prediction_id' => $prediction->id,
+            ]);
+        }
 
         return response()->json([
             'status' => true,
@@ -133,7 +149,7 @@ class EventsController extends Controller
 
     public function eventPrediction($event_id)
     {
-        return $event_prediction = EventPrediction::where('event_id', $event_id)->with('prediction')->get();
+        return $event_prediction = EventPrediction::where('event_id', $event_id)->with('prediction')->orderBy('id', 'desc')->get();
     }
 
     public function addPrediction(Request $request)

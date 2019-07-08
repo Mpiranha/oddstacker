@@ -37,7 +37,7 @@ class TeamController extends Controller
 
     public function teams()
     {
-        $sports = Sport::paginate(20);
+        $sports = Sport::orderBy('id', 'desc')->paginate(20);
         return view('admin.teams.show', [
             'sports' => $sports,
         ]);
@@ -50,7 +50,7 @@ class TeamController extends Controller
             return back();
         }
         $leagues = League::where('sport_id', $sport->id)->get();
-        $teams = Team::where('sport_id', $sport->id)->with('leagues')->get();
+        $teams = Team::where('sport_id', $sport->id)->with('leagues')->orderBy('id', 'desc')->get();
 
         return view('admin.teams.view', [
             'teams' => $teams,

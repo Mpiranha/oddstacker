@@ -78,9 +78,9 @@ class SettingController extends Controller
 
             if ($query_stock_type < 3) {
                 $types = [
-                    ['name' => 'event'],
-                    ['name' => 'prediction'],
-                    ['name' => 'multiple'],
+                    ['name' => 'leagues'],
+                    ['name' => 'predictions'],
+                    ['name' => 'matches'],
                 ];
 
                 foreach ($types as $type) {
@@ -90,7 +90,6 @@ class SettingController extends Controller
                 }
             }
         }
-
 
         return back()->with('success', 'Settings saved!');
     }

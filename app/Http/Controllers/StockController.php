@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
+use App\Models\StockWinners;
+use App\Models\StockEvent;
 use Illuminate\Http\Request;
 use App\Models\StockCategory;
 use App\Models\StockType;
 use App\Models\Sport;
-use App\Models\Country;
 use App\Models\League;
 use App\Models\Competition;
 use App\Models\Event;
@@ -16,7 +18,11 @@ class StockController extends Controller
 {
     public function index()
     {
-        return view('admin.stock.index');
+        $stocks = Stock::paginate(10);
+
+        return view('admin.stock.index', [
+            'stocks' => $stocks
+        ]);
     }
 
     public function category()
@@ -81,10 +87,121 @@ class StockController extends Controller
         return $leagues;
     }
 
-    public function events($league_id)
+    public function events($sport_id)
     {
         $now = (new Carbon())->now()->toDateString();
-        $events = Event::where('league_id', $league_id)->whereDate('event_schedule', '>', $now)->get();
+        $events = Event::with('predictions')->with('league')->where('sport_id', $sport_id)->whereDate('event_schedule', '>', $now)->orderBy('event_schedule', 'desc')->get();
         return $events;
+    }
+
+    public function saveStock(Request $request)
+    {
+        $this->validate($request, [
+            'stock_type' => 'required'
+        ]);
+
+        $stock_category = StockCategory::where('id', $request->get('category'))->first();
+
+        if ($stock_category->boxes == sizeof($request->get('matches'))) {
+            $stock_group = StockType::where('name', $request->get('stock_group'))->first();
+            $stock_token = str_random(7);
+            $is_bonus = $request->get('available_for_promo');
+            $matches = $request->get('matches');
+            $winners = $request->get('price');
+
+            $stock = new Stock();
+            $stock->amount = $request->get('amount');
+            $stock->value = $request->get('value');
+            $stock->commission = $request->get('commission');
+            $stock->stake = $request->get('stake');
+            $stock->entry = $request->get('entry');
+            $stock->code = $stock_token;
+//            $stock->schedule_date = $schedule_time;
+            $stock->start_time = $matches[0]['event_schedule'];
+            $stock->stock_type = $stock_group->id;
+            $stock->stock_type_txt = $request->get('stock_type');
+            $stock->sport_id = $request->get('sport_id');
+            $stock->duplicate = $request->get('duplicate');
+            $stock->category_id = $stock_category->id;
+            $stock->no_winners = $request->get('no_winners');
+            $stock->bonus = $is_bonus;
+            $stock->save();
+
+            $this->createStockWinners($winners, $stock);
+            $this->addStockEvents($matches, $stock);
+
+            return response()->json([], 201);
+        }
+
+        return response()->json([
+            'errors' => ['all' => 'Request could not be processed at this time. Please reload and try again.']
+        ], 401);
+    }
+
+    public function createStock(Request $request)
+    {
+        $this->validate($request, [
+            'stock_type' => 'required'
+        ]);
+
+        $stock_category = StockCategory::where('id', $request->get('category'))->first();
+
+        if ($stock_category->boxes == sizeof($request->get('matches'))) {
+            $schedule_time = ($request->get('schedule_time')) ? date('Y-m-d H:i:s ', strtotime($request->get('schedule_time'))) : Carbon::now();
+            $stock_group = StockType::where('name', $request->get('stock_group'))->first();
+            $stock_token = str_random(7);
+            $is_bonus = $request->get('available_for_promo');
+            $matches = $request->get('matches');
+            $winners = $request->get('price');
+
+            $stock = new Stock();
+            $stock->amount = $request->get('amount');
+            $stock->value = $request->get('value');
+            $stock->commission = $request->get('commission');
+            $stock->stake = $request->get('stake');
+            $stock->entry = $request->get('entry');
+            $stock->code = $stock_token;
+            $stock->schedule_date = $schedule_time;
+            $stock->start_time = $matches[0]['event_schedule'];
+            $stock->stock_type = $stock_group->id;
+            $stock->stock_type_txt = $request->get('stock_type');
+            $stock->sport_id = $request->get('sport_id');
+            $stock->duplicate = $request->get('duplicate');
+            $stock->category_id = $stock_category->id;
+            $stock->no_winners = $request->get('no_winners');
+            $stock->bonus = $is_bonus;
+            $stock->save();
+
+            $this->createStockWinners($winners, $stock);
+            $this->addStockEvents($matches, $stock);
+
+            return response()->json([], 201);
+        }
+
+        return response()->json([
+            'errors' => ['all' => 'Request could not be processed at this time. Please reload and try again.']
+        ], 401);
+    }
+
+    private function createStockWinners($arr, $stock){
+        foreach ($arr as $key => $winner){
+            $position = $key + 1;
+
+            StockWinners::create([
+                'position' => $position,
+                'amount' => $winner['amount'],
+                'stock_id' => $stock->id
+            ]);
+        }
+    }
+
+    private function addStockEvents($arr, $stock){
+        foreach ($arr as $key => $match){
+            StockEvent::create([
+                'prediction_id' => $match['prediction_id'],
+                'event_id' => $match['event_id'],
+                'stock_id' => $stock->id
+            ]);
+        }
     }
 }
