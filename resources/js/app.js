@@ -6,6 +6,7 @@
  */
 
 import { store } from './store/store';
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -40,6 +41,7 @@ Vue.component('single-breaker-box', require('./components/TieBreakSIngle.vue'));
 Vue.component('bank-details', require('./components/BankDetailBox.vue'));
 Vue.component('account-details', require('./components/AccountDetailBox.vue'));
 Vue.component('search-match-tab', require('./components/searchMatchTab.vue'));
+Vue.component('leaderboard-entry', require('./components/EntriesLeaderBoard.vue'));
 
 
 
@@ -62,3 +64,5 @@ const app = new Vue({
     store: store,
     el: '#app'
 });
+
+

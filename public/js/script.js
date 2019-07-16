@@ -272,6 +272,8 @@ $(document).ready(function(){
         $(".modal-box").css("display", "none");
     });
 
+    $('.datepicker').pickadate();
+
 
     
 

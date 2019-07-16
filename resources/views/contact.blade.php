@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container bg-referal px-0 h-100">
+    <div class="container-fluid bg-land px-0 h-100">
         <div class="light-shade h-100">
 
             <main-nav title="CONTACT"></main-nav>

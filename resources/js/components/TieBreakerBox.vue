@@ -1,12 +1,12 @@
 <template>
     <div class="d-flex fancy-top-bot">
-        <div class="h-100 mt-3 star">
-            <i v-if="state === 'normal'" @click="changeState('highlighted')" class="far fa-star text-light "></i>
+        <!-- <div class=" mt-3 star">
+            <i v-if="state === 'normal'" @click="changeState('highlighted')" class="far fa-star text-light"></i>
             <i v-else @click="changeState('normal')" class="fas fa-star text-yellow"></i>
-        </div>
+        </div> -->
         <div class="d-flex flex-column justify-content-between flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-2"></fancy-top-bottom>
+                <fancy-top-bottom tie-breaker="true" content="Man U vs Liverpool" class="flex-grow-1 mr-2"></fancy-top-bottom>
             </div>
             
             <div class="d-flex mt-2">
@@ -21,33 +21,34 @@
 
 <script>
 export default {
-    data() {
-        return {
-            state: 'normal'
-        }
-    },
-    methods: {
-        changeState: function (newState) {
-            this.state = newState;
-        }
-    }
+    // data() {
+    //     return {
+    //         state: 'normal'
+    //     }
+    // },
+    // methods: {
+    //     changeState: function (newState) {
+    //         this.state = newState;
+    //     }
+    // }
 }
 </script>
 
 <style scoped>
     .odds-text {
-        background-color: rgba(245, 199, 11, 0.561);
+        background-color: rgba(245, 199, 11, 0.82);
         border-radius: 30px;
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
     }
     .shell-odd-input {
-        width: 25%;
+        width: 20%;
         padding: 0.4rem 1rem;
-        background-color: rgba(12, 220, 78, 0.24);
+        background-color: rgba(228, 218, 218, 0.72);
         border-radius: 30px;
-        margin-left: 2rem;
-        border: 2px solid white;
+        margin-left: 1rem;
+        /* border: 2px solid white; */
+        border: none;
         font-weight: bolder;
         display: block;
     }
@@ -85,9 +86,9 @@ export default {
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
     }
-    .star {
+    /* .star {
         padding: 0.5rem;
         font-size: 1.7rem;
         cursor: pointer;
-    }
+    } */
 </style>

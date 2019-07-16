@@ -12,11 +12,8 @@
             <div class="d-flex justify-content-between text-white">
                 <p>Min: <span>1.21</span></p>
 
-                <div class="d-flex flex-column">
-                    <p class="mb-0 text-yellow">(P) <span class="text-light">59.99</span></p>
-                    <p class="mb-0 text-red">(H) <span class="text-light">4499</span></p>
-                    <p class="mb-0 text-blue">(D) <span class="text-light">32.99</span></p>
-                </div>
+                
+                <p class="mb-0 text-light">59.99</>
 
                 <p>Max: <span>9.99</span></p>
 
@@ -33,7 +30,9 @@
 
             <div class="row mt-2">
                 <div class="col-12 text-center">
-                    <button class="btn btn-success w-40 sexy-btn" disabled="disabled">PLAY #400</button>
+                    <button class="btn w-50 sexy-btn" disabled="disabled">PLAY #400</button>
+                    <br>
+                    <small class="text-light">Proceed to Tie Breaker</small>
                 </div>
             </div>
 

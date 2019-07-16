@@ -4,7 +4,7 @@
                 <div class="odd-display text-center text-uppercase text-light">
                     under 2.5
                 </div> 
-                <input id="oddbox" type="text" class="input-odd b-0 text-center text-dark" placeholder="0.00" value="" maxlength="4"/>
+                <input id="oddbox" type="text" class="input-odd b-0 text-center px-3 text-dark" placeholder="0.00" value="" maxlength="4"/>
             </div> 
         </div>           
 </template>
@@ -35,9 +35,9 @@ export default {
         width: 100%;
         height: 0;
         position: absolute;
-        top: -11px;
+        top: -10px;
         left: 0;
-        border-bottom: 11px solid rgba(255, 255, 255, 0.4);;
+        border-bottom: 10px solid rgba(255, 255, 255, 0.4);;
         border-left: 20px solid #eee0;
         border-right: 20px solid #eee0;
     }
@@ -49,9 +49,9 @@ export default {
         width: 100%;
         height: 0;
         position: absolute;
-        bottom: -11px;
+        bottom: -10px;
         left: 0;
-        border-top: 11px solid rgba(255, 255, 255, 0.4);;
+        border-top: 10px solid rgba(255, 255, 255, 0.4);;
         border-left: 20px solid #eee0;
         border-right: 20px solid #eee0;
     }
@@ -62,11 +62,12 @@ export default {
         border-radius: 30px; 
         z-index: 1;
         padding: 0.4rem 0;
+        font-size: .85rem;
     }
     .input-odd {
-        width: 15%;
+        width: 20%;
         border-radius: 30px;
-        background-color: #BFC0C0; 
+        background-color: rgb(255, 255, 255); 
         z-index: 1;
     }
    

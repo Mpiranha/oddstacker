@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('page')
-<div class="container bg-referal px-0 h-100">
+<div class="container bg-land px-0 h-100">
     <div class="light-shade">
       <main-nav title="STACK SHELL"></main-nav>
       <div class="px-2">

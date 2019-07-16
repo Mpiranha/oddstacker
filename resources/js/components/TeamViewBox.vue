@@ -1,29 +1,27 @@
 <template>
-    <div class="d-flex fancy-top-bot">
-        <div class="d-flex star">
+    <div class="d-flex flex-column pl-3 fancy-top-bot">
+        <!-- <div class="d-flex star">
             <i class="fas fa-star mt-1"></i><span>(1)</span>
+        </div> -->
+        <div class="d-flex">
+            <fancy-top-bottom result="true" content="Man U 1-2 Liverpool" class="flex-grow-1 mr-3"></fancy-top-bottom>
         </div>
-        <div class="d-flex flex-column flex-grow-1">
-            <div class="d-flex">
-                <fancy-top-bottom content="Man U 1-2 Liverpool" class="flex-grow-1 mr-3"></fancy-top-bottom>
+        
+        <div class="d-flex mt-3">
+            <div class="odds-text text-center text-white w-70 d-flex justify-content-center align-items-center scroll-x">
+                BOTH HALVES UNDER 1.5
             </div>
-            
-            <div class="d-flex mt-3">
-                <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center align-items-center">
-                    BOTH HALVES UNDER 1.5
-                </div>
-                <input type="text" class="odd pt-2 px-2 text-center" value="2.99" placeholder="0.00" readonly="readonly">
-            </div>
+            <input type="text" class="odd pt-2 px-2 text-center" value="2.99" placeholder="0.00" readonly="readonly">
         </div>
     </div>
 </template>
 
 <style scoped>
-    .star {
+    /* .star {
         font-size: 0.659rem;
         color: rgb(255, 215, 0);
         padding: 2rem 0.2rem;
-    }
+    } */
     .odds-text {
         background-color: rgba(245, 199, 11, 0.561);
         border-radius: 30px;
@@ -32,11 +30,12 @@
     }
     .odd {
         padding: 0.4rem 1rem;
-        background-color: rgba(12, 220, 78, 0.24);
-        width: 30%;
+        background-color: rgb(112, 173, 71);
+        width: 20%;
         border-radius: 30px;
-        margin-left: 2rem;
-        border: 2px solid white;
+        margin-left: 1rem;
+        /* border: 2px solid white; */
+        border: none;
         font-weight: bolder;
     }
 

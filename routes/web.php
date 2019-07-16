@@ -19,7 +19,7 @@ Route::get('/forgot-password',function (){
     return view('forgot');
 });
 
-Route::get('/enter',function (){
+Route::get('/lobby',function (){
     return view('home');
 });
 
@@ -55,9 +55,6 @@ Route::get('/account',function (){
     return view('account');
 });
 
-Route::get('/stackshell',function (){
-    return view('stackshell');
-});
 
 Route::get('/change-password',function (){
     return view('changepwd');
@@ -75,9 +72,9 @@ Route::get('/multiebreak',function (){
     return view('multiebreak');
 });
 
-Route::get('/singlebreak',function (){
-    return view('singlebreak');
-});
+// Route::get('/singlebreak',function (){
+//     return view('singlebreak');
+// });
 
 Route::get('/referal',function (){
     return view('referal');

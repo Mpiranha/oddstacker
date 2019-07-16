@@ -6,7 +6,7 @@
     
     <div class="little-shade">
         <main-nav title="RESULTS"></main-nav>
-        <div class="px-3">
+        <div class="px-3 reponsive">
             
             <stock-nav left-content="STOCK" center-content="ALL STOCK" right-content="WINNERS"></stock-nav>
             <date-picker></date-picker>
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex">
-                        <input type="text" class="form-control w-70" name="sort-code-search" id="sort-code-search" placeholder="sort code">
+                        <input type="text" class="form-control w-70" name="sort-code-search" id="sort-code-search" placeholder="Search">
                         <select class="form-control w-30 ml-2" name="sort-sport" id="sort-sport">
                             <option selected>Sports</option>
                             <option value="football">Football</option>

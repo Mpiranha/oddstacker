@@ -15,6 +15,15 @@ export const store = new Vuex.Store({
         ],
         mails: [
             {email: "customercare@odstackr.com", subject: "Welcome to Odstackr", mail: "You are humbly welcomed to odstackr and i want to get you started"}
+        ],
+        gameEntries: [],
+        leaderboard: [
+            // {
+            //     pos: "1",
+            //     username: "Mesh",
+            //     score: "500",
+            //     won: "50"
+            // }
         ]
         
         

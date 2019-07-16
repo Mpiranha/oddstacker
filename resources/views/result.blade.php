@@ -30,17 +30,17 @@
 
             <div class="row">
                 <div class="col-12 px-5">
-                    <div class="box-radius px-3 d-flex justify-content-between f-0-6">
-                        <div class="text-yellow">
-                            <i class="fas fa-star mt-1"></i><span>(1)</span><span class="ml-2 text-light">3.54</span>
-                        </div>
+                    <div class="d-flex">                    
+                        <div class="box-radius px-3 d-flex justify-content-between f-0-6">
+                            <div class="text-yellow">
+                                <i class="fas fa-star mt-1"></i><span>(1)</span><span class="ml-2 text-light">3.54</span>
+                            </div>
 
-                        <div class="text-yellow">
-                            <span class="mr-2 text-light">3.54</span><i class="fas fa-star mt-1"></i><span>(2)</span>
+                            <div class="text-yellow">
+                                <span class="mr-2 text-light">3.54</span><i class="fas fa-star mt-1"></i><span>(2)</span>
+                            </div>
                         </div>
-                        <div class="info-box px-1 f-0-6">
-                            i
-                        </div>
+                        <img class="info-box ml-1 mt-3" src="/images/info-icon.png" />
                     </div>
                 </div>
             </div>
@@ -63,38 +63,7 @@
                 </div>
             </div>
 
-            <div class="row mt-4">
-                <div class="col-12 col-sm-12 col-lg-12">
-                    <div class="d-flex justify-content-center stack-lead-btn">
-                        <a data-toggle="tab" href="#mystacks" id="my-stack" class="btn end end-left bg-grey text-dark btn-stack text-uppercase active">MY
-                            STACK</a>
-                        <a data-toggle="tab" href="#leader-board" id="leaderboard" class="btn end end-right bg-grey text-dark btn-lead text-uppercase">LEADERBOARD</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my-3 px-3">
-                <div class="col-12 border-curve pt-0">
-                    <div class="tab-content">
-                        <div id="mystacks" class="tab-pane active">
-                            <team-view-box></team-view-box>
-
-                            <team-view-box></team-view-box>
-
-                            <team-view-box></team-view-box>
-
-                            <team-view-box></team-view-box>
-
-                            <team-view-box></team-view-box>
-
-                            <team-view-box></team-view-box>
-                        </div>
-                        <div id="leader-board" class="tab-pane">
-                            <leader-box></leader-box>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <leaderboard-entry></leaderboard-entry>
 
         </div>
 

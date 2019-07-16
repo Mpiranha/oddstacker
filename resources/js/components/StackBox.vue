@@ -8,7 +8,8 @@
                     <img src="/images/123-blocks2-512.png" class="img-fluid" @click="bringMoreDetails()">
                 </div>
                 
-                <div class="d-flex h-100 mt-0 w-20 ball">
+                <div class="d-flex h-100 mt-0 w-20 ball-icn"
+                :class="{'ball-icn-premium': isPremium, 'ball-icn-head-head': isHeadToHead, 'ball-icn-doubleup': isDoubleUp}">
                     <i class="fas fa-futbol"></i>
                 </div>
                 <div class="w-80 mt-0 mr-3">
@@ -17,7 +18,7 @@
                             <h6 class="bold-1 stand-out">Both Teams to Score</h6>
                             <h6 class="pr-3 bold-1 stand-out">05:32:15</h6>
                         </div>
-                        <div class="another-shape w-100 d-flex">
+                        <div class="another-shape w-100 d-flex" :class="{'premium': isPremium, 'head-to-head': isHeadToHead, 'double-up': isDoubleUp}">
                             <span class="amt-text">₦ 200,000</span>
                             <!-- <span class="cur-stack pt-1 ml-2">NGN 20 000</span> -->
                         </div>
@@ -33,7 +34,7 @@
                         </div>
                         <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
                             <h6 class="mb-0">CODE: <span class="bold-1 stand-out">FF32421</span></h6>
-                            <h6 class="mb-0">ODDS: <span class="bold-1 odd-green">44.95</span></h6>
+                            <h6 class="mb-0">ODDS: <span class="bold-1 odd-gold">44.95</span></h6>
                         </div>
                     </div>
                 </div>
@@ -53,7 +54,10 @@
 export default {
     data() {
         return {
-            detailsIsVisible: false
+            detailsIsVisible: false,
+            isPremium: false,
+            isHeadToHead: true,
+            isDoubleUp: false
         }
     },
     state: {
@@ -103,10 +107,26 @@ export default {
         to { height: 70px;}
     }
 
+    .ball-icn {
+        padding: 1.5rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    .ball-icn-premium {
+        color: rgb(255, 192, 0) !important
+    }
+
+    .ball-icn-head-head {
+        color: rgb(255, 32, 32) !important;
+    }
+
+    .ball-icn-doubleup {
+        color: rgb(0, 112, 192) !important;
+    }
      #octagon {
       width: 100%;
       height: 100%;
-      background: #ffffff85;
+      background: #ffffff;
       position: relative;
       margin: 0.2rem 1rem;
       padding-top: .3rem;
@@ -116,7 +136,7 @@ export default {
         height: 20px;
         position: relative;
         z-index: 1;
-        background-color: gold;
+        /* background-color: rgb(255, 192, 0); */
         padding-bottom: 1.1rem;
         padding-left: 1rem;
         font-size: 1.1rem;
@@ -129,8 +149,8 @@ export default {
         height: 0;
         position: absolute;
         z-index: 0;
-        border-bottom: 8px solid gold;
-        border-right: 17px solid #eee0;
+        /* border-bottom: 8px solid rgb(255, 192, 0);
+        border-right: 17px solid #eee0; */
         top: -8px;
         left: 0;
      }
@@ -142,14 +162,61 @@ export default {
         bottom: -10px;
         left: 0;
         z-index: -1;
-        border-top: 10px solid gold;
+        /* border-top: 10px solid rgb(255, 192, 0);
         border-left: 17px solid #eee0;
-        border-right: 15px solid gold;
+        border-right: 15px solid rgb(255, 192, 0); */
      }
 
-     .odd-green {
+     .premium {
+         background-color: rgb(255, 192, 0) !important;
+     }
+
+     .premium::before {
+         border-bottom: 8px solid rgb(255, 192, 0) !important;
+        border-right: 17px solid #eee0;
+     }
+
+     .premium::after {
+          border-top: 10px solid rgb(255, 192, 0) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(255, 192, 0) !important;
+     }
+
+     .head-to-head {
+         background-color: rgb(255, 32, 32) !important;
+     }
+
+     .head-to-head::before {
+         border-bottom: 8px solid rgb(255, 32, 32) !important;
+        border-right: 17px solid #eee0;
+     }
+
+     .head-to-head::after {
+          border-top: 10px solid rgb(255, 32, 32) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(255, 32, 32) !important;
+     }
+
+    .double-up {
+         background-color: rgb(0, 112, 192);
+     }
+
+     .double-up::before {
+         border-bottom: 8px solid rgb(0, 112, 192) !important;
+        border-right: 17px solid #eee0;
+     }
+
+     .double-up::after {
+          border-top: 10px solid rgb(0, 112, 192) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(0, 112, 192) !important;
+     }
+
+
+
+     .odd-gold {
          font-size: 0.8rem;
-         color: gold !important;
+         color: rgb(255, 192, 0) !important;
      }
 
     #octagon::after {
@@ -159,7 +226,7 @@ export default {
         position: absolute;
         bottom: -10px;
         left: 0;
-        border-top: 10px solid #ffffff85;
+        border-top: 10px solid #ffffff;
         border-left: 15px solid #eee0;
         border-right: 14px solid #eee0;
     }  

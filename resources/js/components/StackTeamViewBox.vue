@@ -2,10 +2,10 @@
     <div class="fancy-top-bot px-3">
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1 mr-5"></fancy-top-bottom>
+                <fancy-top-bottom content="Man U vs Liverpool" class="flex-grow-1"></fancy-top-bottom>
             </div>
             
-            <div class="d-flex mt-4">
+            <div class="d-flex mt-3">
                 <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
                     <span class="odds-text-content align-self-center">
                         BOTH HALVES UNDER 1.5
@@ -17,7 +17,8 @@
     </div>
 </template>
 
-<style scoped>
+<style>
+
     .star {
         font-size: 0.659rem;
         color: rgb(255, 215, 0);
@@ -25,18 +26,18 @@
     }
     .odds-text {
         position: relative;
-        background-color: rgba(245, 199, 11, 0.561);
+        background-color: rgba(245, 199, 11, 0.82);
         border-radius: 30px;
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
     }
 
     .shell-odd-input {
-        width: 25%;
+        width: 20%;
         padding: 0.4rem 1rem;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(228, 218, 218, 0.72);
         border-radius: 30px;
-        margin-left: 2rem;
+        margin-left: 1rem;
         border: none;
         font-weight: bolder;
         display: block;

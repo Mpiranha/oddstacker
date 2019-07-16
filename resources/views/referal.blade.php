@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('page')
-    <div class="container bg-referal px-0">
+    <div class="container bg-land px-0">
         <div class="light-shade">
 
             <main-nav title="REFERAL"></main-nav>
