@@ -94,6 +94,7 @@
         </div>
         <div class="col-8 text-center">
             <i class="far fa-calendar-alt"></i> Mon 05 June 2018
+            <i class="far fa-calendar-alt"></i> {{ today }}
         </div>
         <div class="col-2">
             <a class="carousel-control-next" href="#demo" data-slide="next">
@@ -103,6 +104,20 @@
     </div>
 
 </template>
+<script>
+import moment from 'moment'
+export default {
+    data: function(){
+        return {}
+    },
+
+    computed: {
+        today: function(){
+            return moment().format('LL')
+        }
+    }
+}
+</script>
 
 
 <script>

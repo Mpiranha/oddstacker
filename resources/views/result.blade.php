@@ -5,11 +5,11 @@
 <div class="container-fluid h-100 pr-0 pl-0 scroll-y bg-land">
 
     <div class="little-shade">
-        <main-nav title="RESULTS"></main-nav>
+       <main-nav title="RESULTS" :user="{{ Auth::user() }}" 
+            :wallet="{{ Auth::user()->wallet }}">
+        </main-nav>
         <div class="px-3">
-
             <stock-nav left-content="STOCK" center-content="ALL STOCK" right-content="WINNERS"></stock-nav>
-
             <stack-box></stack-box>
 
             <div class="d-flex justify-content-center mt-3 px-4">

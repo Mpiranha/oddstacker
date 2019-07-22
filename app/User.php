@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -16,7 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'tel', 'username', 'gender',
+        'country','state', 'referal', 'role'
     ];
 
     /**
@@ -27,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function wallet(){
+        return $this->hasOne('App\Models\Wallet');
+    }
+
+    public function referral() {
+        return $this->hasMany('App\Models\Referral');
+    }
+
+    public function exists($username) {
+        return User::where('username', $username)->first();
+    }
 }

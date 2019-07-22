@@ -32,7 +32,6 @@ export default {
         tieBreaker: String,
         result: String
     }
-
 }
 </script>
 

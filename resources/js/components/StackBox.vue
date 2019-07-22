@@ -8,18 +8,19 @@
                     <img src="/images/123-blocks2-512.png" class="img-fluid" @click="bringMoreDetails()">
                 </div>
                 
-                <div class="d-flex h-100 mt-0 w-20 ball-icn"
-                :class="{'ball-icn-premium': isPremium, 'ball-icn-head-head': isHeadToHead, 'ball-icn-doubleup': isDoubleUp}">
+                <!-- <div class="d-flex h-100 mt-0 w-20 ball-icn"
+                :class="{'ball-icn-premium': isPremium, 'ball-icn-head-head': isHeadToHead, 'ball-icn-doubleup': isDoubleUp}"> -->
+                <div class="d-flex h-100 mt-0 w-20 ball-icn" :class="this.class">
                     <i class="fas fa-futbol"></i>
                 </div>
                 <div class="w-80 mt-0 mr-3">
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-between w-100 align-items-end">
                             <h6 class="bold-1 stand-out">Both Teams to Score</h6>
-                            <h6 class="pr-3 bold-1 stand-out">05:32:15</h6>
+                            <h6 class="pr-3 bold-1 stand-out">3:00pm</h6>
                         </div>
-                        <div class="another-shape w-100 d-flex" :class="{'premium': isPremium, 'head-to-head': isHeadToHead, 'double-up': isDoubleUp}">
-                            <span class="amt-text">₦ 200,000</span>
+                        <div class="another-shape w-100 d-flex" :class="this.class">
+                            <span class="amt-text">₦ {{ stock.value }}</span>
                             <!-- <span class="cur-stack pt-1 ml-2">NGN 20 000</span> -->
                         </div>
                         <div class="d-flex justify-content-between mt-3">
@@ -28,13 +29,13 @@
                             <h6 class="mb-0">ENTRY</h6>
                         </div>
                         <div class="d-flex justify-content-between w-100">
-                            <h6 class="bold-1 stand-out">NGN 400</h6>
-                            <h6 class="bold-1 pr-21 stand-out">TOP HALF</h6>
-                            <h6 class="bold-1 stand-out">100</h6>
+                            <h6 class="bold-1 stand-out">NGN{{ stock.stake }}</h6>
+                            <h6 class="bold-1 pr-21 stand-out">{{ stock.margin }}</h6>
+                            <h6 class="bold-1 stand-out">{{ stock.entry }}</h6>
                         </div>
                         <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
-                            <h6 class="mb-0">CODE: <span class="bold-1 stand-out">FF32421</span></h6>
-                            <h6 class="mb-0">ODDS: <span class="bold-1 odd-gold">44.95</span></h6>
+                            <h6>CODE: <span class="bold-1 stand-out">{{ stock.code }}</span></h6>
+                            <h6>ODDS: <span class="bold-1 odd-green" :class="this.class">{{ stock.category.odd }}</span></h6>
                         </div>
                     </div>
                 </div>
@@ -51,24 +52,29 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
+    props: ['stock'],
     data() {
         return {
-            detailsIsVisible: false,
-            isPremium: false,
-            isHeadToHead: true,
-            isDoubleUp: false
+            detailsIsVisible: false
+
         }
     },
-    state: {
-        
-    },
-    props: {
-
-    },
+    mounted: function(){},
     methods: {
         bringMoreDetails() {
             this.detailsIsVisible = !this.detailsIsVisible;
+        }
+    },
+    computed: {
+        class: function(){
+            if(this.stock.category.name === 'double up')
+                return 'double-up';
+            else if(this.stock.category.name === 'head to head')
+                return 'h2h'
+            else 
+                return 'premium'
         }
     }
 }
@@ -113,15 +119,16 @@ export default {
     }
 
     .ball-icn-premium {
-        color: rgb(255, 192, 0) !important
-    }
-
-    .ball-icn-head-head {
-        color: rgb(255, 32, 32) !important;
+        color: rgb(255, 192, 0) !important;
     }
 
     .ball-icn-doubleup {
         color: rgb(0, 112, 192) !important;
+
+    }
+
+    .ball-icn-head-head {
+        color: rgb(255, 32, 32) !important;
     }
      #octagon {
       width: 100%;
@@ -143,17 +150,36 @@ export default {
         font-weight: bolder;
     }
 
+    .h2h.another-shape{
+        background-color: rgb(255, 32, 32) !important;
+    }
+
+    .double-up.another-shape{
+        background-color: rgb(0, 112, 192) !important;
+    }
+
     .another-shape::before {
         content: "";
         width: 100%;
         height: 0;
         position: absolute;
         z-index: 0;
-        /* border-bottom: 8px solid rgb(255, 192, 0);
-        border-right: 17px solid #eee0; */
+        border-bottom: 8px solid rgb(255, 192, 0);
+        border-right: 17px solid #eee0;
         top: -8px;
         left: 0;
      }
+
+    .h2h.another-shape::before{
+         border-bottom: 8px solid rgb(255, 32, 32) !important;
+        border-right: 17px solid #eee0;
+    }
+
+    .double-up.another-shape::before{
+        border-bottom: 8px solid rgb(0, 112, 192) !important;
+        border-right: 17px solid #eee0;
+    }
+
     .another-shape::after {
         content: "";
         width: 100%;
@@ -162,29 +188,13 @@ export default {
         bottom: -10px;
         left: 0;
         z-index: -1;
-        /* border-top: 10px solid rgb(255, 192, 0);
+        border-top: 10px solid rgb(255, 192, 0);
         border-left: 17px solid #eee0;
-        border-right: 15px solid rgb(255, 192, 0); */
+        border-right: 15px solid rgb(255, 192, 0);
      }
 
-     .premium {
-         background-color: rgb(255, 192, 0) !important;
-     }
 
-     .premium::before {
-         border-bottom: 8px solid rgb(255, 192, 0) !important;
-        border-right: 17px solid #eee0;
-     }
 
-     .premium::after {
-          border-top: 10px solid rgb(255, 192, 0) !important;
-        border-left: 17px solid #eee0;
-        border-right: 15px solid rgb(255, 192, 0) !important;
-     }
-
-     .head-to-head {
-         background-color: rgb(255, 32, 32) !important;
-     }
 
      .head-to-head::before {
          border-bottom: 8px solid rgb(255, 32, 32) !important;
@@ -201,22 +211,33 @@ export default {
          background-color: rgb(0, 112, 192);
      }
 
-     .double-up::before {
-         border-bottom: 8px solid rgb(0, 112, 192) !important;
-        border-right: 17px solid #eee0;
-     }
-
-     .double-up::after {
-          border-top: 10px solid rgb(0, 112, 192) !important;
-        border-left: 17px solid #eee0;
-        border-right: 15px solid rgb(0, 112, 192) !important;
-     }
 
 
 
-     .odd-gold {
+
+
+
+     .odd-green {
          font-size: 0.8rem;
          color: rgb(255, 192, 0) !important;
+     }
+    .h2h.another-shape::after{
+        border-top: 10px solid red !important;
+        border-right: 15px solid red !important;
+    }
+
+    .double-up.another-shape::after{
+        border-top: 10px solid rgb(0, 112, 192) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(0, 112, 192) !important;
+    }
+
+
+     .h2h.odd-green{
+         color: rgb(255, 32, 32);
+     }
+     .double-up.odd-green{
+         color: rgb(0, 112, 192);
      }
 
     #octagon::after {
