@@ -40,7 +40,7 @@
                                                         <td>
                                                             <label class="checkbox-container">
                                                                 <input type="checkbox" :id="`check-${ft.id}`"
-                                                                       @click="addLeague(ft.id, `check-${ft.id}`, team.id)"
+                                                                       @change="addLeague($event, ft.id, `check-${ft.id}`, team.id)"
                                                                        :checked="isChecked(ft.id, team.id)"
                                                                 >
                                                                 <span class="checkmark"></span>
@@ -121,34 +121,36 @@
             }
         },
         watch: {
-            league_selected(newVal, oldVal) {
+//            league_selected(newVal, oldVal) {
+//
+//            },
+//            teams(newVal, oldVal) {
+//                return newVal
+//            }
+        },
+        computed: {
 
-            },
-            teams(newVal, oldVal) {
-                return newVal
-            }
         },
         methods: {
             deleteTeam: function (team) {
                 let result = confirm(`Are you sure you want to delete ${team.name}?`);
-                if (result) {console.log("BEFORE: ", this.teams)
+                if (result) {
+                    console.log("BEFORE: ", this.teams)
                     let selected_team = this.teams.indexOf(team)
                     this.teams.splice(selected_team, 1)
                     axios.delete(`/api/team/delete/${team.id}`).then((resp) => {
-                        if(resp.data.status){
+                        if (resp.data.status) {
                             location.reload()
                         }
                     }).catch((e) => console.log(e))
                 }
             },
-            addLeague(id, e, team) {
+            addLeague(event, id, e, team) {
                 let check_id = document.querySelector(`#${e}`);
                 let item_name = `t${team}`
-                if (check_id.checked) {
-                    console.log("CHECKED")
+                console.log(check_id)
+                if (event.target.checked) {
                     if (this.league_selected[item_name].includes(id)) {
-                        console.log("EXIST")
-                        console.log("EXIST: ", this.league_selected[item_name])
                         let index = this.league_selected[item_name].indexOf(id);
                         if (index > -1) {
                             this.league_selected[item_name].splice(index, 1);
@@ -156,13 +158,13 @@
                         }
                         return
                     }
-                    console.log("IN HERE")
+//                    console.log("IN HERE")
                     this.league_selected[item_name].push(id);
                     this.addValue(id, team);
                 } else {
-                    console.log("NONONO")
+//                    console.log("NONONO")
                     let index = this.league_selected[item_name].indexOf(id);
-                    console.log("INDEX: ", index)
+//                    console.log("INDEX: ", index)
                     if (index > -1) {
                         this.league_selected[item_name].splice(index, 1);
                         this.deleteValue(id, team);

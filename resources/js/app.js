@@ -57,6 +57,8 @@ Vue.component('event-prediction', require('./components/admin/events/event-predi
 Vue.component('stock-index', require('./components/admin/stock/create_stock.vue').default);
 Vue.component('team-table', require('./components/admin/team/view.vue').default);
 
+Vue.component('stock-lobby', require('./components/stock/index.vue').default)
+
 const app = new Vue({
     store,
     el: '#app',
