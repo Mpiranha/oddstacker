@@ -195,6 +195,9 @@
                         <h4 class="modal-title" id="myModalLabel">Add Event</h4>
                     </div>
                     <div class="modal-body">
+                        <div class="alert alert-warning" v-if="messages.event_form">
+                            {{messages.event_form}}
+                        </div>
                         <div class="form-group">
                             <label>Select Event</label>
                             <select class="form-control" v-on:change="selectEvent" v-model="event">
@@ -232,6 +235,9 @@
         components: {Money},
         data(){
             return {
+                messages: {
+                    event_form: ''
+                },
                 money: {
                     decimal: '.',
                     thousands: ',',
@@ -444,7 +450,7 @@
             },
             saveEvent: function () {
                 if (this.addEventStat == false && this.stock_events.length < this.category.boxes) {
-                    let data = {
+                    let data = {//
                         event_id: this.selected_event.id,
                         event_name: `${this.selected_event.team_a.name} vs ${this.selected_event.team_b.name}`,
                         event_schedule: this.selected_event.event_schedule,
@@ -453,30 +459,38 @@
                         prediction_id: this.selected_event.predictions[this.prediction_index].id,
                         prediction_group: this.selected_event.predictions[this.prediction_index].group_id,
                         prediction_group_name: this.selected_event.predictions[this.prediction_index].group.name
-                    }
-                    this.stock_events.push(data)
+                    };
 
-                    if (this.stock_events.length == this.category.boxes) {
-                        if (this.identicalArr(this.stock_events, 'event_name')) {
-                            this.stock_type = this.stock_events[0].event_name
-                            this.stock_group = 'matches'
-                        } else if (this.identicalArr(this.stock_events, 'prediction_group_name')) {
-                            this.stock_type = this.stock_events[0].prediction_group_name
-                            this.stock_group = 'predictions'
-                        } else if (this.identicalArr(this.stock_events, 'league_name')) {
-                            this.stock_type = this.stock_events[0].league_name
-                            this.stock_group = 'leagues'
-                        } else {
-                            this.stock_type = `${this.stock_events[0].league_name}, ${this.stock_events[1].league_name}, ${this.stock_events[2].league_name}`
-                            this.stock_group = 'leagues'
+                    if(_.some(this.stock_events, data)){
+                        this.messages.event_form = 'Event already selected.';
+                        return;
+                    }else{
+                        this.stock_events.push(data);
+
+//                        console.log("AFTER INSERTION: ", this.stock_events.includes(data))
+
+                        if (this.stock_events.length == this.category.boxes) {
+                            if (this.identicalArr(this.stock_events, 'event_name')) {
+                                this.stock_type = this.stock_events[0].event_name
+                                this.stock_group = 'matches'
+                            } else if (this.identicalArr(this.stock_events, 'prediction_group_name')) {
+                                this.stock_type = this.stock_events[0].prediction_group_name
+                                this.stock_group = 'predictions'
+                            } else if (this.identicalArr(this.stock_events, 'league_name')) {
+                                this.stock_type = this.stock_events[0].league_name
+                                this.stock_group = 'leagues'
+                            } else {
+                                this.stock_type = `${this.stock_events[0].league_name}, ${this.stock_events[1].league_name}, ${this.stock_events[2].league_name}`
+                                this.stock_group = 'leagues'
+                            }
                         }
+
+                        this.selected_event = {}
+                        this.prediction_index = null
+                        this.event = ''
+
+                        $('#addEventDialog').modal('hide');
                     }
-
-                    this.selected_event = {}
-                    this.prediction_index = null
-                    this.event = ''
-
-                    $('#addEventDialog').modal('hide');
                 } else {
                     $('#addEventDialog').modal('hide');
                 }

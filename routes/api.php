@@ -32,3 +32,4 @@ Route::get('/stock/leagues/{sport_id}', 'StockController@league');
 Route::get('/stock/events/{sport_id}', 'StockController@events');
 Route::post('/stock/save', 'StockController@saveStock');
 Route::post('/stock/publish', 'StockController@createStock');
+Route::get('/stocks', 'StockController@todayStocks');

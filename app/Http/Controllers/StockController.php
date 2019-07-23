@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\Stocks;
 use App\Models\Stock;
 use App\Models\StockWinners;
 use App\Models\StockEvent;
@@ -172,8 +173,8 @@ class StockController extends Controller
             $stock->bonus = $is_bonus;
             $stock->save();
 
-            $this->createStockWinners($winners, $stock);
-            $this->addStockEvents($matches, $stock);
+            Stocks::createStockWinners($winners, $stock);
+            Stocks::addStockEvents($matches, $stock);
 
             return response()->json([], 201);
         }
@@ -183,25 +184,11 @@ class StockController extends Controller
         ], 401);
     }
 
-    private function createStockWinners($arr, $stock){
-        foreach ($arr as $key => $winner){
-            $position = $key + 1;
 
-            StockWinners::create([
-                'position' => $position,
-                'amount' => $winner['amount'],
-                'stock_id' => $stock->id
-            ]);
-        }
-    }
 
-    private function addStockEvents($arr, $stock){
-        foreach ($arr as $key => $match){
-            StockEvent::create([
-                'prediction_id' => $match['prediction_id'],
-                'event_id' => $match['event_id'],
-                'stock_id' => $stock->id
-            ]);
-        }
+    public function todayStocks(){
+        $stocks = Stock::all();
+
+        return response()->json($stocks);
     }
 }

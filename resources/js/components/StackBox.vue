@@ -1,8 +1,8 @@
 <template>
-    <div class="container-fluid px-0">
+    <div class="container-fluid px-0" @click="stockShell(stock)">
         <div class="row">
             <div class="d-flex" id="octagon">
-                <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn"></i>
+                <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn">vgb</i>
                 <div class="d-flex h-100 mt-3 w-20 ball" :class="this.class">
                     <i class="fas fa-futbol"></i>
                 </div>
@@ -23,8 +23,8 @@
                         </div>
                         <div class="d-flex justify-content-between w-100">
                             <h6 class="bold-1 stand-out">NGN{{ stock.stake }}</h6>
-                            <h6 class="bold-1 pr-21 stand-out">{{ stock.margin }}</h6>
-                            <h6 class="bold-1 stand-out">{{ stock.entry }}</h6>
+                            <h6 class="bold-1 pr-21 stand-out">{{ stock.margin.length }}</h6>
+                            <h6 class="bold-1 stand-out">{{ stock.entries.length }}</h6>
                         </div>
                         <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end">
                             <h6>CODE: <span class="bold-1 stand-out">{{ stock.code }}</span></h6>
@@ -57,6 +57,9 @@ export default {
     methods: {
         bringMoreDetails() {
             this.detailsIsVisible = !this.detailsIsVisible;
+        },
+        stockShell(stock){
+            window.location = `/stock/${stock.id}/shell`;
         }
     },
     computed: {
@@ -67,7 +70,7 @@ export default {
                 return 'h2h'
             else 
                 return 'premium'
-        }
+        },
     }
 }
 </script>
