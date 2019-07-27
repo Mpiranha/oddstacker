@@ -17,11 +17,14 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->integer('teamA_id')->unsigned();
             $table->integer('teamB_id')->unsigned();
-            $table->integer('competition_id')->unsigned();
+            $table->integer('league_id')->unsigned();
+            $table->integer('sport_id')->unsigned();
             $table->timestamp('event_schedule')->nullable();
+            $table->timestamp('event_ending')->nullable();
             $table->foreign('teamA_id')->references('id')->on('teams')->onDelete('cascade');
             $table->foreign('teamB_id')->references('id')->on('teams')->onDelete('cascade');
-            $table->foreign('competition_id')->references('id')->on('competitions')->onDelete('cascade');
+            $table->foreign('league_id')->references('id')->on('leagues')->onDelete('cascade');
+            $table->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
             $table->timestamps();
         });
     }

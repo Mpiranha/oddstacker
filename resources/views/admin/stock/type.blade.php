@@ -13,12 +13,12 @@
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                         <thead>
-                            <th class="text-center">Name</th>
+                            <th>Name</th>
                         </thead>
                         <tbody>
                           @foreach ($types as $sc)
                             <tr>
-                                <td class="text-center">
+                                <td>
                                   {{$sc->name}}
                                 </td>
                             </tr>

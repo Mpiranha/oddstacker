@@ -16,7 +16,8 @@ class CreateSportsTable extends Migration
         Schema::create('sports', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('image', 255)->nullable();
+            $table->string('image', 2000)->nullable();
+            $table->integer('count_teams')->unsigned()->default(0);
             $table->timestamps();
         });
     }

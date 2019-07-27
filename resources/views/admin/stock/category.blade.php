@@ -16,6 +16,9 @@
                             <th class="">Name</th>
                             <th class="">Odd</th>
                             <th class="">Boxes</th>
+                            <th class="">Tie Breaker</th>
+                            <th class="">T1</th>
+                            <th class="">T2</th>
                             <th class="">Action</th>
                         </thead>
                         <tbody>
@@ -29,6 +32,16 @@
                                 </td>
                                 <td class="">
                                   {{$sc->boxes}}
+                                </td>
+
+                                <td class="">
+                                    {{$sc->tie_breaker}}
+                                </td>
+                                <td class="">
+                                    {{$sc->tie_breaker_one}}
+                                </td>
+                                <td class="">
+                                    {{$sc->tie_breaker_two}}
                                 </td>
                                 <td class="">
                                   <a href="{{route('stock.category.update',[$sc->id])}}" class="btn btn-sm btn-primary">Edit</a>

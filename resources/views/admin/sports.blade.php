@@ -55,13 +55,11 @@
                                         <td class="text-center">
                                             <a href="#" style="color: black"
                                                 onclick="
-                                                    let result = confirm('Are you sure you want to delete this country?');
+                                                    var result = confirm('Are you sure you want to delete this sport?');
                                                     if (result){
-                                                        let sure = confirm('really sure');
-                                                        if (sure){
-                                                            event.preventDefault();
+                                                        event.preventDefault();
                                                         document.getElementById('delete-form-{{$sport->id}}').submit();
-                                                        }
+
                                                     }"
                                                 >
                                                     <i class="fa fa-trash cursor" ></i>
@@ -78,7 +76,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="100%" class="text-center">NO Sports Added</td>
+                                    <td colspan="100%" class="text-center">No Sports Added</td>
                                 </tr>
                             @endif
                         </tbody>

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Events\AddNewUser;
+use App\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'min:4', 'alpha_dash', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'tel' => ['required', 'min:8', 'max:14'],
-            'gender' => ['required', 'in:none,male,female'],
+            'gender' => ['required', 'in:male,female'],
             'country' => ['required'],
             'state' => ['required'],
             'terms' => ['required', 'accepted']
@@ -80,7 +80,7 @@ class RegisterController extends Controller
         $new_user = $user;
         if ($has_referal_code) {
             $referal_user_name = $has_referal_code;
-            event(new AddNewUser($referal_user_name, $new_user));
+            event(new Registered($referal_user_name, $new_user));
         }
 
         return $user;

@@ -11,10 +11,12 @@ require('./bootstrap');
 
 import Vue from 'vue';
  import Datetime from 'vue-datetime'
+import Vue2Filters from 'vue2-filters'
 // You need a specific loader for CSS files
 import 'vue-datetime/dist/vue-datetime.css'
 
 Vue.use(Datetime);
+Vue.use(Vue2Filters)
 
 /**
  * The following block of code may be used to automatically register your
@@ -71,11 +73,15 @@ Vue.component('search-match-tab', require('./components/searchMatchTab.vue').def
 Vue.component('leaderboard-entry', require('./components/EntriesLeaderBoard.vue'));
 Vue.component('event-show', require('./components/admin/events/show.vue').default);
 Vue.component('event-create', require('./components/admin/events/createView.vue').default);
-Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
+// Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
 Vue.component('datetime', Datetime.default);
-Vue.component('prediction-view', require('./components/admin/events/prediction-view.vue').default);
+// Vue.component('prediction-view', require('./components/admin/events/prediction-view.vue').default);
 Vue.component('event-prediction', require('./components/admin/events/event-prediction.vue').default);
-Vue.component('stock-index', require('./components/admin/stock/index.vue').default);
+// Vue.component('stock-index', require('./components/admin/stock/index.vue').default);
+Vue.component('stock-index', require('./components/admin/stock/create_stock.vue').default);
+Vue.component('team-table', require('./components/admin/team/view.vue').default);
+
+Vue.component('stock-lobby', require('./components/stock/index.vue').default)
 
 const app = new Vue({
     store,

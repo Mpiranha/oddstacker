@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
     return view('welcome');
@@ -116,21 +107,15 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/admin', function(){
     return view('admin.dashboard');
-});
+})->name('admin');
 
 Route::get('/admin/users', 'AdminPagesController@users')->name('admin.users');
 Route::put('/admin/users/revoke/{id}/{revoke?}', 'AdminPagesController@revoke')->name('user.revoke');
 
-// Countrty
-Route::get('/admin/countries', 'CountryController@countries')->name('admin.countries');
-Route::post('/admin/countries/create', 'CountryController@create')->name('country.create');
-Route::delete('/admin/countries/delete/{id}', 'CountryController@delete')->name('country.delete');
-
 // League
 Route::get('/admin/leagues', 'LeagueController@league')->name('admin.league');
-Route::get('/admin/leagues/{name}/view/{id}', 'LeagueController@view')->name('league.view');
-Route::get('/admin/leagues/{country}/{country_id}/{sport}/view/{id}', 'LeagueController@sport')->name('league.show');
-Route::post( '/admin/leagues/{country_id}/{sport_id}', 'LeagueController@create')->name('league.create');
+Route::get('/admin/leagues/view/{id}', 'LeagueController@sport')->name('league.view');
+Route::post( '/admin/leagues/{sport_id}', 'LeagueController@create')->name('league.create');
 Route::delete('/admin/leagues/delete/{id}', 'LeagueController@delete')->name('league.delete');
 
 //sport
@@ -139,35 +124,27 @@ Route::post('/admin/sports', 'SportsController@create')->name('sport.create');
 Route::delete('/admin/sports/delete/{id}', 'SportsController@delete')->name('sport.delete');
 
 // Team
-Route::post('admin/teams/create/{country_id}/{sport_id}/{league_id}', 'TeamController@addNewTeam')->name('team.create');
-Route::get('/admin/teams/{name}/view/{id}', 'TeamController@view')->name('team.view');
-Route::get('/admin/teams/{country}/{country_id}/{sport}/view/{id}', 'TeamController@league')->name('team.league');
-Route::get('/admin/teams/{country}/{country_id}/{sport}/{sport_id}/{league_name}/{league_id}', 'TeamController@getTeams')->name('team.show');
 Route::get('/admin/teams', 'TeamController@teams')->name('admin.teams');
-Route::delete('/admin/teams/delete/{id}', 'TeamController@delete')->name('team.delete');
+Route::get('/admin/teams/sport/{id}', 'TeamController@view')->name('team.view');
+Route::post('admin/teams/create/{sport_id}', 'TeamController@addNewTeam')->name('team.create');
 
 // Predictions
 Route::get('/admin/predictions', 'PredictionController@predictions')->name('admin.prediction');
-Route::get( '/admin/predictions/{name}/view/{id}', 'PredictionController@view')->name('prediction.view');
-Route::post('/admin/predictions/create/{sport_name}/{sport_id}', 'PredictionController@create')->name('prediction.create');
+Route::get( '/admin/predictions/view/{id}', 'PredictionController@view')->name('prediction.view');
+Route::post('/admin/predictions/create/{sport_id}', 'PredictionController@create')->name('prediction.create');
 Route::delete('/admin/predictions/delete/{id}', 'PredictionController@delete')->name('prediction.delete');
 Route::get('/admin/predictions/edit/{id}', 'PredictionController@edit')->name('prediction.edit');
 Route::post('/admin/predictions/update/{id}', 'PredictionController@update')->name('prediction.update');
 
-//Event
-Route::get('/admin/events', 'EventsController@index')->name('event.index');
-Route::get('/admin/events/view', 'EventsController@view')->name('event.view');
-Route::get('/admin/events/{country}/view/{id}', 'EventsController@sport')->name('event.sport');
-Route::get('/admin/events/{country}/{country_id}/{sport}/view/{id}', 'EventsController@league')->name('event.league');
-Route::get('/admin/events/competition/{id}', 'EventsController@createView')->name('event.compt');
-Route::get('/admin/events/eventPage/{id}', 'EventsController@viewEventPage')->name('event.page');
+// Group predictions
+Route::get('/admin/predictions/groups', 'PredictionController@prediction_groups')->name('admin.prediction.group');
+Route::post('/admin/predictions/groups/create', 'PredictionController@create_prediction_groups')->name('admin.prediction.group_create');
 
-// Competitions
-Route::get('/admin/competition', 'CompetitionsController@index')->name('compt.index');
-Route::get('/admin/competition/country/{sport_id}', 'CompetitionsController@view')->name('compt.view');
-Route::get('/admin/competition/show/{country_name}/{country_id}/{sport_id}', 'CompetitionsController@show')->name('compt.show');
-Route::post( '/admin/competition/create/{country_id}/{sport_id}', 'CompetitionsController@create')->name('compt.create');
-Route::delete('/admin/competition/delete/{id}', 'CompetitionsController@delete')->name('compt.delete');
+//Event
+Route::get('/admin/events', 'EventsController@view')->name('event.index');
+Route::get('/admin/events/view/{id}', 'EventsController@league')->name('event.league');
+Route::get('/admin/events/league/{id}', 'EventsController@createView')->name('event.league_view');
+Route::get('/admin/events/eventPage/{id}', 'EventsController@viewEventPage')->name('event.page');
 
 // stocks
 Route::get('/admin/stocks', 'StockController@index')->name('stock.index');
@@ -176,3 +153,12 @@ Route::get('/admin/stocks/category/update/{id}', 'StockController@categoryEdit')
 Route::post('/admin/stocks/category/update/{id}', 'StockController@categoryUpdate')->name('stock.category.update');
 Route::get('/admin/stocks/type', 'StockController@type')->name('stock.types');
 Route::get('/admin/stocks/create-view', 'StockController@createView')->name('stock.create');
+
+// Slider
+Route::get('/admin/sliders', 'SliderController@view')->name('admin.sliders');
+Route::post('/admin/slider/create', 'SliderController@save')->name('slider.create');
+Route::delete('/admin/slider/delete/{id}', 'SliderController@delete')->name('slider.delete');
+
+// Settings
+Route::get('/admin/settings', 'SettingController@view')->name('admin.settings');
+Route::post('/admin/settings/save', 'SettingController@save')->name('settings.update');

@@ -23,7 +23,7 @@
                           <div class="modal-header">
                           <h4 class="modal-title" id="exampleModalLongTitle">Edit Stock Category {{$stockCategory->name}}</h4>
                           </div>
-                          <form action="#" method="POST">
+                          <form action="" method="POST">
                               {{ csrf_field() }}
                               <div class="modal-body">
                                   <div class="form-group">
@@ -33,6 +33,18 @@
                                   <div class="form-group">
                                       <label>Boxes</label>
                                   <input type="number" name="boxes" value="{{$stockCategory->boxes}}" class="form-control" placeholder="boxes" >
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Tie Breaker</label>
+                                      <input type="number" name="tie_breaker" value="{{$stockCategory->tie_breaker}}" class="form-control" placeholder="tie breaker" >
+                                  </div>
+                                  <div class="form-group">
+                                      <label>T1</label>
+                                      <input type="number" name="tie_breaker_one" value="{{$stockCategory->tie_breaker_one}}" class="form-control" placeholder="tie breaker 1" >
+                                  </div>
+                                  <div class="form-group">
+                                      <label>T2</label>
+                                      <input type="number" name="tie_breaker_two" value="{{$stockCategory->tie_breaker_two}}" class="form-control" placeholder="tie breaker 2" >
                                   </div>
                               </div>
                               <div class="modal-footer">

@@ -9,7 +9,7 @@ class Competition extends Model
 {
 
     protected $fillable = [
-        'name', 'country_id', 'sport_id'
+        'name', 'sport_id'
     ];
     public function teams($teamType = null)
     {
