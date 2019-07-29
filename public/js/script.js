@@ -230,7 +230,7 @@ $(document).ready(function () {
         $("#mystacks").removeClass("active");
     });
 
-    $(".input-odd, .shell-odd-input").each(function () {
+    $(".input-odd").each(function () {
         $(this).keypress(function () {
             if ($(this).val().length == 1) {
                 $(this).val($(this).val() + ".");

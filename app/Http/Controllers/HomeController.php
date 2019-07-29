@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Stock;
 use App\Models\EventPrediction;
+use App\Models\StockEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function changePassword(Request $request, $id) {
+    public function changePassword(Request $request, $id)
+    {
         $authId = Auth::id();
         if ($authId == $id) {
             $this->validate($request, [
@@ -46,7 +48,7 @@ class HomeController extends Controller
             $new_pass = $request->password;
 
             $hashPassword = $user->password;
-            if (password_verify ( $old_pass , $hashPassword )) {
+            if (password_verify($old_pass, $hashPassword)) {
                 $user->password = Hash::make($new_pass);
                 $user->save();
                 return redirect()->back()->with('success', 'Password updated successfully');
@@ -62,12 +64,18 @@ class HomeController extends Controller
     {
         $stock = Stock::with('category')->findOrFail($id);
         ##  TODO::PROTECT THIS ROUTE:: SHOW ONLY PUBLISHED STOCKS
-        $eventPredictions = EventPrediction::where('stock_id', $stock->id)
+        $eventPredictions = StockEvent::where('stock_id', $stock->id)
             ->with('event')->with('prediction')->get();
+
+        foreach ($eventPredictions as $event) {
+            $event['odds'] = 0;
+        }
 
         return view('stackshell-db', [
             'stock' => $stock,
             'eventPredictions' => $eventPredictions
         ]);
+
+//        return $eventPredictions;
     }
 }

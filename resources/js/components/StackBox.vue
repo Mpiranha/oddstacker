@@ -2,7 +2,7 @@
     <div class="container-fluid px-0" @click="stockShell(stock)">
         <div class="row">
             <div class="d-flex" id="octagon">
-                <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn">vgb</i>
+                <i @click="bringMoreDetails()" class="far fa-chart-bar info-btn"></i>
                 <div class="d-flex h-100 mt-3 w-20 ball" :class="this.class">
                     <i class="fas fa-futbol"></i>
                 </div>
