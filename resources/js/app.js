@@ -42,6 +42,7 @@ Vue.component('new-box', require('./components/Newbox.vue').default);
 Vue.component('second-box', require('./components/SecondBox.vue').default);
 Vue.component('leader-box', require('./components/LeaderBox.vue').default);
 Vue.component('db-stackshell-box', require('./components/StackTeamViewBox.vue').default);
+Vue.component('db-stackshell-tie-box', require('./components/StockTieBreakerBox.vue').default);
 Vue.component('tie-breaker-box', require('./components/TieBreakerBox.vue').default);
 Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').default);
 Vue.component('bank-details', require('./components/BankDetailBox.vue').default);

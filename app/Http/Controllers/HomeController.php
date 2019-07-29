@@ -69,6 +69,7 @@ class HomeController extends Controller
 
         foreach ($eventPredictions as $event) {
             $event['odds'] = 0;
+            $event['tie_breaker'] = false;
         }
 
         return view('stackshell-db', [
