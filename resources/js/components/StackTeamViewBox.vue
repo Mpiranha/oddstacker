@@ -13,8 +13,8 @@
                         {{ eventPredictions.prediction.name }}
                     </span>
                 </div>
-                <money v-bind="money" class="shell-odd-input text-center text-dark pt-2 px-2" placeholder="0.00"
-                       v-model="eventPredictions.odds" maxlength="5"></money>
+                <input type="tel" class="shell-odd-input text-center text-dark pt-2 px-2" placeholder="0.00"
+                       v-model="eventPredictions.odds" id="shell-odd-input" maxlength="4" v-on:keyup="oddChanged">
             </div>
         </div>
     </div>
@@ -37,7 +37,11 @@
                 },
             }
         },
-        mounted: function () {
+        methods: {
+            oddChanged(){
+                console.log("HEY")
+                this.$emit('alter-odd')
+            }
         }
     }
 </script>
