@@ -2,29 +2,44 @@
     <div class="fancy-top-bot px-3">
         <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex">
-                <fancy-top-bottom 
-                 :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`" 
-                 class="flex-grow-1 mr-5"></fancy-top-bottom>
+                <fancy-top-bottom
+                        :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`"
+                        class="flex-grow-1 mr-5"></fancy-top-bottom>
             </div>
-            
+
             <div class="d-flex mt-4">
                 <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
                     <span class="odds-text-content align-self-center">
                         {{ eventPredictions.prediction.name }}
                     </span>
                 </div>
-                <input class="shell-odd-input text-center text-dark pt-2 px-2" type="text" placeholder="0.00" value="" maxlength="4">
+                <money v-bind="money" class="shell-odd-input text-center text-dark pt-2 px-2" placeholder="0.00"
+                       v-model="eventPredictions.odds" maxlength="5"></money>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    props: ['stock', 'eventPredictions'],
-
-    mounted: function(){}
-}
+    import {Money} from 'v-money'
+    export default {
+        props: ['stock', 'eventPredictions'],
+        components: {Money},
+        data(){
+            return {
+                money: {
+                    decimal: '.',
+                    thousands: ',',
+                    prefix: '',
+                    suffix: '',
+                    precision: 2,
+                    masked: false
+                },
+            }
+        },
+        mounted: function () {
+        }
+    }
 </script>
 
 
@@ -34,6 +49,7 @@ export default {
         color: rgb(255, 215, 0);
         padding: 2rem 0.2rem;
     }
+
     .odds-text {
         position: relative;
         background-color: rgba(245, 199, 11, 0.561);
@@ -52,7 +68,6 @@ export default {
         font-weight: bolder;
         display: block;
     }
-
 
     .fancy-top-bot {
         width: 100%;
@@ -73,17 +88,17 @@ export default {
         border-bottom: 15px solid #ffffff33;
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
-    }  
+    }
 
     .fancy-top-bot:after {
-    content: "";
-    width: 100%;
-    height: 0;
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    border-top: 15px solid #ffffff33;
-    border-left: 15px solid #eee0;
-    border-right: 15px solid #eee0;
+        content: "";
+        width: 100%;
+        height: 0;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        border-top: 15px solid #ffffff33;
+        border-left: 15px solid #eee0;
+        border-right: 15px solid #eee0;
     }
 </style>

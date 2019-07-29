@@ -58,6 +58,7 @@ Vue.component('stock-index', require('./components/admin/stock/create_stock.vue'
 Vue.component('team-table', require('./components/admin/team/view.vue').default);
 
 Vue.component('stock-lobby', require('./components/stock/index.vue').default)
+Vue.component('stock-shell', require('./components/stock/stock-shell.vue').default)
 
 const app = new Vue({
     store,
