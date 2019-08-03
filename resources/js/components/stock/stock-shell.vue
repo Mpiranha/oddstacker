@@ -87,16 +87,16 @@
                 let usedOdds = 0;
                 this.predictions.forEach((pred) => {
                     if (pred.odds > 0) {
-                        usedOdds = usedOdds + Number(pred.odds, 10)
+                        usedOdds = Number(this.roundTo(usedOdds + Number(pred.odds, 10), 2))
                     }
                 });
 
                 this.odds = this.roundTo(this.stock.category.odd - usedOdds, 2)
             },
             submitStack(){
-                axios.post(`/api/stock/lobby`, {stock: this.stock, event: this.predictions})
+                axios.post(`/stock/lobby`, {selection: this.predictions})
                     .then((resp) => {
-
+                        window.location.reload()
                     }).catch((err) => console.log(err))
             },
             selectionChanged(selection){
@@ -112,7 +112,7 @@
                 this.predictions.forEach((pred) => {
                     if (pred.odds > 0) {
 //                        console.log(usedOdds)
-                        usedOdds = usedOdds + Number(pred.odds, 10)
+                        usedOdds = Number(this.roundTo(usedOdds + Number(pred.odds, 10), 2), 10)
                     }
                 });
 

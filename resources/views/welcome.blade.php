@@ -2,11 +2,11 @@
 
 @section('page')
     <div class="container-fluid h-100 scroll-y clear-padding log-rg-bg">
-        <div class="shades pb-5">
+        <div class="little-shade pb-5">
             <div class="row">
                 <div class="col-12 col-sm-12">
                     <nav class="navbar navbar-expand bg-nav">
-                        <a href="/" class="navbar-brand logo">ODDSTACKR</a>             
+                        <a href="/" class="navbar-brand logo">ODDSTACKR</a>
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a href="/login" class="nav-link">Login</a>
@@ -24,11 +24,11 @@
                 <div class="col-12 col-sm-12">
                     <div class="jumbotron jumbotron-fluid text-center more-pt clear-bg text-light">
                         <div class="container">
-                            <h1 class="desc-header">Play and Win With ODDSTACKR</h1> 
+                            <h1 class="desc-header">Play and Win With ODDSTACKR</h1>
                             <p class="mt-4 desc-paragraph">
                                 ipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsum
                                 ipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsumipsum dulum ipsum
-                            </p> 
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -44,4 +44,3 @@
         <footer-comp></footer-comp>
     </div>
 @endsection
-

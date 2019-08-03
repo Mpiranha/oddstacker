@@ -211,9 +211,9 @@ $(document).ready(function () {
 
     $("#reg-submit").click(function () {
         /* if (errors.length < 1) {
-            return true;
-        }
-        return false; */
+         return true;
+         }
+         return false; */
     });
 
     $("#my-stack").click(function () {
@@ -239,20 +239,20 @@ $(document).ready(function () {
     });
 
 
-    function depositIncrementer(targetBox) {
-        if (i == 3) {
-            targetBox.val(Number(targetBox.val()) + Number(4 + "00"));
-            return false;
-        } else if (i == 4) {
-            targetBox.val(Number(targetBox.val()) + Number(8 + "00"));
-            return false;
-        } else if (i == 5) {
-            targetBox.val(Number(targetBox.val()) + Number(1 + "000"));
-            return false;
-        }
-        targetBox.val(Number(targetBox.val()) + Number(i + "00"));
+        function depositIncrementer(targetBox) {
+            if (i == 3) {
+                targetBox.val(Number(targetBox.val()) + Number(4 + "00"));
+                return false;
+            } else if (i == 4) {
+                targetBox.val(Number(targetBox.val()) + Number(8 + "00"));
+                return false;
+            } else if (i == 5) {
+                targetBox.val(Number(targetBox.val()) + Number(1 + "000"));
+                return false;
+            }
+            targetBox.val(Number(targetBox.val()) + Number(i + "00"));
 
-    }
+        }
     //Deposit iincrementer
     for (let i = 1; i < 6; i++) {
         $("#paystack-add-" + i + "00").click(function () {
@@ -277,6 +277,7 @@ $(document).ready(function () {
         });
     }
 
+
     $(".info-box").click(function () {
         $(".modal-box").css("display", "block");
     });
@@ -284,4 +285,11 @@ $(document).ready(function () {
     $("#close-modal").click(function () {
         $(".modal-box").css("display", "none");
     });
+
+
+    $('.datepicker').pickadate();
+
+
+
+
 });

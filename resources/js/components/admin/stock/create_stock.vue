@@ -158,6 +158,9 @@
                                                 <label>Duplicate</label><input type="checkbox" v-model="duplicate">
                                             </div>
                                             <div class="form-group">
+                                                <label>N0 of times duplicate</label><input type="number" v-model="duplicate_times">
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Available for promo users</label><input type="checkbox" v-model="available_for_promo">
                                             </div>
                                             <div class="form-group" v-if="schedule">
@@ -254,6 +257,7 @@
                 loaders: {
                     events_section: true
                 },
+                duplicate_times: 1,
                 event: '',
                 events: [],
                 stock_events: [],
@@ -323,7 +327,8 @@
                     stock_type: this.stock_type,
                     stock_group: this.stock_group,
                     price: this.winners,
-                    available_for_promo: this.available_for_promo
+                    available_for_promo: this.available_for_promo,
+                    duplicate_times: this.duplicate_times
                 }).then((resp) => {
                     window.location = '/admin/stocks'
                 }).catch((err) => console.log(err))
@@ -353,7 +358,8 @@
                     stock_group: this.stock_group,
                     price: this.winners,
                     available_for_promo: this.available_for_promo,
-                    schedule_time: this.schedule_time
+                    schedule_time: this.schedule_time,
+                    duplicate_times: this.duplicate_times
                 }).then((resp) => {
                     window.location = '/admin/stocks'
                 }).catch((err) => console.log(err))

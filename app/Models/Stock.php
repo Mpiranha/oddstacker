@@ -10,7 +10,7 @@ class Stock extends Model
         'value', 'margin', 'entry', 'code', 'stake',
     ];
 
-    public $with = ['category', 'margin', 'sport', 'entries'];
+    public $with = ['category', 'margin', 'sport', 'entries', 'events'];
 
     public function category()
     {
@@ -31,6 +31,6 @@ class Stock extends Model
     }
 
     public function events(){
-        return $this->hasManyThrough('App\Models\Event', 'App\Models\EventPrediction');
+        return $this->hasMany('App\Models\StockEvent');
     }
 }

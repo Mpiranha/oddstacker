@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Stock;
 use App\Models\EventPrediction;
+use App\Models\StockEntry;
 use App\Models\StockEvent;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +31,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $stocks = Stock::with('category')->get();
+        $stocks = Stock::with('category')->where('schedule_date', '<=', Carbon::now())
+            ->where('status', 0)->where('full_entry', false)->get();
+
         return view('home', [
             'stocks' => $stocks,
         ]);
@@ -62,21 +66,37 @@ class HomeController extends Controller
 
     public function stackShell(Request $request, $id)
     {
-        $stock = Stock::with('category')->findOrFail($id);
-        ##  TODO::PROTECT THIS ROUTE:: SHOW ONLY PUBLISHED STOCKS
-        $eventPredictions = StockEvent::where('stock_id', $stock->id)
-            ->with('event')->with('prediction')->get();
+        $stock = Stock::with('category')->where('id', $id)
+            ->where('schedule_date', '<=', Carbon::now())
+            ->where('status', 0)->where('full_entry', false)->first();
 
-        foreach ($eventPredictions as $event) {
-            $event['odds'] = 0;
-            $event['tie_breaker'] = false;
+        if ($stock) {
+            $eventPredictions = StockEvent::where('stock_id', $stock->id)
+                ->with('event')->with('prediction')->get();
+
+            foreach ($eventPredictions as $event) {
+                $event['odds'] = 0;
+                $event['tie_breaker'] = false;
+            }
+
+            //check if current user has enrolled for this stock else take to stock shell
+
+            $entry = StockEntry::where('stock_id', $id)->where('user_id', Auth::user()->id);
+
+            if ($entry->count()) {
+                return view('stock/stock-details', [
+                    'stock' => $stock,
+                    'eventPredictions' => $eventPredictions,
+                    'entry' => $entry
+                ]);
+            }
+
+            return view('stock/stackshell-db', [
+                'stock' => $stock,
+                'eventPredictions' => $eventPredictions
+            ]);
         }
 
-        return view('stackshell-db', [
-            'stock' => $stock,
-            'eventPredictions' => $eventPredictions
-        ]);
-
-//        return $eventPredictions;
+        return abort(404);
     }
 }
