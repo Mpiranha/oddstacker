@@ -27,7 +27,11 @@ class CreateStocksTable extends Migration
                 ->references('id')->on('stock_types')->onDelete('cascade');
             $table->integer('sport_id')->unisgned()
                 ->references('id')->on('sports')->onDelete('cascade');
-            $table->boolean('duplicate')->default(false);
+            $table->boolean('is_duplicating')->default(false);
+            $table->integer('n_duplicates')->default(0);
+            $table->integer('count_duplicate')->default(0);
+            $table->integer('copy_id')->default(null)->nullable();
+            $table->boolean('is_photocopy')->default(false);
             $table->integer('category_id')->unisgned()
                 ->references('id')->on('stock_categories')->onDelete('cascade');
             $table->integer('no_winners')->unsigned()->default(0);

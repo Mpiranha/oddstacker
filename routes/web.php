@@ -132,6 +132,8 @@ Route::post('/admin/stocks/category/update/{id}', 'StockController@categoryUpdat
 Route::get('/admin/stocks/type', 'StockController@type')->name('stock.types');
 Route::get('/admin/stocks/create-view', 'StockController@createView')->name('stock.create');
 
+Route::post('/stock/lobby', 'StockController@stockLobby')->middleware('auth');
+
 // Slider
 Route::get('/admin/sliders', 'SliderController@view')->name('admin.sliders');
 Route::post('/admin/slider/create', 'SliderController@save')->name('slider.create');
