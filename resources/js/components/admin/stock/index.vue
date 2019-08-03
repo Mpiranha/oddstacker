@@ -8,7 +8,7 @@
                 <tbody>
                 <tr>
                     <td class="text-center" v-for="(sc, i) in stockcategories" :key="i"
-           t            @click="setCategory(sc.name, sc.id)"
+                       @click="setCategory(sc.name, sc.id)"
                         :class="catClick">
                   <span class="cursor">
                     {{sc.name}}

@@ -2,10 +2,10 @@
 
 @section('page')
 <div class="container-fluid h-100 pr-0 pl-0 bg-land scroll-y text-white">
-    <main-nav title="STACK LOBBY" :user="{{ Auth::user() }}" 
+    <main-nav title="PROFILE" :user="{{ Auth::user() }}" 
         :wallet="{{ Auth::user()->wallet }}">
     </main-nav>
-    <div class="shades h-75">
+    <div class="little-shade h-75">
         <div class="pr-2 pl-2">
             <div class="d-flex flex-column">
 

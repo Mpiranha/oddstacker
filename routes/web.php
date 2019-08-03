@@ -10,7 +10,7 @@ Route::get('/forgot-password',function (){
     return view('forgot');
 });
 
-Route::get('/enter',function (){
+Route::get('/lobby',function (){
     return redirect(route('home'));
 });
 
@@ -46,9 +46,6 @@ Route::get('/account',function (){
     return view('account');
 });
 
-Route::get('/stackshell',function (){
-    return view('stackshell');
-});
 
 Route::get('/change-password',function (){
     return view('changepwd');
@@ -66,9 +63,34 @@ Route::get('/multiebreak',function (){
     return view('multiebreak');
 });
 
-Route::get('/singlebreak',function (){
-    return view('singlebreak');
+// Route::get('/singlebreak',function (){
+//     return view('singlebreak');
+// });
+
+Route::get('/referal',function (){
+    return view('referal');
 });
+
+Route::get('/token',function (){
+    return view('token');
+});
+
+Route::get('/contact',function (){
+    return view('contact');
+});
+
+Route::get('/mail',function (){
+    return view('mail');
+});
+
+Route::get('/terms',function (){
+    return view('terms');
+});
+
+Route::get('/feedback',function (){
+    return view('feedback');
+});
+
 
 
 

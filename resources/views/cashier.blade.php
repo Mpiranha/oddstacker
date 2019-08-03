@@ -5,7 +5,7 @@
     <main-nav title="CASHIER"
         :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
         </main-nav>
-    <div class="shades h-75">
+    <div class="little-shade h-75">
         <div class="pr-2 pl-2">
             <div class="d-flex flex-column">
 

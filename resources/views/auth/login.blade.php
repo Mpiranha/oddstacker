@@ -2,7 +2,7 @@
 
 @section('page')
     <div class="container-fluid h-100 log-rg-bg scroll-y clear-padding">
-        <div class="shades">
+        <div class="little-shade">
             <odd-header></odd-header>
 
             <form id="login-form" action="{{ route('login') }}" class="ml-4 mr-4 extra-mt" method="POST">

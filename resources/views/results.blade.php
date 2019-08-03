@@ -4,7 +4,7 @@
 
 <div class="container-fluid h-100 pr-0 pl-0 scroll-y bg-land">
     
-    <div class="shades">
+    <div class="little-shade">
         <main-nav title="RESULTS"
           :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
         </main-nav>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex">
-                        <input type="text" class="form-control w-70" name="sort-code-search" id="sort-code-search" placeholder="sort code">
+                        <input type="text" class="form-control w-70" name="sort-code-search" id="sort-code-search" placeholder="Search">
                         <select class="form-control w-30 ml-2" name="sort-sport" id="sort-sport">
                             <option selected>Sports</option>
                             <option value="football">Football</option>

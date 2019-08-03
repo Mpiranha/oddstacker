@@ -5,8 +5,10 @@
         <span id="side" class="dark-blue-text">
           <i class="fa fa-bars fa-2x f-2"></i>
         </span>
-        <h1 class="text-center text-uppercase f-2 m-0 pl-2">ODDSTACKER</h1>
-        <button id="right-btn" class="btn right-btn pt-0 pb-0 pr-2 pl-2 text-center">N{{ wallet.balance }} <i class="fas fa-angle-down ml-1 angle-down"></i></button>
+        <h1 class="text-center text-uppercase f-2 m-0 pl-2">
+          <span class="logo-blue">ODD</span>STACK<span class="logo-blue">R</span>
+        </h1>
+        <button id="right-btn" class="btn right-btn pt-0 pb-0 pr-2 pl-2 text-center">₦{{ wallet.balance }} <i class="fas fa-angle-down ml-1 angle-down"></i></button>
       </nav>
       <h2 class="text-uppercase text-center f-1 mt-3">{{ title }}</h2>
     </div>
@@ -21,8 +23,7 @@
             </div>
             <div class="flex-grow-1 d-flex flex-column">
               <div class="name-2">{{ user.username }}</div>
-              <div class="name-2">User ID: 4313522</div>
-              <div class="job">N{{ wallet.balance }}</div>
+              <div class="job">₦{{ wallet.balance }}</div>
             </div>
           </div>
           <div class="card-body">
@@ -56,10 +57,13 @@
         <!--list items-->
         <ul class="list-group list-group-flush scroll-y">
           <li class="list-group-item text-light f-1-1">
-            <i class="fas fa-money-bill"></i><a class="text-white" href="/withdrawal">Withdrawal</a>
+            <i class="fas fa-money-bill"></i><a class="text-white" href="/deposit">Withdrawal</a>
           </li>
           <li class="list-group-item text-light f-1-1">
-            <i class="fas fa-scroll"></i><a class="text-white" href="/enter">Stock Lobby</a>
+            <i class="fas fa-scroll"></i><a class="text-white" href="/lobby">Stock Lobby</a>
+          </li>
+          <li class="list-group-item text-light f-1-1">
+            <i class="fas fa-coins mr-3"></i><a class="text-white" href="/token">Token</a>
           </li>
           <li class="list-group-item text-light f-1-1">
             <i class="far fa-file-alt mr-4"></i><a class="text-white" href="/results">Results</a>
@@ -104,7 +108,7 @@ export default {
 }
 
 .bg-dark {
-  background-color: #143363 !important;
+  background-color: rgb(30, 78, 121) !important;
 }
 .jumbotron {
   border-radius: 0px;
@@ -118,7 +122,7 @@ export default {
   font-size: 12px;
   color: #eff;
   border-radius: 23px;
-  background: #073453;
+  background: rgb(30, 78, 121);
 }
 
 /*Top Bar*/
@@ -127,11 +131,11 @@ export default {
   margin-bottom: 0;
   height: 120px;
   color: white;
-  background-color: #143363;
+  background-color: rgb(30, 78, 121);
   border-bottom: none;
 }
 .card-body {
-  background: #143363;
+  background: rgb(30, 78, 121);
   border-top: 1px solid rgb(233, 241, 241);
   color: white;
   padding-bottom: 22px;
@@ -217,7 +221,7 @@ export default {
 }
 
 .list-group-item {
-  background-color: #073453;
+  background-color: rgb(30, 78, 121);
   height: 9vh;
   line-height: 32px;
   font-size: 1.3em;
@@ -255,4 +259,21 @@ export default {
   font-family: "Times New Roman", Times, serif;
   color: white;
 }
+
+.logo-blue {
+  color: rgb(91, 155, 213);
+  font-weight: bolder;
+  font-size: 1.7rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* #sidebar {
+    left: 0px;
+  }
+
+  #close {
+    display: none;
+  } */
+}
 </style>
+

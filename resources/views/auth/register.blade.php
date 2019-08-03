@@ -2,7 +2,7 @@
 
 @section('page')
 <div class="container-fluid h-100 scroll-y log-rg-bg rg-bg clear-padding">
-    <div class="shades">
+    <div class="little-shade">
         <odd-header></odd-header>
 
         @if ($errors->any())

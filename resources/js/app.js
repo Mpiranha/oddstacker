@@ -6,6 +6,7 @@
  */
 
 import { store } from './store/store';
+
 require('./bootstrap');
 
 import Vue from 'vue';
@@ -25,6 +26,28 @@ Vue.use(Vue2Filters)
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+
+
+
+
+
+
+
+
+
+
+
+// const files = require.context('./', true, /\.vue$/i)
+
+// files.keys().map(key => {
+//     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))
+// })
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 Vue.component('odd-header', require('./components/Header.vue').default);
 Vue.component('stack-nav', require('./components/StackNav.vue').default);
 Vue.component('stack-box', require('./components/StackBox.vue').default);
@@ -48,6 +71,7 @@ Vue.component('single-breaker-box', require('./components/TieBreakSingle.vue').d
 Vue.component('bank-details', require('./components/BankDetailBox.vue').default);
 Vue.component('account-details', require('./components/AccountDetailBox.vue').default);
 Vue.component('search-match-tab', require('./components/searchMatchTab.vue').default);
+Vue.component('leaderboard-entry', require('./components/EntriesLeaderBoard.vue'));
 Vue.component('event-show', require('./components/admin/events/show.vue').default);
 Vue.component('event-create', require('./components/admin/events/createView.vue').default);
 // Vue.component('settings-modal', require('./components/modal/settings-modal.vue').default);
@@ -78,3 +102,5 @@ const app = new Vue({
         }
     }
 });
+
+

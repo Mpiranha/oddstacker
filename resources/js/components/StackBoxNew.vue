@@ -4,7 +4,7 @@
             <div class="d-flex h-100 mt-4 w-20 ball">
                 <i class="fas fa-futbol"></i>
             </div>
-            <div class="w-80 mt-3 mr-3">
+            <div class="w-80 mt-1 mr-3">
                 <div class="d-flex flex-column">
                     <div class="d-flex justify-content-between w-100 align-items-end">
                         <h6 class="bold-1 top-section">Both Teams to Score</h6>
@@ -18,38 +18,26 @@
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <div class="d-flex flex-column mr-2">
-                            <h6 class="bold">STAKE</h6>
-                            <h6 class="bold-1 stand-out">NGN 400 000</h6>
+                            <h6 class="bold m-0">STAKE</h6>
+                            <h6 class="bold-1 stand-out m-0">NGN 400 000</h6>
                         </div>
 
-                        <div class="flex-grow-1 rounded-border py-1 px-2 pt-1">
-                            <div class="d-flex justify-content-around mb-1">
-                                <h6 class="bold-1 stand-out m-0">POS</h6>
-                                <h6 class="pl-2 bold-1 m-0 stand-out">WON</h6>
-                                <h6 class="bold-1 stand-out m-0">ODDS</h6>
-                            </div>
-
-                            <div class="d-flex justify-content-around">
-                                <h6 class="bold-1 more-em m-0">5/400</h6>
-                                <h6 class="bold-1 amount-text m-0 px-2 text-white ">2000</h6>
-                                <h6 class="bold-1 more-em m-0">41.22</h6>
-                            </div>
+                        <div class="flex-grow-1 align-self-center py-1 px-2 pt-1">
+                            <h6 class="bold text-uppercase text-center m-0">Win MARGIN</h6>
+                            <h6 class="bold-1 stand-out text-uppercase text-center m-0">top 3</h6>
                         </div>
 
                         <div class="d-flex flex-column ml-2">
-                            <h6 class="bold">ENTRY</h6>
-                            <h6 class="bold-1 stand-out">7/100</h6>
+                            <h6 class="bold m-0">ENTRY</h6>
+                            <h6 class="bold-1 stand-out m-0">7/100</h6>
                         </div>
                     </div>
                     <div class="d-flex pt-1 bt-1 justify-content-between w-100 align-items-end mt-2">
-                        <h6 class="m-0">WIN MARGIN </h6>
-                        <h6 class="m-0">CODE</h6>
-                        <h6 class="m-0">ODDS</h6>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-start w-100">
-                        <h6 class="bold-1 stand-out">FIRST ONLY</h6>
-                        <h6 class="bold-1 stand-out">56758</h6>
-                        <h6 class="bold-1 odd-green">44.95</h6>
+                        <h6 class="m-0">ODDS: <span class="bold-1 stand-out">44.95</span> </h6>
+
+                        <h6 class="m-0 f-1 status-text text-center">LIVE</h6>
+
+                        <h6 class="m-0">CODE: <span class="bold-1 stand-out">56758</span> </h6>
                     </div>
                 </div>
             </div>
@@ -119,9 +107,9 @@ export default {
         width: 100%;
         height: 0;
         position: absolute;
-        bottom: -15px;
+        bottom: -10px;
         left: 0;
-        border-top: 15px solid #ffffff85;
+        border-top: 10px solid #ffffff85;
         border-left: 15px solid #eee0;
         border-right: 14px solid #eee0;
     }  
@@ -131,9 +119,11 @@ export default {
         border: 2px solid green;
         align-items: center;
     }
-    .amount-text {
+    .status-text {
         border-radius: 30px;
         background-color: green;
+        padding: 0 .8rem;
+        color: #fbf7f7 !important;
     }
     .amt-text {
         display: block;

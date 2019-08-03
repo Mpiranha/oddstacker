@@ -15,12 +15,8 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="d-flex text-light justify-content-center">
-                        <p class="f-0-6 mb-0 bold-1 pos-relative">SELECT SIX PREDICTIONS AS TIE BREAKER
-                            <span class="info-box f-0-6">
-                                <i class="fas fa-info text-light"></i>
-                            </span>
-                        </p>
-
+                        <p class="f-0-9 mb-0 bold-1">SELECT SIX PREDICTIONS AS TIE BREAKER</p>
+                            <img class="info-box ml-1" src="/images/info-icon.png" />
                     </div>
                 </div>
             </div>
@@ -44,13 +40,21 @@
             </div>
 
 
-            <div class="shell-box border-curve px-1 pt-0 pb-3 mt-4">
+            <div class="shell-box border-curve px-1 pt-0 pb-3 mt-1">
                 
-            <tie-breaker-box></tie-breaker-box>
+                <tie-breaker-box></tie-breaker-box>
 
-            <tie-breaker-box></tie-breaker-box>
+                <tie-breaker-box></tie-breaker-box>
 
-            <tie-breaker-box></tie-breaker-box>
+                <tie-breaker-box></tie-breaker-box>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 text-center">
+                    <button class="btn w-75 sexy-btn" disabled="disabled">PLAY WITH ₦1,000</button>
+                    <br />
+                    <small class="text-light">Submit Your Stack Of Odds</small>
+                </div>
             </div>
         </div>
     </div>

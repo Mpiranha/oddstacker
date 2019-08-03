@@ -5,7 +5,7 @@
     <main-nav title="DEPOSIT"
         :user="{{ Auth::user() }}" :wallet="{{ Auth::user()->wallet }}">
         </main-nav>
-    <div class="shades">
+    <div class="little-shade">
         <div class="pr-3 pl-3">
             <label for="exampleFormControlTextarea1">Choose Method Of Payment</label>
             <div class="accordion" id="accordionExample">

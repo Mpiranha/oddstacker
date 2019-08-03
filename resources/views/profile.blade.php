@@ -3,7 +3,7 @@
 @section('page')
 <div class="container-fluid px-0 bg-land">
 
-        <div class="shades">
+        <div class="little-shade">
                 <main-nav title="PROFILE" :user="{{ Auth::user() }}" 
                         :wallet="{{ Auth::user()->wallet }}">
                 </main-nav>

@@ -16,8 +16,8 @@
                 <div class="col-12">
                     <div class="d-flex text-light justify-content-center">
                         <p class="f-0-6 mb-0 bold-1 pos-relative">SELECT SIX PREDICTIONS AS TIE BREAKER
-                            <span class="info-box f-0-6">
-                                <i class="fas fa-info text-light"></i>
+                            <span class="info-box f-1">
+                                i
                             </span>
                         </p>
 

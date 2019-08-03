@@ -6,14 +6,14 @@
                 <div class="d-flex h-100 mt-3 w-20 ball" :class="this.class">
                     <i class="fas fa-futbol"></i>
                 </div>
-                <div class="w-80 mt-3 mr-3">
+                <div class="w-80 mt-0 mr-3">
                     <div class="d-flex flex-column">
                         <div class="d-flex justify-content-between w-100 align-items-end">
-                            <h6 class="bold-1 top-section">Both Teams to Score</h6>
-                            <h6 class="pr-3 bold-1 top-section">3:00pm</h6>
+                            <h6 class="bold-1 stand-out">Both Teams to Score</h6>
+                            <h6 class="pr-3 bold-1 stand-out">3:00pm</h6>
                         </div>
                         <div class="another-shape w-100 d-flex" :class="this.class">
-                            <span class="amt-text">NGN{{ stock.value }}</span>
+                            <span class="amt-text">₦ {{ stock.value }}</span>
                             <!-- <span class="cur-stack pt-1 ml-2">NGN 20 000</span> -->
                         </div>
                         <div class="d-flex justify-content-between mt-3">
@@ -51,6 +51,7 @@ export default {
     data() {
         return {
             detailsIsVisible: false
+
         }
     },
     mounted: function(){},
@@ -108,19 +109,37 @@ export default {
         to { height: 70px;}
     }
 
+    .ball-icn {
+        padding: 1.5rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    .ball-icn-premium {
+        color: rgb(255, 192, 0) !important;
+    }
+
+    .ball-icn-doubleup {
+        color: rgb(0, 112, 192) !important;
+
+    }
+
+    .ball-icn-head-head {
+        color: rgb(255, 32, 32) !important;
+    }
      #octagon {
       width: 100%;
       height: 100%;
-      background: #ffffff85;
+      background: #ffffff;
       position: relative;
-      margin: 0.7rem 1rem;
+      margin: 0.2rem 1rem;
+      padding-top: .3rem;
     }
 
     .another-shape {
         height: 20px;
         position: relative;
         z-index: 1;
-        background-color: gold;
+        /* background-color: rgb(255, 192, 0); */
         padding-bottom: 1.1rem;
         padding-left: 1rem;
         font-size: 1.1rem;
@@ -128,11 +147,11 @@ export default {
     }
 
     .h2h.another-shape{
-        background-color: red !important;
+        background-color: rgb(255, 32, 32) !important;
     }
 
     .double-up.another-shape{
-        background-color: blue !important;
+        background-color: rgb(0, 112, 192) !important;
     }
 
     .another-shape::before {
@@ -141,18 +160,20 @@ export default {
         height: 0;
         position: absolute;
         z-index: 0;
-        border-bottom: 8px solid gold;
+        border-bottom: 8px solid rgb(255, 192, 0);
         border-right: 17px solid #eee0;
         top: -8px;
         left: 0;
      }
 
     .h2h.another-shape::before{
-        border-bottom: 8px solid red !important;
+         border-bottom: 8px solid rgb(255, 32, 32) !important;
+        border-right: 17px solid #eee0;
     }
 
     .double-up.another-shape::before{
-        border-bottom: 8px solid blue !important;
+        border-bottom: 8px solid rgb(0, 112, 192) !important;
+        border-right: 17px solid #eee0;
     }
 
     .another-shape::after {
@@ -163,41 +184,66 @@ export default {
         bottom: -10px;
         left: 0;
         z-index: -1;
-        border-top: 10px solid gold;
+        border-top: 10px solid rgb(255, 192, 0);
         border-left: 17px solid #eee0;
-        border-right: 15px solid gold;
+        border-right: 15px solid rgb(255, 192, 0);
      }
 
+
+
+
+     .head-to-head::before {
+         border-bottom: 8px solid rgb(255, 32, 32) !important;
+        border-right: 17px solid #eee0;
+     }
+
+     .head-to-head::after {
+          border-top: 10px solid rgb(255, 32, 32) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(255, 32, 32) !important;
+     }
+
+    .double-up {
+         background-color: rgb(0, 112, 192);
+     }
+
+
+
+
+
+
+
+     .odd-green {
+         font-size: 0.8rem;
+         color: rgb(255, 192, 0) !important;
+     }
     .h2h.another-shape::after{
         border-top: 10px solid red !important;
         border-right: 15px solid red !important;
     }
 
     .double-up.another-shape::after{
-        border-top: 10px solid blue !important;
-        border-right: 15px solid blue !important;
+        border-top: 10px solid rgb(0, 112, 192) !important;
+        border-left: 17px solid #eee0;
+        border-right: 15px solid rgb(0, 112, 192) !important;
     }
 
-     .odd-green {
-         font-size: 0.8rem;
-         color: gold;
-     }
 
      .h2h.odd-green{
-         color: red;
+         color: rgb(255, 32, 32);
      }
      .double-up.odd-green{
-         color: blue;
+         color: rgb(0, 112, 192);
      }
 
-    #octagon:after {
+    #octagon::after {
         content: "";
         width: 100%;
         height: 0;
         position: absolute;
-        bottom: -15px;
+        bottom: -10px;
         left: 0;
-        border-top: 15px solid #ffffff85;
+        border-top: 10px solid #ffffff;
         border-left: 15px solid #eee0;
         border-right: 14px solid #eee0;
     }  
@@ -209,16 +255,9 @@ export default {
         bottom: -11px;
     }
 
-    .cur-stack {
-        display: block;
-        font-weight: bolder;
-        font-size: 0.6rem;
-    }
 
-    .top-section {
-        font-size: 0.8rem !important;
-        color: #000000 !important;
-    }
+
+
 
     .stand-out {
         font-size: 0.8rem !important;
@@ -229,6 +268,16 @@ export default {
         position: absolute;
         bottom: 9px;
         left: 20px;
-        font-size: 1rem;
+        height: 20px;
+        width: 20px;
+    }
+
+    .participated-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-width: 5px;
+        border-color: green transparent transparent green;
+        border-style: solid;
     }
 </style>

@@ -765,6 +765,7 @@ a.stock-ref:visited{
     border-top: 10px solid #476036;
     border-left: 17px solid #eee0;
     border-right: 15px solid #476036;
+<<<<<<< HEAD
 }
 
 .btn-referal {
@@ -798,15 +799,56 @@ a.stock-ref:visited{
 
 .ref-level-box {
     position: relative;
+=======
+ }
+
+ .btn-referal {
+     text-transform: uppercase;
+     border-radius: 15px;
+     border: 1px solid #ffffff;
+     background-color: #476036;
+     color: #ffffff;
+ }
+
+ .time-stamp {
+     position: absolute;
+     top: -23px;
+     left: 0;
+     background-color: #476036;
+     color: #ffffff;
+ }
+
+ .ref-tab {
+     text-transform: uppercase;
+     color: #ffffff;
+     background-color: #26381a9c;
+     border: 1px solid #ffffff;
+     border-radius: 5px;
+     padding: 0 .5rem;
+ }
+
+ .ref-tab a {
+     font-size: .8rem;
+ }
+
+ .ref-level-box {
+     position: relative;
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
     border-width: 16px;
     border-style: solid;
     border-image: url("../images/border.png") 28% round;
     -webkit-border-image: url("../images/border.png") 28% round;
     -moz-border-image: url("../images/border.png") 28% round;
     padding: 0 1rem;
+<<<<<<< HEAD
 }
 
 .ref-username-box {
+=======
+ }
+
+ .ref-username-box {
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
     border-width: 16px;
     border-style: solid;
     border-image: url("../images/referral-username-box.png") 28% round;
@@ -814,6 +856,7 @@ a.stock-ref:visited{
     -moz-border-image: url("../images/referral-username-box.png") 28% round;
     border-image-outset: 10px;
     padding: 0 1rem;
+<<<<<<< HEAD
 }
 
 .ref-level-progress {
@@ -826,21 +869,42 @@ a.stock-ref:visited{
 }
 
 .ref-progress-value {
+=======
+ }
+
+ .ref-level-progress {
+     height: .5rem;
+ }
+
+ .ref-progress-bar {
+     background-color: #476036;
+     position: relative;
+ }
+
+ .ref-progress-value {
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
     color: #476036;
     font-size: 11px;
     position: absolute;
     top: -5px;
     right: -24px;
     font-weight: bolder;
+<<<<<<< HEAD
 }
 
 .ref-current-lvl-box {
+=======
+ }
+
+ .ref-current-lvl-box {
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
     position: absolute;
     top: -39px;
     left: -9px;
     background-color: #476036;
     color: #ffffff;
     padding: 0 1rem;
+<<<<<<< HEAD
 }
 
 .ref-table th, .ref-table td {
@@ -848,6 +912,15 @@ a.stock-ref:visited{
 }
 
 .desc-box {
+=======
+ }
+
+ .ref-table th, .ref-table td {
+     padding: 0;
+ }
+
+ .desc-box {
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
     width: 100%;
     /* height: 100px; */
     background: #a3a5a8c4;
@@ -867,6 +940,7 @@ a.stock-ref:visited{
     border-bottom: 15px solid #a3a5a8c4;
     border-left: 15px solid #eee0;
     border-right: 15px solid #eee0;
+<<<<<<< HEAD
 }
 
 .desc-box:after {
@@ -879,6 +953,20 @@ a.stock-ref:visited{
     border-top: 15px solid #a3a5a8c4;
     border-left: 15px solid #eee0;
     border-right: 15px solid #eee0;
+=======
+}
+
+.desc-box:after {
+content: "";
+width: 100%;
+height: 0;
+position: absolute;
+bottom: -15px;
+left: 0;
+border-top: 15px solid #a3a5a8c4;
+border-left: 15px solid #eee0;
+border-right: 15px solid #eee0;
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
 }
 
 
@@ -965,4 +1053,18 @@ div.fancy-top-bot:first-of-type {
 }
 
 /* @media screen and (min-width: 768px) {
+<<<<<<< HEAD
 } */
+=======
+
+} */
+
+
+
+
+
+
+
+
+
+>>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
