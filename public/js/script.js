@@ -238,10 +238,6 @@ $(document).ready(function () {
         });
     });
 
-<<<<<<< HEAD
-
-=======
-
         function depositIncrementer(targetBox) {
             if (i == 3) {
                 targetBox.val(Number(targetBox.val()) + Number(4 + "00"));
@@ -279,8 +275,6 @@ $(document).ready(function () {
 
         });
     }
->>>>>>> 1b9376ab882788bab1c75bead2d7136bb87b1c6d
-
 
     $(".info-box").click(function () {
         $(".modal-box").css("display", "block");
@@ -289,23 +283,13 @@ $(document).ready(function () {
     $("#close-modal").click(function () {
         $(".modal-box").css("display", "none");
     });
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
 
     $('.datepicker').pickadate();
 
 
-<<<<<<< HEAD
-
 
 });
-=======
 
 
-=======
->>>>>>> 1b9376ab882788bab1c75bead2d7136bb87b1c6d
-});
->>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
+

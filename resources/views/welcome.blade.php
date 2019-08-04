@@ -1,5 +1,6 @@
 @extends('layouts.layout')
-
+@section('page_title')Placing bets customisable odds
+@stop
 @section('page')
     <div class="container-fluid h-100 scroll-y clear-padding log-rg-bg">
         <div class="little-shade pb-5">

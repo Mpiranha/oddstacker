@@ -1,21 +1,26 @@
 <template>
-    <div class="fancy-top-bot px-3">
-        <div class="d-flex flex-column flex-grow-1">
+    <div class="d-flex fancy-top-bot">
+        <!--<div class=" mt-3 star">-->
+            <!--<i v-if="state === 'normal'" @click="changeState('highlighted')" class="far fa-star text-light"></i>-->
+            <!--<i v-else @click="changeState('normal')" class="fas fa-star text-yellow"></i>-->
+        <!--</div>-->
+        <div class="d-flex flex-column justify-content-between flex-grow-1">
             <div class="d-flex">
-                <input type="checkbox" v-model="eventPredictions.tie_breaker" @change="selected($event)">
-                <fancy-top-bottom
-                        :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`"
-                        class="flex-grow-1 mr-5"></fancy-top-bottom>
+                <!--<input type="checkbox" v-model="eventPredictions.tie_breaker" @change="selected($event)">-->
+                <fancy-top-bottom tie-breaker="true"
+                                  :selection-tie-breaker="eventPredictions"
+                                  :selections="selections"
+                                  :stock="stock"
+                                  :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`"
+                                  class="flex-grow-1 mr-2"></fancy-top-bottom>
             </div>
 
-            <div class="d-flex mt-4">
-                <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
-                    <span class="odds-text-content align-self-center">
-                        {{ eventPredictions.prediction.name }}
-                    </span>
+            <div class="d-flex mt-2">
+                <div class="odds-text d-flex justify-content-center align-items-center text-white flex-grow-1">
+                    {{ eventPredictions.prediction.name }}
                 </div>
-                <input type="tel" class="shell-odd-input text-center text-dark pt-2 px-2"
-                       v-model="eventPredictions.odds" maxlength="5" readonly>
+                <input class="shell-odd-input text-center text-dark pt-2 px-2" readonly type="tel" placeholder="0.00"
+                       v-model="eventPredictions.odds" maxlength="5">
             </div>
         </div>
     </div>
@@ -25,13 +30,15 @@
     export default {
         props: ['stock', 'eventPredictions', 'selections'],
         data(){
-            return {}
+            return {
+                state: 'normal'
+            }
         },
         computed: {
             selectionCheck(){
-                if(this.selections > this.stock.category.tie_breaker){
+                if (this.selections > this.stock.category.tie_breaker) {
                     return true
-                }else{
+                } else {
                     return false
                 }
             }
@@ -40,47 +47,30 @@
 
         },
         methods: {
-            selected(event){
-                this.$emit('alter-selection', event.target.checked)
 
-                setTimeout(() => {
-                    if(this.selectionCheck){
-                        event.target.checked = false
-                        this.$emit('alter-selection', event.target.checked)
-                    }
-                }, 400)
-            }
         }
     }
 
 </script>
 
 <style scoped>
-    .star {
-        font-size: 0.659rem;
-        color: rgb(255, 215, 0);
-        padding: 2rem 0.2rem;
-    }
-
     .odds-text {
-        position: relative;
-        background-color: rgba(245, 199, 11, 0.561);
+        background-color: rgba(245, 199, 11, 0.82);
         border-radius: 30px;
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
     }
-
     .shell-odd-input {
-        width: 25%;
+        width: 20%;
         padding: 0.4rem 1rem;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(228, 218, 218, 0.72);
         border-radius: 30px;
-        margin-left: 2rem;
+        margin-left: 1rem;
+        /* border: 2px solid white; */
         border: none;
         font-weight: bolder;
         display: block;
     }
-
     .fancy-top-bot {
         width: 100%;
         height: 100px;
@@ -89,7 +79,6 @@
         margin-top: 2.2rem;
         padding: 0.4rem 0.3rem;
     }
-
     .fancy-top-bot:before {
         content: "";
         width: 100%;
@@ -101,7 +90,6 @@
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
     }
-
     .fancy-top-bot:after {
         content: "";
         width: 100%;
@@ -112,5 +100,10 @@
         border-top: 15px solid #ffffff33;
         border-left: 15px solid #eee0;
         border-right: 15px solid #eee0;
+    }
+    .star {
+        padding: 0.5rem;
+        font-size: 1.7rem;
+        cursor: pointer;
     }
 </style>

@@ -49,18 +49,9 @@
     padding: 1rem 0rem !important;
     font-size: 1.4rem !important;
 }
-
-
-
-
-
-
-
 </style>
 
 <template>
-
-    
     <div class="d-flex justify-content-center m-0 mt-2 bg-date pb-1 px-2 cal-font">
 
         <datepicker
@@ -106,9 +97,15 @@
 </template>
 <script>
 import moment from 'moment'
+import Datepicker from 'vuejs-datepicker';
 export default {
+    components: {
+        Datepicker
+    },
     data: function(){
-        return {}
+        return {
+            selectedDate: new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate()
+        }
     },
 
     computed: {
@@ -118,37 +115,3 @@ export default {
     }
 }
 </script>
-
-
-<script>
-
-import Datepicker from 'vuejs-datepicker';
-// import Datepicker from 'vue-material-datepicker';
-
-
-
-// .$mount('#app')
-
-export default {
-    components: {
-        Datepicker
-    },
-    // ...
-//   components: {
-//     Datepicker
-//   },
-
-//   state: {
-//       date: new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate()
-//   }
-    data () {
-    return {
-          selectedDate: new Date().getFullYear() + '-' + (new Date().getMonth()+1) + '-' + new Date().getDate()
-    }
-  },
-  methods: {
-  }
-  // ...
-}
-</script>
-

@@ -10,34 +10,65 @@
             <i v-else @click="changeState('normal')" class="fas fa-star text-yellow"></i>
         </div>
 
-        
-            {{content}}
+
+        {{content}}
     </div>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            state: 'normal'
+    import {EventBus} from './event-bus';
+    export default {
+        data() {
+            return {
+                state: 'normal'
+            }
+        },
+        computed: {
+            selectionCheck(){
+                if (this.tieBreaker == 'true') {
+                    if (this.selections > this.stock.category.tie_breaker) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+            }
+        },
+        methods: {
+            changeState: function (newState) {
+                this.state = newState;
+                let data = this.selectionTieBreaker;
+                data.tie_breaker = !data.tie_breaker;
+
+//                console.log(this.selections)
+
+//                console.log("NEW: ", data)
+//                console.log("MAIN: ", this.selectionTieBreaker)
+                EventBus.$emit('alter-selection', data.tie_breaker);
+
+                if (this.selectionCheck) {
+                    setTimeout(() => {
+                        data.tie_breaker = false;
+                        EventBus.$emit('alter-selection', data.tie_breaker);
+
+                    }, 400)
+                }
+            }
+        },
+        props: {
+            content: String,
+            tieBreaker: String,
+            result: String,
+            selectionTieBreaker: Object,
+            stock: Object,
+            selections: Number
         }
-    },
-    methods: {
-        changeState: function (newState) {
-            this.state = newState;
-        }
-    },
-    props: {
-        content: String,
-        tieBreaker: String,
-        result: String
     }
-}
 </script>
 
 
 <style>
-     #fancy-top-bot {
+    #fancy-top-bot {
         width: 100%;
         height: 24px;
         background: rgba(0, 0, 0, 0.54);
@@ -56,7 +87,7 @@ export default {
         border-bottom: 8px solid rgba(0, 0, 0, 0.54);
         border-left: 15px solid rgba(238, 238, 238, 0);
         border-right: 15px solid rgba(238, 238, 238, 0);
-    }  
+    }
 
     #fancy-top-bot:after {
         content: "";

@@ -6,13 +6,9 @@
                         :content="`${eventPredictions.event.team_a.name} vs ${eventPredictions.event.team_b.name}`"
                         class="flex-grow-1 mr-5"></fancy-top-bottom>
             </div>
-<<<<<<< HEAD
 
-            <div class="d-flex mt-4">
-=======
-            
+
             <div class="d-flex mt-3">
->>>>>>> 4e779fe48763318f4e4c7fb26d3c3d85037b02ce
                 <div class="odds-text text-center text-white flex-grow-1 d-flex justify-content-center">
                     <span class="odds-text-content align-self-center">
                         {{ eventPredictions.prediction.name }}
@@ -44,7 +40,7 @@
         },
         methods: {
             oddChanged(){
-                console.log("HEY")
+//                console.log("HEY")
                 this.$emit('alter-odd')
             }
         }
